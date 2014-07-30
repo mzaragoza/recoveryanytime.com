@@ -1,1 +1,656 @@
-Hope Page
+%section
+  %article
+    .container
+      .row
+        .col-md-9
+          .boxes
+            .boxes-title.home
+              %span
+                %i.icon-search
+              %h4 Find the House of your Dreams
+            #carousel-house-dreams.carousel.slide.house-dreams{"data-ride" => "carousel"}
+              .quick-search
+                %h4 Quick Search
+                %form.form-quick-search{role: "form"}
+                  .form-group
+                    %label.sr-only{for: "qs-property-type"} Property Type
+                    %select#qs-property-type.form-control
+                      %option Property Type
+                      %option Type 1
+                      %option Type 2
+                  .form-group
+                    %label.sr-only{for: "qs-operation"} Operation
+                    %select#qs-operation.form-control
+                      %option Operation
+                      %option Operation 1
+                      %option Operation 2
+                  .form-group
+                    %label.sr-only{for: "qs-location"} Location
+                    %select#qs-location.form-control
+                      %option Location
+                      %option Location 1
+                      %option Location 2
+                  %button.btn.btn-default{type: "submit"}
+                    %i.icon-search>
+                    Search
+              / Controls
+              %a.left.carousel-control{"data-slide" => "prev", href: "#carousel-house-dreams"}
+                %i.icon-left-open
+              %a.right.carousel-control{"data-slide" => "next", href: "#carousel-house-dreams"}
+                %i.icon-right-open
+              / Wrapper for slides
+              .carousel-inner
+                .item.active
+                  %img{alt: "//", src: "/assets/img/houses/dreams01.jpg"}/
+                .item
+                  %img{alt: "//", src: "/assets/img/houses/dreams02.jpg"}/
+                .item
+                  %img{alt: "//", src: "/assets/img/houses/dreams03.jpg"}/
+        .col-md-3
+          .boxes
+            .boxes-title
+              %span
+                %i.icon-doc-text
+              %h4 Popular on Sale
+            .property-item
+              %figure.item-thumbnail.darken
+                %img{alt: "//", src: "/assets/img/houses/popular01.jpg"}/
+                %span.overthumb
+                .icons
+                  %a{href: "#"}
+                    %i.icon-plus
+              %p A new boutique building in the rem ipsum dolor sit...
+              %p
+                %i.icon-location>
+                Chicago, USA
+            .property-item
+              %figure.item-thumbnail.darken
+                %img{alt: "//", src: "/assets/img/houses/popular02.jpg"}/
+                %span.overthumb
+                .icons
+                  %a{href: "#"}
+                    %i.icon-plus
+              %p A new boutique building in the rem ipsum dolor sit...
+              %p
+                %i.icon-location>
+                Chicago, USA
+            .property-item
+              %figure.item-thumbnail.darken
+                %img{alt: "//", src: "/assets/img/houses/popular03.jpg"}/
+                %span.overthumb
+                .icons
+                  %a{href: "#"}
+                    %i.icon-plus
+              %p A new boutique building in the rem ipsum dolor sit...
+              %p
+                %i.icon-location>
+                Chicago, USA
+  %article
+    .container.bordered
+      %h2 We are Offering the best Real Estate Deals
+      %p.subtitle Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, omnis, porro, vero explicabo repellendus nisi quibusdam in aliquam nesciunt quos suscipit fuga aperiam et veniam ratione nemo doloremque a! Sed!
+  %article.offers
+    .container.bordered
+      .row
+        .col-md-4
+          %figure
+            %img{alt: "//", src: "/assets/img/icons/offer3.png"}/
+          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, enim deleniti doloribus dicta voluptates qui sit omnis.
+        .col-md-4
+          %figure
+            %img{alt: "//", src: "/assets/img/icons/offer1.png"}/
+          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ipsam, debitis, nulla, laborum sequi molestiae accusamus quibusdam.
+        .col-md-4
+          %figure
+            %img{alt: "//", src: "/assets/img/icons/offer2.png"}/
+          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, eius, ipsum repellendus incidunt aut nobis tempore.
+  %article.properties-tabs
+    .container
+      / Nav tabs
+      %ul.nav.nav-tabs
+        %li.active
+          %a{"data-toggle" => "tab", href: "#featured"} Featured Properties
+        %li
+          %a{"data-toggle" => "tab", href: "#sale"} Recent Properties on Sale
+        %li
+          %a{"data-toggle" => "tab", href: "#rent"} Recent Properties for Rent
+      / Tab panes
+      .tab-content
+        #featured.tab-pane.fade.in.active
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular03.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular02.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular01.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular01.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular03.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular02.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular01.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular02.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular03.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .clearfix
+        #sale.tab-pane.fade
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular02.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular01.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular03.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular03.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular01.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular02.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular01.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular03.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular02.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .clearfix
+        #rent.tab-pane.fade
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular02.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular03.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular01.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular01.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular03.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular02.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular02.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular01.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular03.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .clearfix
+  %article.experts
+    .container
+      %h2 Experts on real Estates
+      %h3 We Build our Products to represent our values
+      %a.btn.btn-image{href: "#"} Properties on Sale
+  %article.team
+    .container
+      %h2 Meet the Team
+      %p.subtitle Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, omnis, porro, vero explicabo repellendus nisi quibusdam in aliquam nesciunt quos suscipit fuga aperiam et veniam ratione nemo doloremque a! Sed!
+      .team-item
+        %figure.item-thumbnail
+          %img{alt: "//", src: "/assets/img/team/team1.jpg"}/
+          %span.overthumb
+          .icons
+            %a.btn.btn-image{href: "#"} View Profile
+        %h6 Mike Smithson
+        %a{href: "#"} mike@company.com
+        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, voluptatum, consequatur non.
+      .team-item
+        %figure.item-thumbnail
+          %img{alt: "//", src: "/assets/img/team/team2.jpg"}/
+          %span.overthumb
+          .icons
+            %a.btn.btn-image{href: "#"} View Profile
+        %h6 Mike Smithson
+        %a{href: "#"} mike@company.com
+        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, voluptatum, consequatur non.
+      .team-item
+        %figure.item-thumbnail
+          %img{alt: "//", src: "/assets/img/team/team3.jpg"}/
+          %span.overthumb
+          .icons
+            %a.btn.btn-image{href: "#"} View Profile
+        %h6 Mike Smithson
+        %a{href: "#"} mike@company.com
+        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, voluptatum, consequatur non.
+      .team-item
+        %figure.item-thumbnail
+          %img{alt: "//", src: "/assets/img/team/team4.jpg"}/
+          %span.overthumb
+          .icons
+            %a.btn.btn-image{href: "#"} View Profile
+        %h6 Mike Smithson
+        %a{href: "#"} mike@company.com
+        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, voluptatum, consequatur non.
+  %article.super-offers
+    .container
+      .col-md-6
+        .boxes
+          .onsale
+            %span> On Sale
+            Popular Properties in New York
+          .property-item.big
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular-big03.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, voluptatem, error, quaerat dolorem sunt labore cum placeat debitis eos molestias consectetur repellendus itaque perspiciatis nihil odit cupiditate temporibus veritatis ea?
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular07.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular07.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular07.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .clearfix
+      .col-md-6
+        .boxes
+          .onsale
+            %span> On Sale
+            Popular Properties in New York
+          .property-item.big
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular-big02.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, voluptatem, error, quaerat dolorem sunt labore cum placeat debitis eos molestias consectetur repellendus itaque perspiciatis nihil odit cupiditate temporibus veritatis ea?
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular06.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular06.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular06.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .clearfix
+      .col-md-6
+        .boxes
+          .onsale
+            %span> On Sale
+            Popular Properties in New York
+          .property-item.big
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular-big04.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, voluptatem, error, quaerat dolorem sunt labore cum placeat debitis eos molestias consectetur repellendus itaque perspiciatis nihil odit cupiditate temporibus veritatis ea?
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular04.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular04.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular04.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .clearfix
+      .col-md-6
+        .boxes
+          .onsale
+            %span> On Sale
+            Popular Properties in New York
+          .property-item.big
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular-big01.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, voluptatem, error, quaerat dolorem sunt labore cum placeat debitis eos molestias consectetur repellendus itaque perspiciatis nihil odit cupiditate temporibus veritatis ea?
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular07.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular07.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .property-item
+            %figure.item-thumbnail.darken
+              %img{alt: "//", src: "/assets/img/houses/popular07.jpg"}/
+              %span.overthumb
+              .icons
+                %a{href: "#"}
+                  %i.icon-plus
+            %p A new boutique building in the rem ipsum dolor sit...
+            %p
+              %i.icon-location>
+              Chicago, USA
+          .clearfix
