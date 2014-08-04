@@ -6,8 +6,8 @@
           .boxes
             .boxes-title.home
               %span
-                %i.icon-search
-              %h4 Find the House of your Dreams
+                %i.icon-clock
+              %h4 Join Recovery Anytime
             #carousel-house-dreams.carousel.slide.house-dreams{"data-ride" => "carousel"}
               .quick-search
                 %h4 Join Now
@@ -22,7 +22,6 @@
                     %label.sr-only{for: "qs-location"} Password
                     %input#password.string.required.form-control{"aria-required" => "true", maxlength: "255", name: "password", placeholder: "Password", size: "255", type: "password", value: ""}/
                   %button.btn.btn-default{type: "submit"}
-                    %i.icon-search>
                     Join
               / Controls
               %a.left.carousel-control{"data-slide" => "prev", href: "#carousel-house-dreams"}
@@ -41,9 +40,22 @@
           .boxes
             .boxes-title
               %span
-                %i.icon-doc-text
-              %h4 Popular on Sale
+                %i.icon-clock
+              %h4 Login
             .property-item
+              %form.form-quick-search{role: "form"}
+                .form-group
+                  %label.sr-only{for: "qs-operation"} Email Address
+                  %input#email.string.required.form-control{"aria-required" => "true", maxlength: "255", name: "email", placeholder: "Email", size: "255", type: "text", value: ""}/
+                .form-group
+                  %label.sr-only{for: "qs-location"} Password
+                  %input#password.string.required.form-control{"aria-required" => "true", maxlength: "255", name: "password", placeholder: "Password", size: "255", type: "password", value: ""}/
+                .form-group
+                  %input{name: "remember", type: "checkbox"}/
+                  %span Remember Me
+                %button.btn.btn-default{type: "submit"}
+                  login
+            -#.property-item
               %figure.item-thumbnail.darken
                 %img{alt: "//", src: "/assets/img/houses/popular01.jpg"}/
                 %span.overthumb
@@ -54,29 +66,7 @@
               %p
                 %i.icon-location>
                 Chicago, USA
-            .property-item
-              %figure.item-thumbnail.darken
-                %img{alt: "//", src: "/assets/img/houses/popular02.jpg"}/
-                %span.overthumb
-                .icons
-                  %a{href: "#"}
-                    %i.icon-plus
-              %p A new boutique building in the rem ipsum dolor sit...
-              %p
-                %i.icon-location>
-                Chicago, USA
-            .property-item
-              %figure.item-thumbnail.darken
-                %img{alt: "//", src: "/assets/img/houses/popular03.jpg"}/
-                %span.overthumb
-                .icons
-                  %a{href: "#"}
-                    %i.icon-plus
-              %p A new boutique building in the rem ipsum dolor sit...
-              %p
-                %i.icon-location>
-                Chicago, USA
-  %article
+              %article
     .container.bordered
       %h2 We are Offering the best Real Estate Deals
       %p.subtitle Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, omnis, porro, vero explicabo repellendus nisi quibusdam in aliquam nesciunt quos suscipit fuga aperiam et veniam ratione nemo doloremque a! Sed!

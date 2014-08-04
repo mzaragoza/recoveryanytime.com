@@ -114,6 +114,8 @@
                 = link_to t(:about_us), about_us_path
               %li{ class: "#{'active' if params[:controller] == 'meetings' && params[:action] == 'new'}" }
                 = link_to t(:host_a_meeting), new_meeting_path
+              %li{ class: "#{'active' if params[:controller] == 'pages' && params[:action] == 'login'}" }
+                = link_to t(:log_in), root_path
               -#%li{ class: "#{'active' if params[:controller] == 'pages' && params[:action] == 'index'}" }
                 = link_to t(:classified), root_path
     = yield
