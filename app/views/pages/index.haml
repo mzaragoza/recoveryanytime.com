@@ -10,29 +10,20 @@
               %h4 Find the House of your Dreams
             #carousel-house-dreams.carousel.slide.house-dreams{"data-ride" => "carousel"}
               .quick-search
-                %h4 Quick Search
+                %h4 Join Now
                 %form.form-quick-search{role: "form"}
                   .form-group
-                    %label.sr-only{for: "qs-property-type"} Property Type
-                    %select#qs-property-type.form-control
-                      %option Property Type
-                      %option Type 1
-                      %option Type 2
+                    %label.sr-only{for: "qs-property-type"}
+                    %input#user_name.string.required.form-control{"aria-required" => "true", maxlength: "255", name: "user_name", placeholder: "User Name", size: "255", type: "text", value: ""}/
                   .form-group
-                    %label.sr-only{for: "qs-operation"} Operation
-                    %select#qs-operation.form-control
-                      %option Operation
-                      %option Operation 1
-                      %option Operation 2
+                    %label.sr-only{for: "qs-operation"} Email Address
+                    %input#email.string.required.form-control{"aria-required" => "true", maxlength: "255", name: "email", placeholder: "Email", size: "255", type: "text", value: ""}/
                   .form-group
-                    %label.sr-only{for: "qs-location"} Location
-                    %select#qs-location.form-control
-                      %option Location
-                      %option Location 1
-                      %option Location 2
+                    %label.sr-only{for: "qs-location"} Password
+                    %input#password.string.required.form-control{"aria-required" => "true", maxlength: "255", name: "password", placeholder: "Password", size: "255", type: "password", value: ""}/
                   %button.btn.btn-default{type: "submit"}
                     %i.icon-search>
-                    Search
+                    Join
               / Controls
               %a.left.carousel-control{"data-slide" => "prev", href: "#carousel-house-dreams"}
                 %i.icon-left-open
