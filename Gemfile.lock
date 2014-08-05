@@ -186,6 +186,7 @@ GEM
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-ssh (2.9.1)
+    newrelic_rpm (3.7.1.188)
     nokogiri (1.5.11)
     orm_adapter (0.5.0)
     pg (0.17.1)
@@ -342,6 +343,7 @@ DEPENDENCIES
   json
   launchy
   letter_opener
+  newrelic_rpm (~> 3.7.1.188)
   pg
   phony_rails
   populator
