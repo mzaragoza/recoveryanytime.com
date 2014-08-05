@@ -1,5 +1,19 @@
 RecoveryanytimeCom::Application.routes.draw do
 
+
+  devise_for :users, :controllers => {
+    registrations: 'users/registrations',
+    :sessions => "users/sessions",
+    :passwords => 'users/passwords',
+    :confirmations => 'users/confirmations'
+  }
+
+  authenticate :user do
+    namespace :users do
+      match '/users/registrations' => 'users#registrations',   as: :registrations, via: :post
+    end
+  end
+
   resources :directorys
   resources :contacts
   resources :blogs
