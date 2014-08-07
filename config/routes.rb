@@ -11,6 +11,7 @@ RecoveryanytimeCom::Application.routes.draw do
   authenticate :user do
     namespace :users do
       match '/users/registrations' => 'users#registrations',   as: :registrations, via: :post
+      root 'dashboard#index'
     end
   end
 

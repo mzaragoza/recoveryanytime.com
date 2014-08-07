@@ -1,4 +1,4 @@
-= simple_form_for( user, :url => users_registrations_path, method: 'post') do |f|
+= simple_form_for( user, :url => new_user_registration_path, method: 'GET') do |f|
   -#%ul
     - f.errors.full_messages.each do |e|
       %li=e

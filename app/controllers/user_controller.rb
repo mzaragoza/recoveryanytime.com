@@ -1,6 +1,6 @@
 class UserController < ApplicationController
   before_filter :authenticate_user!
-  #layout 'users/default'
+  layout 'users/default'
   before_filter :check_user_active
 
   private

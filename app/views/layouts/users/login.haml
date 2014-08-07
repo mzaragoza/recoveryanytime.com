@@ -40,6 +40,7 @@
     %meta{content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", name: "viewport"}/
     / // Stylesheets //
     %link{href: "/assets/bootstrap/core/dist/css/bootstrap.min.css", rel: "stylesheet"}/
+    %link{href: "/assets/bootstrap-datetimepicker.css", rel: "stylesheet"}/
     %link{href: "/assets/css/bootstrap-custom.css", rel: "stylesheet"}/
     %link{href: "/assets/css/bootstrap-extended.css", rel: "stylesheet"}/
     %link{href: "/assets/css/login.css", rel: "stylesheet"}/
@@ -60,8 +61,25 @@
     %script{src: "/assets/js/plugins/jquery.pwstrength.min.js"}
     / // Custom //
     %script{src: "/assets/js/plugins/login.js"}
+    / // calendat //
+    %script{src: "/assets/moment.js"}
+    %script{src: "/assets/bootstrap-datetimepicker.js"}
+
   %body
     #container-signup.clearfix
-      = yield
+      #login-box
+        .login-box-inner.clearfix
+          %header#login-header
+            = link_to root_path do 
+              %img{alt: "Recovery Anytime", src: "/assets/img/logo_blue.png"}/
+          .spacer-40
+          = yield
       %footer#login-footer
         %strong Copyright © #{Date.today.strftime('%Y')} Recovery Anytime
+
+:javascript
+  $(function () {
+      $('.datetimepicker').datetimepicker();
+      $('.datepicker').datetimepicker( { pickTime: false});
+      $('.timepicker').datetimepicker( { pickDate: false});
+  });

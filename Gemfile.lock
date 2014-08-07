@@ -66,6 +66,8 @@ GEM
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.2.0.1)
       sass (~> 3.2)
+    bootstrap3-datetimepicker-rails (3.0.0.2)
+      momentjs-rails (~> 2.5.0)
     browser (0.6.0)
     builder (3.1.4)
     capybara (2.4.1)
@@ -180,6 +182,8 @@ GEM
     method_source (0.8.2)
     mime-types (1.25.1)
     minitest (4.7.5)
+    momentjs-rails (2.5.1)
+      railties (>= 3.1)
     multi_json (1.10.1)
     multi_test (0.1.1)
     multi_xml (0.5.5)
@@ -319,6 +323,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass
+  bootstrap3-datetimepicker-rails (~> 3.0.0.2)
   browser
   capybara
   coffee-rails (~> 4.0.0)
@@ -343,6 +348,7 @@ DEPENDENCIES
   json
   launchy
   letter_opener
+  momentjs-rails (>= 2.5.0)
   newrelic_rpm (~> 3.7.1.188)
   pg
   phony_rails
