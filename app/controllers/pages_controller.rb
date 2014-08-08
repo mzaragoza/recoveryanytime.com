@@ -1,4 +1,5 @@
 class PagesController < PublicController
+  before_filter :redirect_if_logged_in
   layout :choose_layout
 
   expose(:user){User.new}
@@ -15,12 +16,13 @@ class PagesController < PublicController
     'public/default'
   end
 
-
-
-
-
-
-  module ContentHelper
+  private
+  def redirect_if_logged_in
+    if user_signed_in?
+      flash[:notice] = 'You must sign out first!'
+      redirect_to users_root_path
+    end
   end
+
 end
 

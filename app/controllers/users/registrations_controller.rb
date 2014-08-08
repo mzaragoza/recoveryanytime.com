@@ -65,6 +65,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   private
+
   def sign_up_params
     params.require(resource_name).permit(
       :username,
@@ -84,9 +85,5 @@ class Users::RegistrationsController < Devise::RegistrationsController
       :birthday,
     )
   end
-
-
-
-
 end
 

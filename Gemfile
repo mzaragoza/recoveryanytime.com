@@ -11,6 +11,9 @@ gem 'pg'
 gem 'newrelic_rpm', '~> 3.7.1.188'
 gem 'gibbon' # mailchimp
 
+# Server
+gem 'unicorn'
+
 #engines
 #gem 'resque', :require => "resque/server"
 #gem 'resque-scheduler', :require => 'resque_scheduler', :git => 'git://github.com/resque/resque-scheduler.git'
