@@ -1,5 +1,5 @@
 class PagesController < PublicController
-  before_filter :redirect_if_logged_in
+  #before_filter :redirect_if_logged_in
   layout :choose_layout
 
   expose(:user){User.new}

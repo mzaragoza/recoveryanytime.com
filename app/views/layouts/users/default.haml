@@ -829,11 +829,11 @@
           %footer#footer-main.footer-sticky
             .footer-main-inner
               .pull-left
-                %p Copyright © 2013 CreativeMilk
+                %p Copyright © #{Date.today.strftime('%Y')} Recovery Anytime
               .pull-right
-                %a.btn.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-                  %i.fa.fa-cogs
-                #ext-dropdown-chat.dropup
+                -#%a.btn.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+                  -#%i.fa.fa-cogs
+                -#ext-dropdown-chat.dropup
                   %a.btn.dropdown-toggle.ext-dropdown-chat-btn{"data-toggle" => "dropdown", href: "#"}
                     %span.online-dot
                     Steven Watson

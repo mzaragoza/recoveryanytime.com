@@ -7,11 +7,15 @@
             .boxes-title.home
               %span
                 %i.icon-clock
-              %h4 Join Recovery Anytime
+              - unless current_user
+                %h4 Join Recovery Anytime
+              - else
+                %h4 
             #carousel-house-dreams.carousel.slide.house-dreams{"data-ride" => "carousel"}
-              .quick-search
-                %h4 Join Now
-                = render 'registration'
+              - unless current_user
+                .quick-search
+                  %h4 Join Now
+                  = render 'registration'
               / Controls
               %a.left.carousel-control{"data-slide" => "prev", href: "#carousel-house-dreams"}
                 %i.icon-left-open
@@ -27,21 +31,29 @@
                   %img{alt: "//", src: "/assets/img/houses/dreams03.jpg"}/
         .col-md-3
           .boxes
-            .boxes-title
-              %span
-                %i.icon-clock
-              %h4 Login
-            .property-item
+            - unless current_user
+              .boxes-title
+                %span
+                  %i.icon-clock
+                %h4 Login
+              .property-item
 
-              = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-                %ul
-                  - resource.errors.full_messages.each do |e|
-                    %li=e
-                = f.input :email      , label: false, input_html: { class: 'form-control input-lg', placeholder: "Email"      }
-                %br
-                = f.input :password   , label: false, input_html: { class: 'form-control input-lg', placeholder: "Password"   }
-                %br
-                = f.button :submit    , "Login", :class => 'btn btn-primary btn-block'
+                = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+                  %ul
+                    - resource.errors.full_messages.each do |e|
+                      %li=e
+                  = f.input :email      , label: false, input_html: { class: 'form-control input-lg', placeholder: "Email"      }
+                  %br
+                  = f.input :password   , label: false, input_html: { class: 'form-control input-lg', placeholder: "Password"   }
+                  %br
+                  = f.button :submit    , "Login", :class => 'btn btn-primary btn-block'
+            - else
+              .boxes-title
+                %span
+                  %i.icon-clock
+                = link_to users_root_path, class: 'btn btn-success' do
+                  %h4 Members Area
+              
               
 
 
