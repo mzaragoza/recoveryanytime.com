@@ -21,17 +21,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     build_resource(sign_up_params)
-    unless params[:user][:sober_date].to_s.empty?
-      date = params[:user][:sober_date].split("/")
-      date = date[1] + '/' + date[0] + '/' + date[2]
-      resource.sober_date = date
-    end
-    unless params[:user][:birthday].to_s.empty?
-      date = params[:user][:birthday].split("/")
-      date = date[1] + '/' + date[0] + '/' + date[2]
-      resource.birthday = date
-    end
     if resource.save
+      unless params[:user][:sober_date].to_s.empty?
+        date = params[:user][:sober_date].split("/")
+        date = date[1] + '/' + date[0] + '/' + date[2]
+        resource.sober_date = date
+      end
+      unless params[:user][:birthday].to_s.empty?
+        date = params[:user][:birthday].split("/")
+        date = date[1] + '/' + date[0] + '/' + date[2]
+        resource.birthday = date
+      end
+      resource.save
       yield resource if block_given?
       if resource.active_for_authentication?
         #resource.post_sign_up
