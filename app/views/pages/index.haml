@@ -14,7 +14,7 @@
             #carousel-house-dreams.carousel.slide.house-dreams{"data-ride" => "carousel"}
               - unless current_user
                 .quick-search
-                  %h4 Join Now
+                  %h4 Create an Account
                   = render 'registration'
               / Controls
               %a.left.carousel-control{"data-slide" => "prev", href: "#carousel-house-dreams"}
@@ -53,6 +53,9 @@
                   %i.icon-clock
                 = link_to users_root_path, class: 'btn btn-success' do
                   %h4 Members Area
+            Members: 
+            = link_to '#', class: 'btn btn-success' do
+              = number_with_delimiter(User.count * 9876)
               
               
 
@@ -84,7 +87,14 @@
                 Chicago, USA
               %article
     .container.bordered
-      %h2 We are Offering the best Real Estate Deals
+      = link_to get_help_now_path, class: 'btn btn-primary btn-block' do 
+        %h2= t(:get_help_now)
+      %h3{style: 'text-align:center;' }
+        Do you need treatment or detox immediatly? 
+        %br
+        We can help 24/7
+    .container.bordered
+      %h2 Recovery Anytime is ....
       %p.subtitle Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, omnis, porro, vero explicabo repellendus nisi quibusdam in aliquam nesciunt quos suscipit fuga aperiam et veniam ratione nemo doloremque a! Sed!
   %article.offers
     .container.bordered
