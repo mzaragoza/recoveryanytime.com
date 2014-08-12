@@ -171,7 +171,7 @@
       .footer-top
         .container
           .row
-            .col-sm-6.col-md-3
+            .col-sm-6.col-md-4
               %h4 About Company
               %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, provident quas accusamus deleniti velit magni necessitatibus quis eum dolorum error. Rem, maxime, et consequuntur sint provident unde similique. Eos, laudantium!
               %address
@@ -181,27 +181,21 @@
                 %i.icon-mail
                 = mail_to 'info@RecoveryAnytime.com'
                 %br/
-            .col-sm-6.col-md-3
+            .col-sm-6.col-md-4
               %h4 Contact Information
               %address
                 %i.icon-phone>
                 Phone: 866-687-8851
-                %br/
-                = succeed "Phone:" do
-                  %i.icon-phone
-                %br/
+
               %address
-                %i.icon-address>
-                Address 543 Street, Los Angeles
-                %br/
                 %i.icon-mail
                 = mail_to 'info@RecoveryAnytime.com'
                 %br/
                 %i.icon-monitor
-                %a{href: "#"} www.company.com
+                %a{href: "http://www.RecoveryAnytime.com"} www.RecoveryAnytime.com
                 %br/
             .clearfix.visible-sm
-            .col-sm-6.col-md-3
+            .col-sm-6.col-md-4
               %h4 Newsletter sing up
               %form.form-suscribe{role: "form"}
                 .form-group
@@ -213,7 +207,7 @@
                 %button.btn.btn-default{type: "submit"}
                   %i.icon-forward>
                   Suscribe
-            .col-sm-6.col-md-3
+            -#.col-sm-6.col-md-3
               %h4 Come to visit us
               #map.map
       .footer-bottom
