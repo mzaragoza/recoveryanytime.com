@@ -5,6 +5,10 @@ class Admin < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   scope :is_active, -> { where(:active => true) }
+  attr_accessor :updating_password
+
+
+
   def name
     full_name
   end

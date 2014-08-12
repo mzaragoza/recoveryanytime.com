@@ -7,6 +7,7 @@
       %th name
       %th phone
       %th active 
+      %th
   %tbody
     - admins.each do |a|
       %tr
@@ -18,9 +19,10 @@
             Yes
           -else 
             No
+        %td= link_to 'Edit', edit_admins_admin_path(a), class: 'pull-right btn btn-default btn-sm'
   %tfoot
     %tr
-      %td.pager.form-horizontal{colspan: "3"}
+      %td.pager.form-horizontal{colspan: "4"}
         %button.btn.first
           %i.fa.fa-step-backward
         %button.btn.prev
