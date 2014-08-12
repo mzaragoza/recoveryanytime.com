@@ -24,11 +24,13 @@
               / Wrapper for slides
               .carousel-inner
                 .item.active
-                  %img{alt: "//", src: "/assets/img/houses/dreams01.jpg"}/
+                  %img{alt: "Meeting", src: "/assets/stock-photo-44532628-diverse-group-of-children-and-adults-talking-in-support-meeting.jpg"}/
                 .item
-                  %img{alt: "//", src: "/assets/img/houses/dreams02.jpg"}/
+                  %img{alt: "friends", src: "/assets/stock-photo-44524122-multi-ethnic-friends-having-fun-at-the-beach.jpg"}/
                 .item
-                  %img{alt: "//", src: "/assets/img/houses/dreams03.jpg"}/
+                  %img{alt: "Direcorty", src: "/assets/stock-photo-42255592-hotel-exterior-on-a-winter-night.jpg"}/
+                .item
+                  %img{alt: "Get Help Now", src: "/assets/stock-photo-44372374-customer-support-staff-pointing-away.jpg"}/
         .col-md-3
           .boxes
             - unless current_user
@@ -56,11 +58,6 @@
             Members: 
             = link_to '#', class: 'btn btn-success' do
               = number_with_delimiter(User.count * 9876)
-              
-              
-
-
-
 
               -#%form#new_user.form-quick-search{"accept-charset" => "UTF-8", action: "/users/sign_in", method: "post"}
                 .form-group
@@ -101,17 +98,20 @@
       .row
         .col-md-4
           %figure
-            %img{alt: "//", src: "/assets/img/icons/offer3.png"}/
+            %img{alt: "//", src: "/assets/stock-photo-32246458-i-m-happy-to-help.jpg"}/
+          %h3{style: 'text-align:center;' } Seeking Help
           %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, enim deleniti doloribus dicta voluptates qui sit omnis.
         .col-md-4
           %figure
-            %img{alt: "//", src: "/assets/img/icons/offer1.png"}/
+            %img{alt: "//", src: "/assets/stock-photo-45231460-campfire-of-friends-in-circle-on-the-fire.jpg"}/
+          %h3{style: 'text-align:center;' } In Recovery
           %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ipsam, debitis, nulla, laborum sequi molestiae accusamus quibusdam.
         .col-md-4
           %figure
-            %img{alt: "//", src: "/assets/img/icons/offer2.png"}/
+            %img{alt: "//", src: "/assets/stock-photo-45215624-group-of-friends-with-hands-in-hands-teamwork.jpg"}/
+          %h3{style: 'text-align:center;' } Friends & Family in Recovery
           %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, eius, ipsum repellendus incidunt aut nobis tempore.
-  %article.properties-tabs
+  -#%article.properties-tabs
     .container
       / Nav tabs
       %ul.nav.nav-tabs
@@ -426,12 +426,12 @@
               %i.icon-location>
               Chicago, USA
           .clearfix
-  %article.experts
+  -#%article.experts
     .container
       %h2 Experts on real Estates
       %h3 We Build our Products to represent our values
       %a.btn.btn-image{href: "#"} Properties on Sale
-  %article.team
+  -#%article.team
     .container
       %h2 Meet the Team
       %p.subtitle Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, omnis, porro, vero explicabo repellendus nisi quibusdam in aliquam nesciunt quos suscipit fuga aperiam et veniam ratione nemo doloremque a! Sed!
@@ -476,8 +476,8 @@
       .col-md-6
         .boxes
           .onsale
-            %span> On Sale
-            Popular Properties in New York
+            -#%span> On Sale
+            Treatment
           .property-item.big
             %figure.item-thumbnail.darken
               %img{alt: "//", src: "/assets/img/houses/popular-big03.jpg"}/
@@ -523,8 +523,8 @@
       .col-md-6
         .boxes
           .onsale
-            %span> On Sale
-            Popular Properties in New York
+            -#%span> On Sale
+            Detox
           .property-item.big
             %figure.item-thumbnail.darken
               %img{alt: "//", src: "/assets/img/houses/popular-big02.jpg"}/
@@ -570,8 +570,7 @@
       .col-md-6
         .boxes
           .onsale
-            %span> On Sale
-            Popular Properties in New York
+            Sober Living
           .property-item.big
             %figure.item-thumbnail.darken
               %img{alt: "//", src: "/assets/img/houses/popular-big04.jpg"}/
@@ -617,8 +616,7 @@
       .col-md-6
         .boxes
           .onsale
-            %span> On Sale
-            Popular Properties in New York
+            ???? 
           .property-item.big
             %figure.item-thumbnail.darken
               %img{alt: "//", src: "/assets/img/houses/popular-big01.jpg"}/
