@@ -3,8 +3,6 @@
 %table#tablesorting-1.table
   %thead
     %tr
-      %th{colspan: "4"}= link_to 'Add Addmin', new_admins_admin_path, class: 'pull-right'
-    %tr
       %th email
       %th name
       %th phone
@@ -15,10 +13,14 @@
         %td= a.email
         %td= a.name
         %td= number_to_phone(a.phone)
-        %td= a.active
+        %td
+          - if a.active
+            Yes
+          -else 
+            No
   %tfoot
     %tr
-      %td.pager.form-horizontal{colspan: "4"}
+      %td.pager.form-horizontal{colspan: "3"}
         %button.btn.first
           %i.fa.fa-step-backward
         %button.btn.prev
@@ -35,3 +37,4 @@
           %option{value: "30"} 30
           %option{value: "40"} 40
         %select.pagenum.input-xs{title: "Select page number"}
+      %td{colspan: "1"}= link_to 'Add Addmin', new_admins_admin_path, class: 'pull-right'

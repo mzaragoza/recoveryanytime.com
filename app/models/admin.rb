@@ -4,7 +4,7 @@ class Admin < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  scope :active, -> { where(:active => true) }
+  scope :is_active, -> { where(:active => true) }
   def name
     full_name
   end

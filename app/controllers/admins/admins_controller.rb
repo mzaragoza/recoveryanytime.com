@@ -4,12 +4,12 @@ class Admins::AdminsController < AdminController
   expose(:admin, attributes: :admin_params)
 
   def create
-    if admin.save
-      flash[:notice] = t(:admin_was_successfully_created)
-      redirect_to(admins_admins_path)
-    else
-      render :new
-    end
+   if admin.save
+     flash[:notice] = t(:admin_was_successfully_created)
+     redirect_to(admins_admins_path)
+   else
+     render :new
+   end
   end
 
   def update
@@ -36,13 +36,14 @@ class Admins::AdminsController < AdminController
     params.require(:admin).permit(
       :email,
       :password,
+      :password_confirmation,
       :first_name,
       :last_name,
       :phone,
       :start_date,
       :end_date,
       :active,
-      :send_sms
+      :send_sms,
     )
   end
 end

@@ -6,5 +6,5 @@ class User < ActiveRecord::Base
 
   validates_uniqueness_of :username
 
-  scope :active, -> { where(:active => true) }
+  scope :is_active, -> { where(:active => true) }
 end
