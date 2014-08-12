@@ -1,0 +1,11 @@
+.spacer-30
+.powerwizard-content
+  = simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
+    %ul
+      - resource.errors.full_messages.each do |e|
+        %li=e
+    = f.input :email      , label: false, input_html: { class: 'form-control input-lg', placeholder: "Email"      , value: "#{ params[:user][:email]    if params[:user] }"   }
+    %br
+
+    = f.button :submit, "Reset Password", :class => 'btn btn-primary btn-block'
+    = link_to 'Already a member', new_admin_session_path, class: 'btn btn-mini btn-default'

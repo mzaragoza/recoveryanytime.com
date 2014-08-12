@@ -1,0 +1,14 @@
+.spacer-30
+.powerwizard-content
+  = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+    %ul
+      - resource.errors.full_messages.each do |e|
+        %li=e
+    = f.input :email      , label: false, input_html: { class: 'form-control input-lg', placeholder: "Email"      }
+    %br
+    = f.input :password   , label: false, input_html: { class: 'form-control input-lg', placeholder: "Password"   }
+    %br
+    = f.button :submit    , "Login", :class => 'btn btn-primary btn-block'
+  %br
+  = link_to 'Forgot Password', new_password_path(resource_name), class: 'btn btn-mini btn-default'
+

@@ -1,0 +1,14 @@
+.spacer-30
+.powerwizard-content
+  = simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f|
+    = f.input :reset_password_token, :as => :hidden
+    %ul
+      - resource.errors.full_messages.each do |e|
+        %li=e
+    = f.input :password               , label: false, input_html: { class: 'form-control input-lg', placeholder: "Password"                }
+    = f.input :password_confirmation  , label: false, input_html: { class: 'form-control input-lg', placeholder: "Password Confirmation"   }
+    %br
+
+    = f.button :submit, "Reset Password", :class => 'btn btn-primary btn-block'
+    = link_to 'Already a member', new_admin_session_path, class: 'btn btn-mini btn-default'
+
