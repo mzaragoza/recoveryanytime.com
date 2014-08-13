@@ -417,7 +417,7 @@ hr{
 li.dropdown,
 .dropdown > .btn,
 .dropup > .btn{
-	position : relative
+	position : relative;
 	margin   : 0;
 }
 .dropup .dropdown-menu{
