@@ -1494,7 +1494,6 @@ label input[type="checkbox"] + span{
 	background-image : linear-gradient(to bottom, #32518d, #253c70);
 	color            : #fff
 	border           : 1px solid #263c6b;
-	/*-ms-filter       : "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#32518d, endColorstr=#253c70)";/* IE8 */
 }
 .btn.brand-linkedin{
 	background-color : #4068ab;/* fallback color */
