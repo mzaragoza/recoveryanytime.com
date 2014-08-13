@@ -2048,7 +2048,7 @@ td .label{
 	width  : 100px;
 }
 .media-example-1 > ul > li div{
-	float : right
+	float : right;
 	width : 180px;
 }
 .media-example-1 > ul > li > div h3{
