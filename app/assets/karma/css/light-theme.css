@@ -1492,7 +1492,7 @@ label input[type="checkbox"] + span{
 	background-image : -ms-linear-gradient(top, #32518d, #253c70); /* IE10 */
 	background-image : -o-linear-gradient(top, #32518d, #253c70); /* Opera 11.10+ */
 	background-image : linear-gradient(to bottom, #32518d, #253c70);
-	color            : #fff
+	color            : #fff;
 	border           : 1px solid #263c6b;
 }
 .btn.brand-linkedin{
@@ -1731,7 +1731,7 @@ select:required:valid,
 	color : #C09853;	
 }
 .has-warning .form-control{
-	border-color       : #C09853
+	border-color       : #C09853;
 	box-shadow         : none;
 	-moz-box-shadow    : none;
 	-webkit-box-shadow : none;
