@@ -1,0 +1,18 @@
+= simple_form_for([:admins, user], html: {class: 'clearfix', novalidate: true}) do |f|
+  = f.input :username
+  = f.input :email
+  = f.input :password
+  = f.input :password_confirmation
+  = f.input :first_name
+  = f.input :last_name
+  = f.input :gender
+  = f.input :address
+  = f.input :city
+  = f.input :state
+  = f.input :zip
+  = f.input :recovery_type
+  = f.input :phone
+  = f.input :photo
+  = f.input :active
+  = f.button :submit, class: 'btn btn-primary btn-large pull-right', disable_with: 'Creating...'
+

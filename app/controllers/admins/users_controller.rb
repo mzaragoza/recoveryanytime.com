@@ -1,5 +1,5 @@
 class Admins::UsersController < AdminController
-  expose(:users){ Users.order("username ASC").scoped{} }
+  expose(:users){ User.order("username ASC").scoped{} }
   expose(:user, attributes: :user_params)
 
   def create
@@ -18,6 +18,17 @@ class Admins::UsersController < AdminController
       render :edit
     end
   end
+  def banned
+    user.active = false
+    if user.save
+      flash[:notice] = t(:user_was_successfully_updated)
+      redirect_to admins_users_path
+    else
+      render :edit
+    end
+  end
+
+
   private
   def check_password_submitted
     if params[:user][:password].blank?
@@ -45,6 +56,7 @@ class Admins::UsersController < AdminController
       :phone,
       :photo,
       :agree_newsletter,
+      :active,
     )
   end
 end

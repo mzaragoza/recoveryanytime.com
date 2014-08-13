@@ -185,7 +185,7 @@
                       %span.indicator-pill= Admin.is_active.count
                       %span.indicator-dot= Admin.all.count
                   %li{class: "#{'page-arrow active-page' if params[:controller] == 'admins/users'} "} 
-                    = link_to admins_root_path do 
+                    = link_to admins_users_path do 
                       %i.fa.fa-sun-o
                       Users
                       %span.indicator-pill= User.is_active.count

@@ -11,6 +11,7 @@ RecoveryanytimeCom::Application.routes.draw do
   authenticate :admin do
     namespace :admins do
       resources :admins
+      match "/users/:id/banned" => "users#banned", :as => :users_banned, via: :all
       resources :users
       root 'dashboard#index'
     end
