@@ -4,5 +4,6 @@ class ApplicationController < ActionController::Base
   decent_configuration do
     strategy DecentExposure::StrongParametersStrategy
   end
+  expose(:email_campaings){ EmailCampaing.is_active}
   protect_from_forgery with: :exception
 end

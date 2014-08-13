@@ -1,0 +1,16 @@
+.subheading
+  %h3 My Profile
+
+.col-md-12
+  %ul.ext-tabs
+    %li.active
+      %a{href: "#personal_information"} Personal Information
+    %li
+      %a{href: "#fellowships"} Fellowships
+    %li
+      %a{href: "#newsletters"} Newsletters
+  / End .ext-tabs
+  .tab-content.ext-tabs-boxed
+    = render 'personal_information'
+    = render 'fellowships'
+    = render 'newsletters'

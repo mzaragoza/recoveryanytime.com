@@ -10,9 +10,11 @@ RecoveryanytimeCom::Application.routes.draw do
 
   authenticate :admin do
     namespace :admins do
+      resources :profile, :only => [:edit, :update]
       resources :admins
       match "/users/:id/banned" => "users#banned", :as => :users_banned, via: :all
       resources :users
+      resources :email_campaings
       root 'dashboard#index'
     end
   end
@@ -27,6 +29,8 @@ RecoveryanytimeCom::Application.routes.draw do
   authenticate :user do
     namespace :users do
       #match '/users/registrations' => 'users#registrations',   as: :registrations, via: :post
+      resources :profile
+      resources :email_campaing_users
       root 'dashboard#index'
     end
   end

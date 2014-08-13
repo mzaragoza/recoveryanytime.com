@@ -40,6 +40,7 @@
     %meta{content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", name: "viewport"}/
     / // Stylesheets //
     %link{href: "/assets/bootstrap/core/dist/css/bootstrap.min.css", rel: "stylesheet"}/
+    %link{href: "/assets/bootstrap-datetimepicker.css", rel: "stylesheet"}/
     %link{href: "/assets/bootstrap/select2/select2.css", rel: "stylesheet"}/
     %link{href: "/assets/bootstrap/datepicker/css/datepicker.css", rel: "stylesheet"}/
     %link{href: "/assets/bootstrap/fileupload/bootstrap-fileupload.min.css", rel: "stylesheet"}/
@@ -116,6 +117,9 @@
     %script{src: "/assets/js/plugins/plugins.js"}
     %script{src: "/assets/js/plugins/demo.js"}
     %script{src: "/assets/js/plugins/main.js"}
+    / // calendar //
+    %script{src: "/assets/moment.js"}
+    %script{src: "/assets/bootstrap-datetimepicker.js"}
   %body
     #container.clearfix
       /
@@ -143,9 +147,7 @@
               %li
                 %h3 Hi, #{current_user.username} 
               %li
-                %a{href: "#"} Profile
-                |
-                %a{href: "#"} Mail
+                = link_to 'Profile', users_profile_path(current_user)
                 |
                 = link_to destroy_user_session_path, :class => 'glyphicons power', :method => :delete do
                   %i
@@ -815,7 +817,11 @@
           / End #header-main-bottom
         / End #header-main
         / HERE
-        = yield
+        .tab-content
+          .inner-padding
+            = yield
+          %br
+          %br
         / End .window
         /
           ********************************************
@@ -957,3 +963,9 @@
       .lockscreen-modal
         %img.lockscreen-avatar{alt: "", src: "/assets/images/users/user-1.jpg"}/
         .lockscreen-placeholder
+:javascript
+  $(function () {
+      $('.datetimepicker').datetimepicker();
+      $('.datepicker').datetimepicker( { pickTime: false});
+      $('.timepicker').datetimepicker( { pickDate: false});
+  });

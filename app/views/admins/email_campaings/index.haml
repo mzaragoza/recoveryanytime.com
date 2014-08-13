@@ -1,0 +1,46 @@
+.subheading
+  %h3 Email Campaings
+%table#tablesorting-1.table
+  %thead
+    %tr
+      %th Name
+      %th List Id
+      %th Active
+      %th Member
+      %th Unsubscribe
+      %th
+  %tbody
+    - email_campaings.each do |ec|
+      - list = Gibbon::API.lists.list({:filters => {:list_name => "#{ec.name}"}})
+      %tr
+        %td= ec.name
+        %td= list['data'][0]['id'] if list['data'] != []
+        %td
+          - if ec.active
+            Yes
+          - else
+            No
+        %td= list['data'][0]['member_count'] if list['data'] != []
+        %td= list['data'][0]['unsubscribe_count'] if list['data'] != []
+        %td= link_to 'Edit', edit_admins_email_campaing_path(ec), class: 'pull-right btn btn-default btn-sm'
+  %tfoot
+    %tr
+      %td.pager.form-horizontal{colspan: "5"}
+        %button.btn.first
+          %i.fa.fa-step-backward
+        %button.btn.prev
+          %i.fa.fa-arrow-left
+        %span.pagedisplay
+        / this can be any element, including an input
+        %button.btn.next
+          %i.fa.fa-arrow-right
+        %button.btn.last
+          %i.fa.fa-step-forward
+        %select.pagesize.input-xs{title: "Select page size"}
+          %option{selected: "selected", value: "10"} 10
+          %option{value: "20"} 20
+          %option{value: "30"} 30
+          %option{value: "40"} 40
+        %select.pagenum.input-xs{title: "Select page number"}
+      %td{colspan: "1"}= link_to 'Add ', new_admins_email_campaing_path, class: 'pull-right'
+

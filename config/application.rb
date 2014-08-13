@@ -31,6 +31,14 @@ module RecoveryanytimeCom
           '.eot',  '.otf', '.svc', '.woff', '.ttf', # Fonts
         ]
       end)
+
+      config.before_initialize do
+        dev = File.join(Rails.root, 'config', 'config.yml')
+        YAML.load(File.open(dev)).each do |key,value|
+        ENV[key.to_s] = value
+        end if File.exists?(dev)
+      end
+
     end
   end
 end

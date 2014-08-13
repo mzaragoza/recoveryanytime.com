@@ -196,14 +196,41 @@
                 %br/
             .clearfix.visible-sm
             .col-sm-6.col-md-4
+              %h4 Share On:
+              %ul.social
+                %li
+                  = link_to 'https://www.facebook.com/recoveryanytime', target: '_blank' do
+                    %i.icon-facebook
+                %li
+                  = link_to 'https://Pinterest.com/', target: '_blank' do
+                    %i.icon-pinterest
+                %li
+                  = link_to 'https://Skype.com/', target: '_blank' do
+                    %i.icon-skype
+                %li
+                  = link_to 'https://plus.google.com/', target: '_blank' do
+                    %i.icon-gplus
+                %li
+                  = link_to 'https://Linkedin.com/', target: '_blank' do
+                    %i.icon-linkedin
+                %li
+                  = link_to 'https://twitter.com/', target: '_blank' do
+                    %i.icon-twitter
+            -#.col-sm-6.col-md-4
               %h4 Newsletter sing up
-              %form.form-suscribe{role: "form"}
+              = simple_form_for( user, :url => new_user_registration_path, method: 'GET') do |f|
                 .form-group
                   %label.sr-only{for: "newsletter-name"} Enter your name
                   %input#newsletter-name.form-control{placeholder: "Enter your name", type: "text"}/
                 .form-group
                   %label.sr-only{for: "newsletter-email"} Enter your e-mail
                   %input#newsletter-email.form-control{placeholder: "Enter your e-mail", type: "email"}/
+                .form-group
+                  - email_campaings.each do |ec|
+                    - list = Gibbon::API.lists.list({:filters => {:list_name => "#{ec.name}"}})
+                    - if list['data'] != []
+                      = ec.name 
+                      %br
                 %button.btn.btn-default{type: "submit"}
                   %i.icon-forward>
                   Suscribe
@@ -237,8 +264,8 @@
                 =link_to 'Privacy Policy', privacy_policy_path
                 \-
                 %strong Recovery Anytime
-                %a.to-top{href: "#"}
-                  %i.icon-up-circled
+                = link_to root_path, class: 'to_top' do 
+                  %i.icon-clock
     %script{src: "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
     :javascript
       window.jQuery || document.write("<script src=\"/assets/js/vendors/jquery-1.9.1.min.js\"")

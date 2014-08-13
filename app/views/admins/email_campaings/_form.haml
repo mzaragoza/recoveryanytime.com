@@ -1,0 +1,7 @@
+= simple_form_for([:admins, email_campaing], html: {class: 'clearfix', novalidate: true}) do |f|
+  = f.input :name
+  = f.input :active
+  = f.button :submit, class: 'btn btn-primary btn-large pull-right', disable_with: 'Creating...'
+%p 
+  %strong
+  Make sure to create the email account on mail chimp and the name have to match exactly

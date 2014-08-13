@@ -172,7 +172,7 @@
             / **********
             .sidebar-module
               %nav.sidebar-nav-v2
-                = #params
+                =# params
                 %ul
                   %li{class: "#{'page-arrow active-page' if params[:controller] == 'admins/dashboard'} "} 
                     = link_to admins_root_path do 
@@ -192,19 +192,19 @@
                       %span.indicator-dot= User.all.count
                   %li{class: "#{'page-arrow active-page' if params[:controller] == 'admins/'} "} 
                     = link_to admins_root_path do 
-                      %i.fa.fa-bar-chart-o
+                      %i.fa.fa-sun-o
                       Fellowships
+                  %li{class: "#{'page-arrow active-page' if params[:controller] == 'admins/email_campaings'} "} 
+                    = link_to admins_email_campaings_path do 
+                      %i.fa.fa-sun-o
+                      Email Campaings
                   %li{class: "#{'page-arrow active-page' if params[:controller] == 'admins/'} "} 
                     = link_to admins_root_path do 
-                      %i.fa.fa-calendar-o
-                      Email List
-                  %li{class: "#{'page-arrow active-page' if params[:controller] == 'admins/'} "} 
-                    = link_to admins_root_path do 
-                      %i.fa.fa-envelope-o
+                      %i.fa.fa-sun-o
                       Meetings
                   %li{class: "#{'page-arrow active-page' if params[:controller] == 'admins/'} "} 
                     = link_to admins_root_path do 
-                      %i.fa.fa-envelope-o
+                      %i.fa.fa-sun-o
                       Advertisements
         .sidebar-line
           / A seperator line
