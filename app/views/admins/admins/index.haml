@@ -19,7 +19,8 @@
             Yes
           -else 
             No
-        %td= link_to 'Edit', edit_admins_admin_path(a), class: 'pull-right btn btn-default btn-sm'
+        %td
+          = link_to 'Edit', edit_admins_admin_path(a), class: 'pull-right btn btn-default btn-sm' if a.id != 1 || curent_admin.id == 1
   %tfoot
     %tr
       %td.pager.form-horizontal{colspan: "4"}
