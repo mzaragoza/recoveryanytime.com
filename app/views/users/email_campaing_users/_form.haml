@@ -1,0 +1,11 @@
+= simple_form_for(email_campaing_user, :url => users_email_campaing_user_path(email_campaing_user), html: {class: 'form-horizontal clearfix', novalidate: true}) do |f|
+  %input{name: "ec[0]", type: "hidden"}
+  - email_campaings.each do |ec|
+    - list = Gibbon::API.lists.list({:filters => {:list_name => "#{ec.name}"}})
+    - if list['data'] != []
+      = ec.name
+      %input{name: "ec[#{ec.id}]", type: "checkbox", value: 1, checked: "#{ ec.email_campaing_users.where(:user_id => current_user).last.opt_in ? 'true' : 'false' }" }/
+      -#%input{name: "ec[#{ec.id}]", type: "checkbox", value: 1, :input_html => { checked: "#{ ec.email_campaing_users.where(:user_id => 15).last.opt_in ? 'checked' : 'unchecked' }" }/
+    %br
+  = f.button :submit, 'Save', class: 'btn btn-primary btn-large pull-right', disable_with: 'Creating...'
+

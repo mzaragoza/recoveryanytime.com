@@ -18,7 +18,7 @@
         - email_campaings.each do |ec|
           - list = Gibbon::API.lists.list({:filters => {:list_name => "#{ec.name}"}})
           - if list['data'] != []
-            - if ec.name == ec.name
+            - if ec.email_campaing_users.where(:user_id => current_user).last.opt_in 
               %strong
                 %li= ec.name 
             - else

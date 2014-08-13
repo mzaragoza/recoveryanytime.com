@@ -1,5 +1,6 @@
 class Users::EmailCampaingUsersController < UserController
   expose(:user){ User.find(params[:id]) }
+  expose(:email_campaing_user){ user }
 
   def edit
     if user != current_user
@@ -8,13 +9,19 @@ class Users::EmailCampaingUsersController < UserController
     end
   end
   def update
-  # if user.update_attributes(user_params)
-  #   sign_in(current_user, :bypass => true)
-  #   flash[:notice] = t(:profile_was_successfully_updated)
-  #   redirect_to users_profile_path(user)
-  # else
-  #   render :edit
-  # end
+    email_campaings.each do |ec|
+      if params[:ec]["#{ec.id}"].to_s.empty?
+        ecu = EmailCampaingUser.find_or_create_by_email_campaing_id_and_user_id(ec.id, current_user.id)
+        ecu.opt_in = false
+        ecu.save
+      else
+        ecu = EmailCampaingUser.find_or_create_by_email_campaing_id_and_user_id(ec.id, current_user.id)
+        ecu.opt_in = true
+        ecu.save
+      end
+    end
+    flash[:notice] = t(:profile_was_successfully_updated)
+    redirect_to users_profile_path(user)
   end
 
   private
