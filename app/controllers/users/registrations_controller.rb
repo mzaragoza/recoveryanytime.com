@@ -53,7 +53,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def after_inactive_sign_up_path_for(resource)
-    users_root_path
+    edit_users_email_campaing_user_path(resource)
   end
 
   def after_sign_up_fails_path_for(resource)
@@ -63,7 +63,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def after_sign_up_path_for(resource)
     session[:just_registered] = true
     sign_in(resource)
-    users_root_path
+    edit_users_email_campaing_user_path(resource)
   end
 
   private
