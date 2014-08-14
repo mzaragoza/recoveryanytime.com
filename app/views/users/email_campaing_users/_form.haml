@@ -4,8 +4,18 @@
     - list = Gibbon::API.lists.list({:filters => {:list_name => "#{ec.name}"}})
     - if list['data'] != []
       = ec.name
-      %input{name: "ec[#{ec.id}]", type: "checkbox", value: 1, checked: "#{ ec.email_campaing_users.where(:user_id => current_user).last.opt_in ? 'true' : 'false' }" }/
-      -#%input{name: "ec[#{ec.id}]", type: "checkbox", value: 1, :input_html => { checked: "#{ ec.email_campaing_users.where(:user_id => 15).last.opt_in ? 'checked' : 'unchecked' }" }/
+      %input{name: "ec[#{ec.id}]", id: "ec[#{ec.id}]",   type: "checkbox", value: 1 }/
+      =# ec.email_campaing_users.where(:user_id => current_user).last.opt_in
     %br
   = f.button :submit, 'Save', class: 'btn btn-primary btn-large pull-right', disable_with: 'Creating...'
 
+- email_campaings.each do |ec|
+  - list = Gibbon::API.lists.list({:filters => {:list_name => "#{ec.name}"}})
+  - if list['data'] != []
+    :javascript
+      checked = #{ec.email_campaing_users.where(:user_id => current_user).last.opt_in}
+      if (checked == true) {
+        console.log (#{ec.id});
+        console.log (checked);
+        document.getElementById('ec[#{ec.id}]').checked = true;
+      }

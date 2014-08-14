@@ -34,6 +34,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       end
       resource.save
       yield resource if block_given?
+      set_email
       if resource.active_for_authentication?
         #resource.post_sign_up
         set_flash_message :notice, :signed_up if is_flashing_format?
@@ -67,6 +68,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   private
 
+  def set_email
+    email_campaings.each do |ec|
+      ecu = EmailCampaingUser.find_or_create_by_email_campaing_id_and_user_id(ec.id, resource.id)
+      ecu.opt_in = false
+      ecu.save
+    end
+  end
   def sign_up_params
     params.require(resource_name).permit(
       :username,

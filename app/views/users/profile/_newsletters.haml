@@ -5,6 +5,10 @@
         %img{alt: "", src: "/assets/images/users/user-4.jpg"}/
       %ul.client-block-list
         %li
+          .alert.alert-success
+            %i.fa.fa-check-circle
+            You are subscribed to items in green 
+        %li
           - if user == current_user
             .dropdown
               %a.btn.btn-default.dropdown-toggle.btn-sm{"data-toggle" => "dropdown", href: "#"}
@@ -19,9 +23,9 @@
           - list = Gibbon::API.lists.list({:filters => {:list_name => "#{ec.name}"}})
           - if list['data'] != []
             - if ec.email_campaing_users.where(:user_id => current_user).last.opt_in 
-              %strong
+              %strong.text-success
                 %li= ec.name 
             - else
               %span.text-muted 
                 %li= ec.name 
-
+      
