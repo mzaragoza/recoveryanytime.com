@@ -1,13 +1,17 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
-
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
 module RecoveryanytimeCom
   class Application < Rails::Application
+    config.generators do |g|
+      g.template_engine :haml
+      g.test_framework      :rspec, fixture: true
+      g.fixture_replacement :fabrication, dir: "spec/fabricators"
+    end
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -19,26 +23,30 @@ module RecoveryanytimeCom
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    initializer 'setup_asset_pipeline', :group => :all  do |app|
-      # We don't want the default of everything that isn't js or css, because it pulls too many things in
-      app.config.assets.precompile.shift
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+    config.assets.precompile += %w( .svg .eot .woff .ttf )
+    config.autoload_paths += %W(#{config.root}/lib)
 
-      # Explicitly register the extensions we are interested in compiling
-      app.config.assets.precompile.push(Proc.new do |path|
-        File.extname(path).in? [
-          '.html', '.erb', '.haml',                 # Templates
-          '.png',  '.gif', '.jpg', '.jpeg',         # Images
-          '.eot',  '.otf', '.svc', '.woff', '.ttf', # Fonts
-        ]
-      end)
+    I18n.enforce_available_locales = false
 
-      config.before_initialize do
-        dev = File.join(Rails.root, 'config', 'config.yml')
-        YAML.load(File.open(dev)).each do |key,value|
-        ENV[key.to_s] = value
-        end if File.exists?(dev)
+    config.before_initialize do
+      dev = File.join(Rails.root, 'config', 'config.yml')
+      YAML.load(File.open(dev)).each do |key,value|
+      ENV[key.to_s] = value
+      end if File.exists?(dev)
+    end
+
+    config.to_prepare do
+      #Devise::Mailer.layout "email" # email.haml or email.erb
+    end
+    def load_console
+      super
+      if File.exists?(project_specific_irbrc = File.join(Rails.root, ".irbrc"))
+        load(project_specific_irbrc)
       end
-
+      if File.exists?(project_specific_awesome_print = File.join(Rails.root, ".aprrc"))
+        load(project_specific_awesome_print)
+      end
     end
   end
 end

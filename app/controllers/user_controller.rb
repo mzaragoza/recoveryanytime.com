@@ -3,6 +3,9 @@ class UserController < ApplicationController
   layout 'users/default'
   before_filter :check_user_active
 
+  expose(:last_users){
+    User.is_active.where.not(id: current_user.id).order("id DESC").limit(10)
+  }
   private
   def check_user_active
     unless current_user.active

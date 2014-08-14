@@ -141,7 +141,10 @@
         / **********
         .sidebar-module
           .sidebar-profile
-            %img.avatar{alt: "", src: "/assets/images/users/user-1.jpg"}/
+            - unless current_user.photo_url.to_s.empty?
+              = image_tag current_user.photo_url, class: 'avatar'
+            - else
+              %img.avatar{alt: "", src: "/assets/images/users/missing_user.png"}/
             %span.indicator-dot 2
             %ul.sidebar-profile-list
               %li
@@ -617,55 +620,17 @@
             / **********
             .sidebar-module
               %ul.mini-list
-                %li
-                  %img.avatar{alt: "", src: "/assets/images/users/user-1.jpg"}/
-                  %ul
-                    %li
-                      %a.bold{href: "#"} Steven Watson
-                    %li
-                      %a{href: "#"} dummyemail@mail.com
-                %li
-                  %img.avatar{alt: "", src: "/assets/images/users/user-2.jpg"}/
-                  %ul
-                    %li
-                      %a.bold{href: "#"} Maris Bradley
-                    %li
-                      %a{href: "#"} dummyemail@mail.com
-                %li
-                  %img.avatar{alt: "", src: "/assets/images/users/user-3.jpg"}/
-                  %ul
-                    %li
-                      %a.bold{href: "#"} Wyatt Brooke
-                    %li
-                      %a{href: "#"} dummyemail@mail.com
-                %li
-                  %img.avatar{alt: "", src: "/assets/images/users/user-4.jpg"}/
-                  %ul
-                    %li
-                      %a.bold{href: "#"} Elly Martel
-                    %li
-                      %a{href: "#"} dummyemail@mail.com
-                %li
-                  %img.avatar{alt: "", src: "/assets/images/users/user-5.jpg"}/
-                  %ul
-                    %li
-                      %a.bold{href: "#"} Martin Gardenar
-                    %li
-                      %a{href: "#"} dummyemail@mail.com
-                %li
-                  %img.avatar{alt: "", src: "/assets/images/users/user-6.jpg"}/
-                  %ul
-                    %li
-                      %a.bold{href: "#"} Debra Hopper
-                    %li
-                      %a{href: "#"} dummyemail@mail.com
-                %li
-                  %img.avatar{alt: "", src: "/assets/images/users/user-7.jpg"}/
-                  %ul
-                    %li
-                      %a.bold{href: "#"} Nathan Rupertson
-                    %li
-                      %a{href: "#"} dummyemail@mail.com
+                - last_users.each do |u|
+                  %li
+                    = link_to users_profile_path(u), class: 'bold' do
+                      - unless u.photo_url.to_s.empty?
+                        = image_tag u.photo_url, class: 'avatar', alt: u.username
+                      - else
+                        %img.avatar{alt: u.username, src: "/assets/images/users/missing_user.png"}/
+                    %ul
+                      %li
+                        = link_to users_profile_path(u), class: 'bold' do
+                          = u.username
               / End .mini-list
             / End .sidebar-module
           -#sidebar-tab-4.tab-pane
@@ -857,7 +822,7 @@
                             %span 11/15/12
                         .ext-dropdown-chat-msg
                           .ext-dropdown-chat-avatar
-                            %img{alt: "", src: "/assets/images/users/user-5.jpg"}/
+                            %img{alt: "", src: "/assets/images/users/missing_user.png"}/
                           .ext-dropdown-chat-user
                             %strong Martin:
                             %span 17:23
@@ -867,21 +832,21 @@
                             %span 11/17/12
                         .ext-dropdown-chat-msg
                           .ext-dropdown-chat-avatar
-                            %img{alt: "", src: "/assets/images/users/user-1.jpg"}/
+                            %img{alt: "", src: "/assets/images/users/missing_user.png"}/
                           .ext-dropdown-chat-user
                             %strong Steven:
                             %span 14:24
                             %p It's going to be a long post, so I will split it into 2 parts...
                         .ext-dropdown-chat-msg
                           .ext-dropdown-chat-avatar
-                            %img{alt: "", src: "/assets/images/users/user-1.jpg"}/
+                            %img{alt: "", src: "/assets/images/users/missing_user.png"}/
                           .ext-dropdown-chat-user
                             %strong Steven:
                             %span 13:44
                             %p How long must the blog post be....
                         .ext-dropdown-chat-msg
                           .ext-dropdown-chat-avatar
-                            %img{alt: "", src: "/assets/images/users/user-5.jpg"}/
+                            %img{alt: "", src: "/assets/images/users/missing_user.png"}/
                           .ext-dropdown-chat-user
                             %strong Martin:
                             %span 13:31
@@ -891,21 +856,21 @@
                                 %a{href: "#"} here
                         .ext-dropdown-chat-msg
                           .ext-dropdown-chat-avatar
-                            %img{alt: "", src: "/assets/images/users/user-1.jpg"}/
+                            %img{alt: "", src: "/assets/images/users/missing_user.png"}/
                           .ext-dropdown-chat-user
                             %strong Steven:
                             %span 13:28
                             %p Sure no problem, I am typing the blog as we speak...
                         .ext-dropdown-chat-msg
                           .ext-dropdown-chat-avatar
-                            %img{alt: "", src: "/assets/images/users/user-5.jpg"}/
+                            %img{alt: "", src: "/assets/images/users/missing_user.png"}/
                           .ext-dropdown-chat-user
                             %strong Martin:
                             %span 13:23
                             %p He, can you write a new blog post, I want update the blog...
                         .ext-dropdown-chat-msg
                           .ext-dropdown-chat-avatar
-                            %img{alt: "", src: "/assets/images/users/user-1.jpg"}/
+                            %img{alt: "", src: "/assets/images/users/missing_user.png"}/
                           .ext-dropdown-chat-user
                             %strong Steven:
                             %span 13:28
@@ -961,7 +926,7 @@
     #lockscreen-slider.lockscreen
       .lockscreen-overlay
       .lockscreen-modal
-        %img.lockscreen-avatar{alt: "", src: "/assets/images/users/user-1.jpg"}/
+        %img.lockscreen-avatar{alt: "", src: "/assets/images/users/missing_user.png"}/
         .lockscreen-placeholder
 :javascript
   $(function () {

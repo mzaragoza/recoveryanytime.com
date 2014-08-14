@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  include ActionView::Helpers::DateHelper
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -9,7 +10,7 @@ class User < ActiveRecord::Base
 
   scope :is_active, -> { where(:active => true) }
   attr_accessor :updating_password
-
+  mount_uploader :photo, PhotoUploader
 
   def full_address
     (self.address + ' ' + self.city + ' ' + self.state + ' ' + self.zip ).titleize
@@ -22,6 +23,9 @@ class User < ActiveRecord::Base
     (self.first_name + ' ' + self.last_name).titleize
   end
 
+  def sober_ago
+    Time.diff(DateTime.now, self.sober_date)[:diff]
+  end
   def should_validate_password?
     updating_password || new_record?
   end

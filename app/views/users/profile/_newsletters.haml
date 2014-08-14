@@ -2,7 +2,10 @@
   .inner-padding
     .client-block
       .avatar
-        %img{alt: "", src: "/assets/images/users/user-4.jpg"}/
+        - unless user.photo_url.to_s.empty?
+          = image_tag user.photo_url
+        - else
+          %img{alt: "", src: "/assets/images/users/missing_user.png"}/
       %ul.client-block-list
         %li
           .alert.alert-success

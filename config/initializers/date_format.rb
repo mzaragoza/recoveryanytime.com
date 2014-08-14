@@ -16,7 +16,7 @@
   #DateTime::DATE_FORMATS[:default] = "%e %b %Y"  # Sun, 3 Nov 2013 14:22:18 -0700
   #DateTime::DATE_FORMATS[:default] = "%Y%m%d"    # 20131103142218
   #DateTime::DATE_FORMATS[:default] = "%e %b"     # 3 Nov 14:22
-  DateTime::DATE_FORMATS[:default] = "%B-%d-%Y %r"          # custom
+  DateTime::DATE_FORMATS[:default] = "%B-%d-%Y"          # custom
 
   # Time
   # ----------------------------

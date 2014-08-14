@@ -59,8 +59,8 @@ gem 'unidecoder'
 gem 'wirble'
 
 #imagrs
-#gem 'carrierwave'
-#gem 'rmagick'
+gem 'carrierwave'
+gem 'rmagick'
 #gem 'jquery-fileupload-rails'
 
 group :development do
