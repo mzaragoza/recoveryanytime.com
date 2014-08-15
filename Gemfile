@@ -60,7 +60,7 @@ gem 'wirble'
 
 #imagrs
 gem 'carrierwave'
-gem 'rmagick'
+gem 'rmagick', require: false
 #gem 'jquery-fileupload-rails'
 
 group :development do

@@ -1,0 +1,8 @@
+= simple_form_for([:admins, fellowship], html: {class: 'clearfix', novalidate: true}) do |f|
+  = f.input :name
+  = f.input :description
+  = f.input :image
+  = f.input :active
+  = f.button :submit, class: 'btn btn-primary btn-large pull-right', disable_with: 'Creating...'
+
+

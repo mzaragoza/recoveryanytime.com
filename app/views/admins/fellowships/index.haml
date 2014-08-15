@@ -1,29 +1,31 @@
 .subheading
-  %h3 Admins
+  %h3 Fellowships
 %table#tablesorting-1.table
   %thead
     %tr
-      %th email
-      %th name
-      %th phone
-      %th active 
+      %th Name
+      %th Description
+      %th Image 
+      %th Members
+      %th Active
       %th
   %tbody
-    - admins.each do |a|
+    - fellowships.each do |f|
       %tr
-        %td= a.email
-        %td= a.name
-        %td= number_to_phone(a.phone)
+        %td= f.name
+        %td= f.description
+        %td= f.image
+        %td= f.users.count
         %td
-          - if a.active
+          - if f.active
             Yes
           -else 
             No
         %td
-          = link_to 'Edit', edit_admins_admin_path(a), class: 'pull-right btn btn-default btn-sm' if a.id != 1 || curent_admin.id == 1
+          = link_to 'Edit', edit_admins_fellowship_path(f), class: 'pull-right btn btn-default btn-sm' 
   %tfoot
     %tr
-      %td.pager.form-horizontal{colspan: "4"}
+      %td.pager.form-horizontal{colspan: "5"}
         %button.btn.first
           %i.fa.fa-step-backward
         %button.btn.prev
@@ -40,4 +42,5 @@
           %option{value: "30"} 30
           %option{value: "40"} 40
         %select.pagenum.input-xs{title: "Select page number"}
-      %td{colspan: "1"}= link_to 'Add', new_admins_admin_path, class: 'pull-right'
+      %td{colspan: "1"}= link_to 'Add', new_admins_fellowship_path, class: 'pull-right'
+

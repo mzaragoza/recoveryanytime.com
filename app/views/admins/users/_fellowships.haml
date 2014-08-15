@@ -1,0 +1,9 @@
+#fellowships.tab-pane
+  .inner-padding
+    %ul.client-block-list
+      - user.fellowship_users.each do |f|
+        %li
+          - if f.opt_in
+            %strong.text-success= f.fellowship.name
+          - else
+            %span.text-muted= f.fellowship.name

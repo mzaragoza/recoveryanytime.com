@@ -20,11 +20,13 @@
             Yes
           -else 
             No
-        %td= u.photo
+        %td
+          - unless u.photo_url.to_s.empty?
+            = image_tag u.photo
         %td= link_to 'Edit', edit_admins_user_path(u), class: 'pull-right btn btn-default btn-sm'
   %tfoot
     %tr
-      %td.pager.form-horizontal{colspan: "5"}
+      %td.pager.form-horizontal{colspan: "6"}
         %button.btn.first
           %i.fa.fa-step-backward
         %button.btn.prev

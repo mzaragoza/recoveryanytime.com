@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :email_campaing_users
+  has_many :email_campaings , through: :email_campaing_users
+  has_many :fellowship_users
+  has_many :fellowships , through: :fellowship_users
   validates_uniqueness_of :username
 
   scope :is_active, -> { where(:active => true) }

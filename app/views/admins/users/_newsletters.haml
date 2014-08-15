@@ -1,0 +1,10 @@
+#newsletters.tab-pane
+  .inner-padding
+    %ul.client-block-list
+      - user.email_campaing_users.each do |e|
+        %li
+          - if e.opt_in
+            %strong.text-success= e.email_campaing.name
+          - else
+            %span.text-muted= e.email_campaing.name
+

@@ -190,10 +190,11 @@
                       Users
                       %span.indicator-pill= User.is_active.count
                       %span.indicator-dot= User.all.count
-                  %li{class: "#{'page-arrow active-page' if params[:controller] == 'admins/'} "} 
-                    = link_to admins_root_path do 
+                  %li{class: "#{'page-arrow active-page' if params[:controller] == 'admins/fellowships'} "} 
+                    = link_to admins_fellowships_path do 
                       %i.fa.fa-sun-o
                       Fellowships
+                      %span.indicator-dot= Fellowship.all.count
                   %li{class: "#{'page-arrow active-page' if params[:controller] == 'admins/email_campaings'} "} 
                     = link_to admins_email_campaings_path do 
                       %i.fa.fa-sun-o
