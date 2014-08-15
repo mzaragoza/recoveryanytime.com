@@ -29,6 +29,10 @@ class Admins::UsersController < AdminController
   end
 
 
+  def login_as
+    sign_in(User.find(params[:id]), :bypass => true)
+    redirect_to users_root_path
+  end
   private
   def check_password_submitted
     if params[:user][:password].blank?

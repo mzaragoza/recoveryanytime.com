@@ -1,0 +1,18 @@
+= simple_form_for(fellowship_user, :url => users_fellowship_user_path(fellowship_user), html: {class: 'form-horizontal clearfix', novalidate: true}) do |f|
+  %input{name: "fellowship[0]", type: "hidden"}
+  - fellowships.each do |f|
+    = f.name
+    = f.fellowship_users.where(:user_id => current_user.id).opt_in unless f.fellowship_users.where(:user_id => current_user.id).empty?
+    %input{name: "fellowship[#{f.id}]", id: "fellowship[#{f.id}]",   type: "checkbox", value: 1 }/
+    %br
+  = f.button :submit, 'Save', class: 'btn btn-primary btn-large pull-right', disable_with: 'Creating...'
+
+- fellowships.each do |f|
+  :javascript
+    checked = #{true if f.fellowship_users.where(:user_id => current_user.id).count > 0 and f.fellowship_users.where(:user_id => current_user.id).opt_in}
+    if (checked == true) {
+      console.log (#{f.id});
+      console.log (checked);
+      document.getElementById('fellowship[#{f.id}]').checked = true;
+    }
+

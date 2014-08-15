@@ -10,6 +10,7 @@ RecoveryanytimeCom::Application.routes.draw do
 
   authenticate :admin do
     namespace :admins do
+      post '/users/login_as' => 'users#login_as', as: :login_as_user
       resources :profile, :only => [:edit, :update]
       resources :fellowships
       resources :admins
@@ -32,6 +33,7 @@ RecoveryanytimeCom::Application.routes.draw do
       #match '/users/registrations' => 'users#registrations',   as: :registrations, via: :post
       resources :profile
       resources :email_campaing_users
+      resources :fellowship_users
       root 'dashboard#index'
     end
   end
