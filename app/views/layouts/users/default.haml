@@ -759,7 +759,9 @@
           .header-main-top
             .pull-left
               / * This is the responsive logo *
-              %a#logo-small{href: "index.html"}
+              = link_to users_root_path, id: 'logo-small' do 
+                %img{alt: "Recovery Anytime", src: "/assets/img/logo.png"}/
+              -#%a#logo-small{href: "index.html"}
                 %h4 karma
                 %h5 /webapp
             .pull-right
