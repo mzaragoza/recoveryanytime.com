@@ -1,0 +1,139 @@
+- list = Gibbon::API.lists.list({:filters => {:list_name => "#{email_campaing.name}"}})
+.subheading
+  %h3 Email Campaings Stats for #{ email_campaing.name }
+.col-md-12
+  .inner-padding
+    .client-block
+      %ul.client-block-list
+        %li
+          .dropdown
+            %a.btn.btn-default.dropdown-toggle.btn-sm{"data-toggle" => "dropdown", href: "#"}
+              %i.fa.fa-cog
+              %i.fa.fa-caret-down
+            %ul.dropdown-menu.pull-right.ext-dropdown-icons-right{role: "menu"}
+              %li
+                = link_to edit_admins_email_campaing_path(email_campaing) do 
+                  %i.fa.fa-edit
+                  Edit
+        %li
+          %span.text-muted 
+            Name 
+          = email_campaing.name
+        %li
+          %span.text-muted 
+            Id
+          = list['data'][0]['id']
+        %li
+          %span.text-muted 
+            Date Created
+          = list['data'][0]['date_created']
+        %li
+          %span.text-muted 
+            Email Type Option
+          = list['data'][0]['email_type_option']
+        %li
+          %span.text-muted 
+            Use Awesomebar
+          = list['data'][0]['use_awesomebar']
+        %li
+          %span.text-muted 
+            Default From Name
+          = list['data'][0]['default_from_name']
+        %li
+          %span.text-muted 
+            Default From Email
+          = list['data'][0]['default_from_email']
+        %li
+          %span.text-muted 
+            Default Subject
+          = list['data'][0]['default_subject']
+        %li
+          %span.text-muted 
+            Default Language
+          = list['data'][0]['default_language']
+        %li
+          %span.text-muted 
+            List Rating
+          = list['data'][0]['list_rating']
+        %li
+          %span.text-muted 
+            Subscribe Url Short
+          = list['data'][0]['subscribe_url_short']
+        %li
+          %span.text-muted 
+            Subscribe Url Long
+          = list['data'][0]['subscribe_url_long']
+        %li
+          %span.text-muted 
+            Beamer Bddress
+          = list['data'][0]['beamer_address']
+        %li
+          %span.text-muted 
+            Visibility
+          = list['data'][0]['visibility']
+        %li
+          %h3 Stats
+        %li
+          %span.text-muted 
+            Member Count 
+          = list['data'][0]['stats']['member_count']
+        %li
+          %span.text-muted 
+            Unsubscribe Count
+          = list['data'][0]['stats']['unsubscribe_count']
+        %li
+          %span.text-muted 
+            Cleaned Count
+          = list['data'][0]['stats']['cleaned_count']
+        %li
+          %span.text-muted 
+            Member Count Since Send
+          = list['data'][0]['stats']['member_count_since_send']
+        %li
+          %span.text-muted 
+            Unsubscribe Count Since Send
+          = list['data'][0]['stats']['unsubscribe_count_since_send']
+        %li
+          %span.text-muted 
+            Cleaned Count Since Send 
+          = list['data'][0]['stats']['cleaned_count_since_send']
+        %li
+          %span.text-muted 
+            Campaign Count
+          = list['data'][0]['stats']['campaign_count']
+        %li
+          %span.text-muted
+            Grouping Count
+          = list['data'][0]['stats']['grouping_count']
+        %li
+          %span.text-muted 
+            Group Count
+          = list['data'][0]['stats']['group_count']
+        %li
+          %span.text-muted 
+            Merge Var Count
+          = list['data'][0]['stats']['merge_var_count']
+        %li
+          %span.text-muted 
+            Avg Sub Rate
+          = list['data'][0]['stats']['avg_sub_rate']
+        %li
+          %span.text-muted 
+            Avg Unsub Rate
+          = list['data'][0]['stats']['avg_unsub_rate']
+        %li
+          %span.text-muted 
+            Target Sub Rate
+          = list['data'][0]['stats']['target_sub_rate']
+        %li
+          %span.text-muted 
+            Open Rate
+          = list['data'][0]['stats']['open_rate']
+        %li
+          %span.text-muted 
+            Click Rate
+          = list['data'][0]['stats']['click_rate']
+        %li
+          %span.text-muted 
+            Date Last Campaign
+          = list['data'][0]['stats']['date_last_campaign']

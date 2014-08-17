@@ -17,7 +17,11 @@
           - ec.list_id = list['data'][0]['id']
           - ec.save
       %tr
-        %td= link_to ec.name, admins_email_campaing_path(ec) 
+        %td
+          - if list['data'] != []
+            = link_to ec.name, admins_email_campaing_path(ec) 
+          - else
+            = ec.name
         %td= list['data'][0]['id'] if list['data'] != []
         %td
           - if ec.active

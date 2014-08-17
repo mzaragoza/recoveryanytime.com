@@ -2,6 +2,9 @@ class AdminController < ApplicationController
   before_filter :authenticate_admin!
   layout 'admins/default'
   before_filter :check_admin_active
+  expose(:last_users){
+    User.is_active.order("last_sign_in_at DESC").limit(1000)
+  }
 
   private
   def check_admin_active

@@ -1,0 +1,16 @@
+= simple_form_for(admin, :url => admins_profile_path(admin), html: {class: 'form-horizontal clearfix', novalidate: true}) do |f|
+  = f.input :first_name             , label: false, input_html: { class: 'form-control input-lg', placeholder: "First Name"             }
+  %br
+  = f.input :last_name              , label: false, input_html: { class: 'form-control input-lg', placeholder: "Last Name"              }
+  %br
+  = f.input :phone                  , label: false, input_html: { class: 'form-control input-lg', placeholder: "Phone"                  }
+  %br
+  = f.input :photo                  , label: false, input_html: { class: 'form-control input-lg', placeholder: "Photo"                  }
+  %br
+  = f.input :password               , label: false, input_html: { class: 'form-control input-lg', placeholder: "Password"               }
+  %br
+  = f.input :password_confirmation  , label: false, input_html: { class: 'form-control input-lg', placeholder: "Password Confirmation"  }
+  %br
+  = f.button :submit, 'Save', class: 'btn btn-primary btn-large pull-right', disable_with: 'Creating...'
+
+

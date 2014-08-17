@@ -6,6 +6,7 @@ class Admin < ActiveRecord::Base
 
   scope :is_active, -> { where(:active => true) }
   attr_accessor :updating_password
+  mount_uploader :photo, PhotoUploader
 
 
 
