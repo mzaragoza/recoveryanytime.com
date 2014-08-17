@@ -14,7 +14,7 @@
       - list = Gibbon::API.lists.list({:filters => {:list_name => "#{ec.name}"}})
       -if list['data'] != []
         - if ec.list_id.empty?
-          - ec.list['data'][0]['id']
+          - ec.list_id = list['data'][0]['id']
           - ec.save
       %tr
         %td= ec.name
