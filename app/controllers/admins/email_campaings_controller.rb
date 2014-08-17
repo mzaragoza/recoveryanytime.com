@@ -6,6 +6,13 @@ class Admins::EmailCampaingsController < AdminController
 
   def create
     if email_campaing.save
+      User.all.each do |u|
+        EmailCampaingUser.create(
+          :email_campaing_id => email_campaing.id
+          :user_id => u.id,
+          :opt_in => false
+        )
+      end
       flash[:notice] = t(:email_campaing_was_successfully_created)
       redirect_to admins_email_campaings_path
     else
