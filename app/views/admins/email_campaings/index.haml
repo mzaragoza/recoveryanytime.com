@@ -24,8 +24,8 @@
             Yes
           - else
             No
-        %td= list['data'][0]['member_count'] if list['data'] != []
-        %td= list['data'][0]['unsubscribe_count'] if list['data'] != []
+        %td= list['data'][0]['stats']['member_count'] if list['data'] != []
+        %td= list['data'][0]['stats']['unsubscribe_count'] if list['data'] != []
         %td= link_to 'Edit', edit_admins_email_campaing_path(ec), class: 'pull-right btn btn-default btn-sm'
   %tfoot
     %tr
