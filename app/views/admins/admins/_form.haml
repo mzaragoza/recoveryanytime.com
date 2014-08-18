@@ -1,10 +1,16 @@
 = simple_form_for([:admins, admin], html: {class: 'clearfix', novalidate: true}) do |f|
-  = f.input :email
-  = f.input :password
-  = f.input :password_confirmation
-  = f.input :first_name
-  = f.input :last_name
-  = f.input :phone
+  = f.input :email                  , label: false, input_html: { class: 'form-control input-lg', placeholder: "Email"                  }
+  %br
+  = f.input :password               , label: false, input_html: { class: 'form-control input-lg', placeholder: "Password"               }
+  %br
+  = f.input :password_confirmation  , label: false, input_html: { class: 'form-control input-lg', placeholder: "Password Confirmation"  }
+  %br
+  = f.input :first_name             , label: false, input_html: { class: 'form-control input-lg', placeholder: "First Name"             }
+  %br
+  = f.input :last_name              , label: false, input_html: { class: 'form-control input-lg', placeholder: "Last Name"              }
+  %br
+  = f.input :phone                  , label: false, input_html: { class: 'form-control input-lg', placeholder: "Phone"                  }
+  %br
   = f.input :active if admin != current_admin
   =# f.input :send_sms
   = f.button :submit, class: 'btn btn-primary btn-large pull-right', disable_with: 'Creating...'

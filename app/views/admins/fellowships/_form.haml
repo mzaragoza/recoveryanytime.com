@@ -1,8 +1,12 @@
 = simple_form_for([:admins, fellowship], html: {class: 'clearfix', novalidate: true}) do |f|
-  = f.input :name
-  = f.input :description
-  = f.input :image
+  = f.input :name              , label: false, input_html: { class: 'form-control input-lg', placeholder: "Name"                  }
+  %br
+  = f.input :description       , label: false, input_html: { class: 'form-control input-lg', placeholder: "Description"                  }
+  %br
+  = f.input :image              , label: false, input_html: { class: 'form-control input-lg', placeholder: "Image"                  }
+  %br
   = f.input :active
+  %br
   = f.button :submit, class: 'btn btn-primary btn-large pull-right', disable_with: 'Creating...'
 
 
