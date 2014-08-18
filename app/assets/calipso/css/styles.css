@@ -1426,7 +1426,8 @@ aside .textwidget img {
   float: right;
 }
 .navbar .navbar-nav>li>a {
-  color: #99aabe;
+  font-size: 14px;
+  color: #FFF;
   height: 70px;
   line-height: 70px;
   padding: 0 15px;
@@ -1437,7 +1438,7 @@ aside .textwidget img {
 .navbar .navbar-nav>li>a:focus,
 .navbar .navbar-nav>li>a:hover {
   background-color: transparent;
-  color: #fff;
+  color: #FFF;
 }
 /**
  *
