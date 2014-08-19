@@ -36,6 +36,7 @@ class Users::EmailCampaingUsersController < UserController
         email      = current_user.email.to_s
         first_name = current_user.first_name.to_s
         last_name  = current_user.last_name.to_s
+        username   = current_user.username.to_s
         info = gb.lists.member_info({:id => list_id, :emails => {:email => email} })
         in_list = false
         gb.lists.members({:id => list_id})['data'].each do |list|
@@ -44,7 +45,7 @@ class Users::EmailCampaingUsersController < UserController
           end
         end
         if in_list == false
-          gb.lists.subscribe({:id => list_id, :email => {:email => email}, :merge_vars => {:FNAME => first_name, :LNAME => last_name}, :double_optin => false})
+          gb.lists.subscribe({:id => list_id, :email => {:email => email}, :merge_vars => {:FNAME => first_name, :LNAME => last_name, :USERNAME => username }, :double_optin => false})
         end
       end
     end
