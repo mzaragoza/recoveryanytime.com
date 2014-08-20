@@ -478,184 +478,87 @@
           .onsale
             -#%span> On Sale
             Treatment
-          .property-item.big
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular-big03.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, voluptatem, error, quaerat dolorem sunt labore cum placeat debitis eos molestias consectetur repellendus itaque perspiciatis nihil odit cupiditate temporibus veritatis ea?
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular07.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular07.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular07.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
+          - treatments.each do |t|
+            - t.add_to_views
+            .property-item{ class: "#{'big' if t.main}"}
+              %figure.item-thumbnail.darken
+                = image_tag t.image, alt: t.name
+                %span.overthumb
+                .icons
+                  = link_to facility_click_path(t), target: '_blank 'do 
+                    %i.icon-plus
+              %p
+                = link_to facility_click_path(t), target: '_blank 'do
+                  %strong= t.name
+              %p= raw t.description 
+              %p
+                %i.icon-location>
+                = t.city
+                = t.state
           .clearfix
       .col-md-6
         .boxes
           .onsale
-            -#%span> On Sale
             Detox
-          .property-item.big
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular-big02.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, voluptatem, error, quaerat dolorem sunt labore cum placeat debitis eos molestias consectetur repellendus itaque perspiciatis nihil odit cupiditate temporibus veritatis ea?
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular06.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular06.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular06.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
+          - detox.each do |t|
+            - t.add_to_views
+            .property-item{ class: "#{'big' if t.main}"}
+              %figure.item-thumbnail.darken
+                = image_tag t.image, alt: t.name
+                %span.overthumb
+                .icons
+                  = link_to facility_click_path(t), target: '_blank 'do 
+                    %i.icon-plus
+              %p
+                = link_to facility_click_path(t), target: '_blank 'do
+                  %strong= t.name
+              %p= raw t.description 
+              %p
+                %i.icon-location>
+                = t.city
+                = t.state
           .clearfix
       .col-md-6
         .boxes
           .onsale
             Sober Living
-          .property-item.big
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular-big04.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, voluptatem, error, quaerat dolorem sunt labore cum placeat debitis eos molestias consectetur repellendus itaque perspiciatis nihil odit cupiditate temporibus veritatis ea?
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular04.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular04.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular04.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
+          - sober_living.each do |t|
+            - t.add_to_views
+            .property-item{ class: "#{'big' if t.main}"}
+              %figure.item-thumbnail.darken
+                = image_tag t.image, alt: t.name
+                %span.overthumb
+                .icons
+                  = link_to facility_click_path(t), target: '_blank 'do 
+                    %i.icon-plus
+              %p
+                = link_to facility_click_path(t), target: '_blank 'do
+                  %strong= t.name
+              %p= raw t.description 
+              %p
+                %i.icon-location>
+                = t.city
+                = t.state
           .clearfix
       .col-md-6
         .boxes
           .onsale
             Intensive Outpatient
-          .property-item.big
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular-big01.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, voluptatem, error, quaerat dolorem sunt labore cum placeat debitis eos molestias consectetur repellendus itaque perspiciatis nihil odit cupiditate temporibus veritatis ea?
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular07.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular07.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular07.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
+          - intensive_outpatient.each do |t|
+            - t.add_to_views
+            .property-item{ class: "#{'big' if t.main}"}
+              %figure.item-thumbnail.darken
+                = image_tag t.image, alt: t.name
+                %span.overthumb
+                .icons
+                  = link_to facility_click_path(t), target: '_blank 'do 
+                    %i.icon-plus
+              %p
+                = link_to facility_click_path(t), target: '_blank 'do
+                  %strong= t.name
+              %p= raw t.description 
+              %p
+                %i.icon-location>
+                = t.city
+                = t.state
           .clearfix

@@ -1,0 +1,34 @@
+= simple_form_for([:admins, facility], html: {class: 'clearfix', novalidate: true}) do |f|
+  = f.input :type_of        , label: false, input_html: { class: 'form-control input-lg', placeholder: "Type"   }, :as => :select, :collection => facilities_type_of_list, include_blank: false
+  %br
+  = f.input :name           , label: false, input_html: { class: 'form-control input-lg', placeholder: "Name"   }
+  %br
+  = f.input :address        , label: false, input_html: { class: 'form-control input-lg', placeholder: "Address"   }
+  %br
+  = f.input :city           , label: false, input_html: { class: 'form-control input-lg', placeholder: "City"   }
+  %br
+  = f.input :state          , label: false, input_html: { class: 'form-control input-lg', placeholder: "State"   }, :as => :select, :collection => us_states, include_blank: false
+  %br
+  = f.input :description    , label: false, input_html: { class: 'form-control input-lg', placeholder: "Description"   }
+  %br
+  = f.input :contact_name   , label: false, input_html: { class: 'form-control input-lg', placeholder: "Contact Name"   }
+  %br
+  = f.input :contact_email  , label: false, input_html: { class: 'form-control input-lg', placeholder: "Email"   }
+  %br
+  = f.input :contact_phone  , label: false, input_html: { class: 'form-control input-lg', placeholder: "Phone"   }
+  %br
+  %span.demo-tip.csstip{:title => "For nice images make sure that images are 400 Width by 400 Height at 72 dpi"} Image
+  = f.input :image          , label: false, input_html: { class: 'form-control input-lg', placeholder: "Image"  }
+  %br
+  %span.demo-tip.csstip{:title => "Links have to have http:// so that they leave the site"} Link
+  = f.input :link           , label: false, input_html: { class: 'form-control input-lg', placeholder: "Link"   }
+  %br
+  = f.input :active
+  %br
+  = f.input :main
+  %br
+  %span.demo-tip.csstip{:title => "Position is the order the Facilities are going to be desplay on the site "} Position
+  = f.input :position        , label: false, input_html: { class: 'form-control input-lg', placeholder: "Position"   }
+  %br
+  = f.button :submit, class: 'btn btn-primary btn-large pull-right', disable_with: 'Creating...'
+

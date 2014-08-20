@@ -209,6 +209,10 @@
                     = link_to admins_promotions_path do 
                       %i.fa.fa-sun-o
                       Promotions
+                  %li{class: "#{'page-arrow active-page' if params[:controller] == 'admins/facilities'} "} 
+                    = link_to admins_facilities_path do 
+                      %i.fa.fa-sun-o
+                      Facilities
         .sidebar-line
           / A seperator line
       #sidebar-sec.sidebar
@@ -392,6 +396,8 @@
         .tab-content
           .inner-padding
             = yield
+          %br
+          %br
         / End .window
         /
           ********************************************

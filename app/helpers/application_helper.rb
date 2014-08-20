@@ -1,4 +1,12 @@
 module ApplicationHelper
+  def facilities_type_of_list
+      [
+        ['Treatment'            , 'treatment'],
+        ['Detox'                , 'detox'],
+        ['Sober Living'         , 'sober_living'],
+        ['Intensive Outpatient' , 'intensive_outpatient'],
+      ]
+  end
   def gender_list
       [
         ['Male'   , 'male'],

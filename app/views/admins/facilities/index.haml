@@ -1,0 +1,50 @@
+.subheading
+  %h3 Facilities
+%table#tablesorting-1.table
+  %thead
+    %tr
+      %th Type
+      %th Name
+      %th Image
+      %th Link 
+      %th Active
+      %th Views
+      %th Clicks
+      %th
+  %tbody
+    - facilities.each do |f|
+      %tr
+        %td= f.type_of.titleize
+        %td= f.name
+        %td= image_tag f.image
+        %td= f.link
+        %td
+          - if f.active
+            Yes
+          -else 
+            No
+        %td= f.views
+        %td= f.clicks
+        %td
+          = link_to 'Edit', edit_admins_facility_path(f), class: 'pull-right btn btn-default btn-sm' 
+  %tfoot
+    %tr
+      %td.pager.form-horizontal{colspan: "7"}
+        %button.btn.first
+          %i.fa.fa-step-backward
+        %button.btn.prev
+          %i.fa.fa-arrow-left
+        %span.pagedisplay
+        / this can be any element, including an input
+        %button.btn.next
+          %i.fa.fa-arrow-right
+        %button.btn.last
+          %i.fa.fa-step-forward
+        %select.pagesize.input-xs{title: "Select page size"}
+          %option{selected: "selected", value: "10"} 10
+          %option{value: "20"} 20
+          %option{value: "30"} 30
+          %option{value: "40"} 40
+        %select.pagenum.input-xs{title: "Select page number"}
+      %td{colspan: "1"}= link_to 'Add', new_admins_facility_path, class: 'pull-right'
+

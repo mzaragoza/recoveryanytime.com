@@ -18,6 +18,7 @@ RecoveryanytimeCom::Application.routes.draw do
       resources :users
       resources :email_campaings
       resources :promotions
+      resources :facilities
       root 'dashboard#index'
     end
   end
@@ -43,6 +44,7 @@ RecoveryanytimeCom::Application.routes.draw do
   resources :contacts
   resources :blogs
   resources :meetings
+  match 'facility/:id'        => 'pages#facility_click',    as: :facility_click, via: :all
   match 'promotion_click/:id' => 'pages#promotion_click',   as: :promotion_click, via: :all
   match 'privacy_policy'      => 'pages#privacy_policy',    as: :privacy_policy, via: :all
   match 'get_help_now'        => 'pages#get_help_now',      as: :get_help_now, via: :all
