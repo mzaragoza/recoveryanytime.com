@@ -119,12 +119,11 @@
     .sponsors
       .container
         #owl-sponsors.owl-carousel
-          - 20.times do 
-            - promotions.each do |p|
-              - p.add_to_views
-              .item
-                = link_to promotion_click_path(p) , target: '_blank 'do 
-                  = image_tag p.image_url, alt: p.name
+          - promotions.each do |p|
+            - p.add_to_views
+            .item
+              = link_to promotion_click_path(p) , target: '_blank 'do 
+                = image_tag p.image_url, alt: p.name
           -#
             .item
               %a{href: "#"}
