@@ -205,10 +205,10 @@
                     = link_to admins_root_path do 
                       %i.fa.fa-sun-o
                       Meetings
-                  %li{class: "#{'page-arrow active-page' if params[:controller] == 'admins/'} "} 
-                    = link_to admins_root_path do 
+                  %li{class: "#{'page-arrow active-page' if params[:controller] == 'admins/promotions'} "} 
+                    = link_to admins_promotions_path do 
                       %i.fa.fa-sun-o
-                      Advertisements
+                      Promotions
         .sidebar-line
           / A seperator line
       #sidebar-sec.sidebar

@@ -1,0 +1,13 @@
+= simple_form_for([:admins, promotion], html: {class: 'clearfix', novalidate: true}) do |f|
+  = f.input :name   , label: false, input_html: { class: 'form-control input-lg', placeholder: "Name"   }
+  %br
+  %span.demo-tip.csstip{:title => "For nice images make sure that images are 185 Width by 75 Height at 72 dpi"} Image
+  = f.input :image  , label: false, input_html: { class: 'form-control input-lg', placeholder: "Image"  }
+  %br
+  %span.demo-tip.csstip{:title => "Links have to have http:// so that they leave the site"} Link
+  = f.input :link   , label: false, input_html: { class: 'form-control input-lg', placeholder: "Link"   }
+  %br
+  = f.input :active 
+  %br
+  = f.button :submit, class: 'btn btn-primary btn-large pull-right', disable_with: 'Creating...'
+

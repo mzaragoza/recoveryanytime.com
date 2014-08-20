@@ -11,11 +11,15 @@ class PagesController < PublicController
     render :layout => false
   end
 
-
   def choose_layout
     'public/default'
   end
 
+  def promotion_click
+    p = Promotion.find(params[:id])
+    p.add_to_clicks
+    redirect_to p.link
+  end
   private
   def redirect_if_logged_in
     if user_signed_in?

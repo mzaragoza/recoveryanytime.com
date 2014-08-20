@@ -122,51 +122,57 @@
     .sponsors
       .container
         #owl-sponsors.owl-carousel
-          .item
-            %a{href: "#"}
-              %img{alt: "//", src: "/assets/img/brands/logo1.png"}/
-          .item
-            %a{href: "#"}
-              %img{alt: "//", src: "/assets/img/brands/logo2.png"}/
-          .item
-            %a{href: "#"}
-              %img{alt: "//", src: "/assets/img/brands/logo3.png"}/
-          .item
-            %a{href: "#"}
-              %img{alt: "//", src: "/assets/img/brands/logo1.png"}/
-          .item
-            %a{href: "#"}
-              %img{alt: "//", src: "/assets/img/brands/logo2.png"}/
-          .item
-            %a{href: "#"}
-              %img{alt: "//", src: "/assets/img/brands/logo3.png"}/
-          .item
-            %a{href: "#"}
-              %img{alt: "//", src: "/assets/img/brands/logo1.png"}/
-          .item
-            %a{href: "#"}
-              %img{alt: "//", src: "/assets/img/brands/logo2.png"}/
-          .item
-            %a{href: "#"}
-              %img{alt: "//", src: "/assets/img/brands/logo3.png"}/
-          .item
-            %a{href: "#"}
-              %img{alt: "//", src: "/assets/img/brands/logo1.png"}/
-          .item
-            %a{href: "#"}
-              %img{alt: "//", src: "/assets/img/brands/logo2.png"}/
-          .item
-            %a{href: "#"}
-              %img{alt: "//", src: "/assets/img/brands/logo3.png"}/
-          .item
-            %a{href: "#"}
-              %img{alt: "//", src: "/assets/img/brands/logo1.png"}/
-          .item
-            %a{href: "#"}
-              %img{alt: "//", src: "/assets/img/brands/logo2.png"}/
-          .item
-            %a{href: "#"}
-              %img{alt: "//", src: "/assets/img/brands/logo3.png"}/
+          - promotions.each do |p|
+            - p.add_to_views
+            .item
+              = link_to promotion_click_path(p) , target: '_blank 'do 
+                = image_tag p.image_url, alt: p.name
+          -#
+            .item
+              %a{href: "#"}
+                %img{alt: "//", src: "/assets/img/brands/logo1.png"}/
+            .item
+              %a{href: "#"}
+                %img{alt: "//", src: "/assets/img/brands/logo2.png"}/
+            .item
+              %a{href: "#"}
+                %img{alt: "//", src: "/assets/img/brands/logo3.png"}/
+            .item
+              %a{href: "#"}
+                %img{alt: "//", src: "/assets/img/brands/logo1.png"}/
+            .item
+              %a{href: "#"}
+                %img{alt: "//", src: "/assets/img/brands/logo2.png"}/
+            .item
+              %a{href: "#"}
+                %img{alt: "//", src: "/assets/img/brands/logo3.png"}/
+            .item
+              %a{href: "#"}
+                %img{alt: "//", src: "/assets/img/brands/logo1.png"}/
+            .item
+              %a{href: "#"}
+                %img{alt: "//", src: "/assets/img/brands/logo2.png"}/
+            .item
+              %a{href: "#"}
+                %img{alt: "//", src: "/assets/img/brands/logo3.png"}/
+            .item
+              %a{href: "#"}
+                %img{alt: "//", src: "/assets/img/brands/logo1.png"}/
+            .item
+              %a{href: "#"}
+                %img{alt: "//", src: "/assets/img/brands/logo2.png"}/
+            .item
+              %a{href: "#"}
+                %img{alt: "//", src: "/assets/img/brands/logo3.png"}/
+            .item
+              %a{href: "#"}
+                %img{alt: "//", src: "/assets/img/brands/logo1.png"}/
+            .item
+              %a{href: "#"}
+                %img{alt: "//", src: "/assets/img/brands/logo2.png"}/
+            .item
+              %a{href: "#"}
+                %img{alt: "//", src: "/assets/img/brands/logo3.png"}/
     %footer
       .footer-top
         .container

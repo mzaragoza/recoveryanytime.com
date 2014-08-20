@@ -17,6 +17,7 @@ RecoveryanytimeCom::Application.routes.draw do
       match "/users/:id/banned" => "users#banned", :as => :users_banned, via: :all
       resources :users
       resources :email_campaings
+      resources :promotions
       root 'dashboard#index'
     end
   end
@@ -42,9 +43,10 @@ RecoveryanytimeCom::Application.routes.draw do
   resources :contacts
   resources :blogs
   resources :meetings
-  match 'privacy_policy' => 'pages#privacy_policy',   as: :privacy_policy, via: :all
-  match 'get_help_now' => 'pages#get_help_now',   as: :get_help_now, via: :all
-  match 'about_us'     => 'pages#about_us',       as: :about_us, via: :all
-  match 'ping'         => 'pages#ping',           as: :ping, via: :all
+  match 'promotion_click/:id' => 'pages#promotion_click',   as: :promotion_click, via: :all
+  match 'privacy_policy'      => 'pages#privacy_policy',    as: :privacy_policy, via: :all
+  match 'get_help_now'        => 'pages#get_help_now',      as: :get_help_now, via: :all
+  match 'about_us'            => 'pages#about_us',          as: :about_us, via: :all
+  match 'ping'                => 'pages#ping',              as: :ping, via: :all
   root 'pages#index'
 end
