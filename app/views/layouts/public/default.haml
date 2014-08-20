@@ -47,9 +47,6 @@
                   = link_to 'https://Pinterest.com/', target: '_blank' do
                     %i.icon-pinterest
                 %li
-                  = link_to 'https://Skype.com/', target: '_blank' do
-                    %i.icon-skype
-                %li
                   = link_to 'https://plus.google.com/', target: '_blank' do
                     %i.icon-gplus
                 %li
@@ -122,11 +119,12 @@
     .sponsors
       .container
         #owl-sponsors.owl-carousel
-          - promotions.each do |p|
-            - p.add_to_views
-            .item
-              = link_to promotion_click_path(p) , target: '_blank 'do 
-                = image_tag p.image_url, alt: p.name
+          - 20.times do 
+            - promotions.each do |p|
+              - p.add_to_views
+              .item
+                = link_to promotion_click_path(p) , target: '_blank 'do 
+                  = image_tag p.image_url, alt: p.name
           -#
             .item
               %a{href: "#"}
@@ -210,9 +208,6 @@
                 %li
                   = link_to 'https://Pinterest.com/', target: '_blank' do
                     %i.icon-pinterest
-                %li
-                  = link_to 'https://Skype.com/', target: '_blank' do
-                    %i.icon-skype
                 %li
                   = link_to 'https://plus.google.com/', target: '_blank' do
                     %i.icon-gplus
