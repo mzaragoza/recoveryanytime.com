@@ -5,6 +5,8 @@ module ApplicationHelper
         ['Detox'                , 'detox'],
         ['Sober Living'         , 'sober_living'],
         ['Intensive Outpatient' , 'intensive_outpatient'],
+        ['Interventionists'     , 'interventionists'],
+        ['Outpatient Detox'     , 'outpatient_detox'],
       ]
   end
   def gender_list

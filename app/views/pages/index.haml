@@ -562,3 +562,47 @@
                 = t.city
                 = t.state
           .clearfix
+      .col-md-6
+        .boxes
+          .onsale
+            Interventionists
+          - interventionists.each do |t|
+            - t.add_to_views
+            .property-item{ class: "#{'big' if t.main}"}
+              %figure.item-thumbnail.darken
+                = image_tag t.image, alt: t.name
+                %span.overthumb
+                .icons
+                  = link_to facility_click_path(t), target: '_blank 'do 
+                    %i.icon-plus
+              %p
+                = link_to facility_click_path(t), target: '_blank 'do
+                  %strong= t.name
+              %p= raw t.description 
+              %p
+                %i.icon-location>
+                = t.city
+                = t.state
+          .clearfix
+      .col-md-6
+        .boxes
+          .onsale
+            Outpatient Detox
+          - outpatient_detox.each do |t|
+            - t.add_to_views
+            .property-item{ class: "#{'big' if t.main}"}
+              %figure.item-thumbnail.darken
+                = image_tag t.image, alt: t.name
+                %span.overthumb
+                .icons
+                  = link_to facility_click_path(t), target: '_blank 'do 
+                    %i.icon-plus
+              %p
+                = link_to facility_click_path(t), target: '_blank 'do
+                  %strong= t.name
+              %p= raw t.description 
+              %p
+                %i.icon-location>
+                = t.city
+                = t.state
+          .clearfix

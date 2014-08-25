@@ -6,6 +6,8 @@ class Facility < ActiveRecord::Base
   scope :detox,                 -> { where(:type_of => 'detox') }
   scope :sober_living,          -> { where(:type_of => 'sober_living') }
   scope :intensive_outpatient,  -> { where(:type_of => 'intensive_outpatient') }
+  scope :interventionists,      -> { where(:type_of => 'interventionists') }
+  scope :outpatient_detox,      -> { where(:type_of => 'outpatient_detox') }
   mount_uploader :image, PhotoUploader
 
   def add_to_views
