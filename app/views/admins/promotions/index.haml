@@ -21,8 +21,8 @@
             Yes
           -else 
             No
-        %td= p.views
-        %td= p.clicks
+        %td= p.clicks.views.count
+        %td= p.clicks.clicks.count
         %td
           = link_to 'Edit', edit_admins_promotion_path(p), class: 'pull-right btn btn-default btn-sm' 
   %tfoot

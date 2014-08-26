@@ -17,17 +17,13 @@ class Facility < ActiveRecord::Base
     else
       self.clicks.create( :action => 'view' )
     end
-    self.views = self.views  + 1
-    self.save
   end
-  def add_to_clicks
+  def add_to_clicks(options={})
     if options[:user_id]
       self.clicks.create( :user_id => options[:user_id], :action => 'click' )
     else
       self.clicks.create( :action => 'click' )
     end
-    self.clicks = self.clicks  + 1
-    self.save
   end
 
 end

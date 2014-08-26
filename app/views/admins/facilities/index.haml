@@ -23,8 +23,8 @@
             Yes
           -else 
             No
-        %td= f.views
-        %td= f.clicks
+        %td= f.clicks.views.count
+        %td= f.clicks.clicks.count
         %td
           = link_to 'Edit', edit_admins_facility_path(f), class: 'pull-right btn btn-default btn-sm' 
   %tfoot

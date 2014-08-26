@@ -120,7 +120,10 @@
       .container
         #owl-sponsors.owl-carousel
           - promotions.each do |p|
-            - p.add_to_views
+            - if current_user
+              - p.add_to_views({:user_id => current_user.id})
+            -else
+              - p.add_to_views
             .item
               = link_to promotion_click_path(p) , target: '_blank 'do 
                 = image_tag p.image_url, alt: p.name

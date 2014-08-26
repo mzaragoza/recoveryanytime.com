@@ -479,7 +479,10 @@
             -#%span> On Sale
             Treatment
           - treatments.each do |t|
-            - t.add_to_views
+            - if current_user
+              - t.add_to_views({:user_id => current_user.id})
+            -else
+              - t.add_to_views
             .property-item{ class: "#{'big' if t.main}"}
               %figure.item-thumbnail.darken
                 = image_tag t.image, alt: t.name
@@ -501,7 +504,11 @@
           .onsale
             Detox
           - detox.each do |t|
-            - t.add_to_views
+            - if current_user
+              - t.add_to_views({:user_id => current_user.id})
+            -else
+              - t.add_to_views
+            
             .property-item{ class: "#{'big' if t.main}"}
               %figure.item-thumbnail.darken
                 = image_tag t.image, alt: t.name
@@ -523,7 +530,11 @@
           .onsale
             Sober Living
           - sober_living.each do |t|
-            - t.add_to_views
+            
+            - if current_user
+              - t.add_to_views({:user_id => current_user.id})
+            -else
+              - t.add_to_views
             .property-item{ class: "#{'big' if t.main}"}
               %figure.item-thumbnail.darken
                 = image_tag t.image, alt: t.name
@@ -545,7 +556,11 @@
           .onsale
             Intensive Outpatient
           - intensive_outpatient.each do |t|
-            - t.add_to_views
+            
+            - if current_user
+              - t.add_to_views({:user_id => current_user.id})
+            -else
+              - t.add_to_views
             .property-item{ class: "#{'big' if t.main}"}
               %figure.item-thumbnail.darken
                 = image_tag t.image, alt: t.name
@@ -567,7 +582,11 @@
           .onsale
             Interventionists
           - interventionists.each do |t|
-            - t.add_to_views
+            
+            - if current_user
+              - t.add_to_views({:user_id => current_user.id})
+            -else
+              - t.add_to_views
             .property-item{ class: "#{'big' if t.main}"}
               %figure.item-thumbnail.darken
                 = image_tag t.image, alt: t.name
@@ -589,7 +608,11 @@
           .onsale
             Outpatient Detox
           - outpatient_detox.each do |t|
-            - t.add_to_views
+            
+            - if current_user
+              - t.add_to_views({:user_id => current_user.id})
+            -else
+              - t.add_to_views
             .property-item{ class: "#{'big' if t.main}"}
               %figure.item-thumbnail.darken
                 = image_tag t.image, alt: t.name
