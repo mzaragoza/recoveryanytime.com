@@ -5,6 +5,7 @@ class CreateClicks < ActiveRecord::Migration
       t.string  :clickable_type   , default: ''
       t.integer :user_id
       t.string  :action           , default: ''
+      t.string  :referer          , default: ''
 
       t.timestamps
     end
