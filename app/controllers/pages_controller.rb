@@ -24,9 +24,9 @@ class PagesController < PublicController
   def promotion_click
     p = Promotion.find(params[:id])
     if current_user
-      p.add_to_clicks({:user_id => current_user.id})
+      p.add_to_clicks({:user_id => current_user.id, :action => 'click', :referer => params[:referer]})
     else
-      p.add_to_clicks
+      p.add_to_clicks({:action => 'click', :referer => params[:referer]})
     end
     redirect_to p.link
   end
@@ -34,9 +34,9 @@ class PagesController < PublicController
   def facility_click
     f = Facility.find(params[:id])
     if current_user
-      f.add_to_clicks({:user_id => current_user.id})
+      f.add_to_clicks({:user_id => current_user.id, :action => 'click', :referer => params[:referer]})
     else
-      f.add_to_clicks
+      f.add_to_clicks({:action => 'click', :referer => params[:referer] })
     end
     redirect_to f.link
   end

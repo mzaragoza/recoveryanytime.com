@@ -13,16 +13,16 @@ class Facility < ActiveRecord::Base
 
   def add_to_views(options={})
     if options[:user_id]
-      self.clicks.create( :user_id => options[:user_id], :action => 'view' )
+      self.clicks.create( :user_id => options[:user_id], :action => 'view', :referer => options[:referer] )
     else
-      self.clicks.create( :action => 'view' )
+      self.clicks.create( :action => 'view', :referer => options[:referer] )
     end
   end
   def add_to_clicks(options={})
     if options[:user_id]
-      self.clicks.create( :user_id => options[:user_id], :action => 'click' )
+      self.clicks.create( :user_id => options[:user_id], :action => 'click', :referer => options[:referer] )
     else
-      self.clicks.create( :action => 'click' )
+      self.clicks.create( :action => 'click', :referer => options[:referer] )
     end
   end
 

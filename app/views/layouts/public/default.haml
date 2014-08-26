@@ -23,6 +23,7 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     /[if lt IE 9]
       <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+  - referer = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
   %body
     %header
       .header-top
@@ -121,11 +122,11 @@
         #owl-sponsors.owl-carousel
           - promotions.each do |p|
             - if current_user
-              - p.add_to_views({:user_id => current_user.id})
+              - p.add_to_views({:user_id => current_user.id, :referer => referer})
             -else
-              - p.add_to_views
+              - p.add_to_views(:referer => referer)
             .item
-              = link_to promotion_click_path(p) , target: '_blank 'do 
+              = link_to promotion_click_path(p, :referer => referer) , target: '_blank 'do 
                 = image_tag p.image_url, alt: p.name
           -#
             .item
