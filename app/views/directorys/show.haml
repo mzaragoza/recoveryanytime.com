@@ -1,7 +1,303 @@
+.header-bottom
+  .container
+    .row
+      .col-sm-12
+        %h1 Luxury Residences in Miami Beach
 %section
-  %article
-    .container
-      .row
-        .col-md-12
-          Content Here 
-
+  .container
+    .row
+      .col-md-9.col-md-push-3
+        .boxes.single-property
+          .row
+            .col-md-12
+              .onsale.alt
+                %span> On Sale
+                $788,000
+              .boxes-title
+                %span
+                  %i.icon-location
+                %h4 SW 14340 Sw 135 Ct 14340, Miami
+              / Nav tabs
+              %ul.nav.nav-tabs
+                %li.active
+                  %a{"data-toggle" => "tab", :href => "#tab-photos"}
+                    %span
+                      %i.icon-picture
+                    Photos (1 of 14)
+                %li
+                  %a{"data-toggle" => "tab", :href => "#tab-video"}
+                    %span
+                      %i.icon-video
+                    Video (1 virtual tour)
+              / Tab panes
+              .tab-content
+                #tab-photos.tab-pane.active
+                  .slide
+                    #slideshow
+                    #thumbs
+                      -#%a.pageLink.prev{:href => "#", :title => "Previous Page"}
+                        %i.icon-left-open
+                      %ul.thumbs.noscript
+                        %li
+                          %a.thumb{:href => "/assets/img/property_single/single01.jpg"}
+                            %img{:alt => "//", :src => "/assets/img/property_single/single-thumb01.jpg"}/
+                        %li
+                          %a.thumb{:href => "/assets/img/property_single/single02.jpg"}
+                            %img{:alt => "//", :src => "/assets/img/property_single/single-thumb02.jpg"}/
+                        %li
+                          %a.thumb{:href => "/assets/img/property_single/single03.jpg"}
+                            %img{:alt => "//", :src => "/assets/img/property_single/single-thumb03.jpg"}/
+                        %li
+                          %a.thumb{:href => "/assets/img/property_single/single04.jpg"}
+                            %img{:alt => "//", :src => "/assets/img/property_single/single-thumb04.jpg"}/
+                        %li
+                          %a.thumb{:href => "/assets/img/property_single/single05.jpg"}
+                            %img{:alt => "//", :src => "/assets/img/property_single/single-thumb05.jpg"}/
+                        %li
+                          %a.thumb{:href => "/assets/img/property_single/single06.jpg"}
+                            %img{:alt => "//", :src => "/assets/img/property_single/single-thumb06.jpg"}/
+                        %li
+                          %a.thumb{:href => "/assets/img/property_single/single07.jpg"}
+                            %img{:alt => "//", :src => "/assets/img/property_single/single-thumb07.jpg"}/
+                        %li
+                          %a.thumb{:href => "/assets/img/property_single/single08.jpg"}
+                            %img{:alt => "//", :src => "/assets/img/property_single/single-thumb08.jpg"}/
+                        %li
+                          %a.thumb{:href => "/assets/img/property_single/single09.jpg"}
+                            %img{:alt => "//", :src => "/assets/img/property_single/single-thumb09.jpg"}/
+                        %li
+                          %a.thumb{:href => "/assets/img/property_single/single10.jpg"}
+                            %img{:alt => "//", :src => "/assets/img/property_single/single-thumb10.jpg"}/
+                      -#%a.pageLink.next{:href => "#", :title => "Next Page"}
+                        %i.icon-right-open
+                #tab-video.tab-pane
+                  %iframe.video{:allowfullscreen => "", :src => "//www.youtube.com/embed/1D4-cGvpjmY"}
+          .row
+            .col-md-3
+              %h5 Details
+              %ul.details
+                %li
+                  %i.icon-check
+                  Type: Residential
+                %li
+                  %i.icon-check
+                  Address: Miami
+                %li
+                  %i.icon-check
+                  Style: Single Story
+                %li
+                  %i.icon-check
+                  Bathrooms: 3
+                %li
+                  %i.icon-check
+                  Bedrooms: 4
+                %li
+                  %i.icon-check
+                  Garage: Single
+                %li
+                  %i.icon-check
+                  Lot Type: Rectangular
+                %li
+                  %i.icon-check
+                  Size: 163 sq.m
+                %li
+                  %i.icon-check
+                  Year built: 2013
+                %li
+                  %i.icon-check
+                  MLS#: 55 L-SPS2
+            .col-md-9
+              %h5 Description
+              %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, aut, inventore, eum, voluptates ab ipsum error voluptatem dolores aperiam corrupti dolor minus cum labore illum quidem nesciunt ad ipsa optio!. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, perferendis minus asperiores ipsam voluptates in aliquid assumenda et quasi officia veniam soluta dignissimos hic autem quis reprehenderit deserunt. Commodi, quam?
+              %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, et, harum, consectetur tenetur soluta veniam assumenda corporis repellendus quam eaque earum impedit dolores deleniti nobis maxime nulla nam optio sed.
+              %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, aperiam illo beatae velit error numquam eveniet ducimus voluptatem! Quo, aspernatur maiores saepe earum rem dicta fugit est et voluptatibus doloribus?.
+          .row
+            .col-md-12
+              %p.share
+                Share this item:
+                %a.btn.btn-social.btn-social-facebook{:href => "#"} Facebook
+                %a.btn.btn-social.btn-social-twitter{:href => "#"} Twitter
+                %a.btn.btn-social.btn-social-gplus{:href => "#"} Circles
+          .row
+            .col-md-12
+              .boxes-title
+                %span
+                  %i.icon-location
+                %h5 Video Tour
+              %iframe.video{:allowfullscreen => "", :src => "//www.youtube.com/embed/1D4-cGvpjmY"}
+          .row
+            .col-md-12
+              .boxes-title
+                %span
+                  %i.icon-location
+                %h5 Contact Form
+              %form.form-contact{:role => "form"}
+                %fieldset
+                  .row
+                    .col-md-6
+                      .form-group
+                        %label.sr-only{:for => "name"} Name
+                        %input#name.form-control{:placeholder => "Name", :type => "text"}/
+                      .form-group
+                        %label.sr-only{:for => "email"} Email
+                        %input#email.form-control{:placeholder => "Email", :type => "email"}/
+                    .col-md-6
+                      .form-group
+                        %label.sr-only{:for => "lastname"} Lastname
+                        %input#lastname.form-control{:placeholder => "Lastname", :type => "text"}/
+                      .form-group
+                        %label.sr-only{:for => "phonenumber"} Phone Number
+                        %input#phonenumber.form-control{:placeholder => "Phone Number", :type => "text"}/
+                  .row
+                    .col-md-12
+                      .form-group
+                        %label.sr-only{:for => "description"} Message
+                        %textarea#description.form-control{:placeholder => "Message", :rows => "7"}
+                %button.btn.btn-details
+                  %i.icon-forward>
+                  Send
+      %aside.col-md-3.col-md-pull-9
+        %form.filters
+          #accordion.panel-group.boxes
+            .panel
+              .panel-heading
+                .boxes-title
+                  %span
+                    %i.icon-search
+                  %h4.panel-title
+                    %a{"data-toggle" => "collapse", :href => "#collapsePrice"}
+                      Price Rating
+                      %i.icon-down-open-mini
+              #collapsePrice.panel-collapse.collapse.in
+                .panel-body
+                  #slider-price.slider-range
+                    %input.input_range.min.sr-only{:type => "text", :value => "20000"}/
+                    %input.input_range.max.sr-only{:type => "text", :value => "90000"}/
+                    .slider
+                    %span.span_range.min $ 20000
+                    %span.span_range.max $ 90000
+                  .clearfix
+            .panel
+              .panel-heading
+                .boxes-title
+                  %span
+                    %i.icon-location
+                  %h4.panel-title
+                    %a{"data-toggle" => "collapse", :href => "#collapseLocation"}
+                      Location
+                      %i.icon-down-open-mini
+              #collapseLocation.panel-collapse.collapse.in
+                .panel-body
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      Harlem
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      Hudston Heights
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      East Harlem
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      Harlem
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      Hudston Heights
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      East Harlem
+                      %span (342)
+            .panel
+              .panel-heading
+                .boxes-title
+                  %span
+                    %i.icon-keyboard
+                  %h4.panel-title
+                    %a{"data-toggle" => "collapse", :href => "#collapseBedrooms"}
+                      Location
+                      %i.icon-down-open-mini
+              #collapseBedrooms.panel-collapse.collapse.in
+                .panel-body
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      1 Bedrooms
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      2 Bedrooms
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      3 Bedrooms
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      4 Bedrooms
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      5 Bedrooms
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      More than 5
+                      %span (342)
+            .panel
+              .panel-heading
+                .boxes-title
+                  %span
+                    %i.icon-resize-full
+                  %h4.panel-title
+                    %a{"data-toggle" => "collapse", :href => "#collapseMetters"}
+                      Meters
+                      %i.icon-down-open-mini
+              #collapseMetters.panel-collapse.collapse.in
+                .panel-body
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      100 sqft
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      500
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      1000
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      2000
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      5000
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      9000
+                      %span (342)
+                  %button.btn.btn-search{:type => "submit"} Show More

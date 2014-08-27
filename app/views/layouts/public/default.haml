@@ -100,8 +100,17 @@
                 = link_to t(:home), root_path
               %li{ class: "btn #{'btn-primary active' if params[:controller] == 'meetings' && params[:action] == 'index'}" }
                 = link_to t(:meetings), meetings_path
-              %li{ class: "btn #{'btn-primary active' if params[:controller] == 'directorys' && params[:action] == 'index'}" }
-                = link_to t(:directory), directorys_path
+              %li{ class: "dropdown btn #{'btn-primary active' if params[:controller] == 'directorys' && params[:action] == 'index'}" }
+                = link_to directorys_path(:facilty => 'Treatment'), class: 'dropdown-toggle active' do 
+                  Directory
+                  %span.caret
+                %ul.dropdown-menu
+                  %li= link_to 'Detox', directorys_path(:facilty => 'Detox')
+                  %li= link_to 'Intensive Outpatient', directorys_path(:facilty => 'Intensive Outpatient')
+                  %li= link_to 'Interventionists', directorys_path(:facilty => 'Interventionists')
+                  %li= link_to 'Outpatient Detox', directorys_path(:facilty => 'Outpatient Detox')
+                  %li= link_to 'Sober Living', directorys_path(:facilty => 'Sober Living')
+                  %li= link_to 'Treatment', directorys_path(:facilty => 'Treatment')
               %li{ class: "btn #{'btn-primary active' if params[:controller] == 'contacts' && params[:action] == 'new'}" }
                 = link_to t(:contact_us), new_contact_path
               -#%li{ class: "btn #{'btn-primary active' if params[:controller] == 'pages' && params[:action] == 'index'}" }
@@ -282,4 +291,16 @@
     %script{src: "/assets/js/vendors/gmaps.js"}
     %script{src: "/assets/js/vendors/bootstrap-slider.js"}
     %script{src: "/assets/js/script.js"}
+
+
+
+
+
+
+
+
+
+
+
+
 = render 'shared/analytics' 

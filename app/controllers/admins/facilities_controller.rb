@@ -24,21 +24,22 @@ class Admins::FacilitiesController < AdminController
 
   def facility_params
     params.require(:facility).permit(
-      :type_of,
-      :name,
+      :active,
       :address,
       :city,
-      :state,
-      :zip,
-      :description,
-      :contact_name,
       :contact_email,
+      :contact_name,
       :contact_phone,
+      :description,
       :image,
-      :active,
       :link,
       :main,
+      :name,
       :position,
+      :short_description,
+      :state,
+      :type_of,
+      :zip,
     )
   end
 end

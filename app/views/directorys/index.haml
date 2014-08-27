@@ -1,7 +1,521 @@
+.container
+  .row
+    .col-sm-12
+      %h1 
+        Directory for 
+        = params[:facilty].titleize if params[:facilty]
+/ end Header
+/ begin Content
 %section
-  %article
-    .container
-      .row
-        .col-md-12
-          Content Here 
-
+  .container
+    .row
+      .col-md-12
+        .searchby.boxes
+          %form.form-inline.pull-left
+            %h6 Search By:
+            .form-group
+              %label.sr-only{:for => "qs-operation"} Operation
+              %select#qs-operation.form-control
+                %option Operation
+                %option Operation 1
+                %option Operation 2
+            .form-group
+              %label.sr-only{:for => "qs-property-type"} Property Type
+              %select#qs-property-type.form-control
+                %option Property Type
+                %option Type 1
+                %option Type 2
+            .form-group
+              %label.sr-only{:for => "qs-location"} City
+              %select#qs-location.form-control
+                %option City
+                %option City 1
+                %option City 2
+            .form-group
+              %label.sr-only{:for => "qs-price"} Price
+              %select#qs-price.form-control
+                %option Price
+                %option Price 1
+                %option Price 2
+            %button.btn.btn-search{:type => "submit"} Most Popular
+          .clearfix.visible-xs
+          .pull-right
+            %a.btn.btn-icon{:href => "#"}
+              %i.icon-layout
+            %a.btn.btn-icon{:href => "#"}
+              %i.icon-list
+            %a.btn.btn-icon{:href => "#"}
+              %i.icon-menu
+    .row
+      .col-md-3.col-md-push-3.property-details
+        - facilities.each do |f|
+          .property-details-item
+            %figure.item-thumbnail
+              - if  f.image.to_s.empty?
+                = image_tag '/assets/missing_facility.jpg'
+              - else
+                = image_tag f.image
+              %span.overthumb
+              .icons
+                %a{:href => "#"}
+                  %i.icon-plus
+            %h5= f.name
+            %p.subtitle
+              %span $ 250,000
+              \/ monthly
+            %p Ultra-luxe Penthouses with super dorem impsum in the dolor sit and amet. Consectur adipiscinit...
+            %ul.features
+              %li
+                %i.icon-resize-full
+                6800 sq ft
+              %li
+                %i.icon-basket
+                2 Garages
+              %li
+                %i.icon-battery
+                2 Bathrooms
+              %li
+                %i.icon-keyboard
+                2 Bedrooms
+        .property-details-item
+          %figure.item-thumbnail
+            %img{:alt => "//", :src => "/assets/img/rent/details02.jpg"}/
+            %span.overthumb
+            .icons
+              %a{:href => "#"}
+                %i.icon-plus
+          %h5 The Beatriche
+          %p.subtitle
+            %span $ 250,000
+            \/ monthly
+          %p Ultra-luxe Penthouses with super dorem impsum in the dolor sit and amet. Consectur adipiscinit...
+          %ul.features
+            %li
+              %i.icon-resize-full
+              6800 sq ft
+            %li
+              %i.icon-basket
+              2 Garages
+            %li
+              %i.icon-battery
+              2 Bathrooms
+            %li
+              %i.icon-keyboard
+              2 Bedrooms
+        .property-details-item
+          %figure.item-thumbnail
+            %img{:alt => "//", :src => "/assets/img/rent/details03.jpg"}/
+            %span.overthumb
+            .icons
+              %a{:href => "#"}
+                %i.icon-plus
+          %h5 The Beatriche
+          %p.subtitle
+            %span $ 250,000
+            \/ monthly
+          %p Ultra-luxe Penthouses with super dorem impsum in the dolor sit and amet. Consectur adipiscinit...
+          %ul.features
+            %li
+              %i.icon-resize-full
+              6800 sq ft
+            %li
+              %i.icon-basket
+              2 Garages
+            %li
+              %i.icon-battery
+              2 Bathrooms
+            %li
+              %i.icon-keyboard
+              2 Bedrooms
+        .property-details-item
+          %figure.item-thumbnail
+            %img{:alt => "//", :src => "/assets/img/rent/details04.jpg"}/
+            %span.overthumb
+            .icons
+              %a{:href => "#"}
+                %i.icon-plus
+          %h5 The Beatriche
+          %p.subtitle
+            %span $ 250,000
+            \/ monthly
+          %p Ultra-luxe Penthouses with super dorem impsum in the dolor sit and amet. Consectur adipiscinit...
+          %ul.features
+            %li
+              %i.icon-resize-full
+              6800 sq ft
+            %li
+              %i.icon-basket
+              2 Garages
+            %li
+              %i.icon-battery
+              2 Bathrooms
+            %li
+              %i.icon-keyboard
+              2 Bedrooms
+      .col-md-3.col-md-push-3.property-details
+        .property-details-item
+          %figure.item-thumbnail
+            %img{:alt => "//", :src => "/assets/img/rent/details05.jpg"}/
+            %span.overthumb
+            .icons
+              %a{:href => "#"}
+                %i.icon-plus
+          %h5 The Beatriche
+          %p.subtitle
+            %span $ 250,000
+            \/ monthly
+          %p Ultra-luxe Penthouses with super dorem impsum in the dolor sit and amet. Consectur adipiscinit...
+          %ul.features
+            %li
+              %i.icon-resize-full
+              6800 sq ft
+            %li
+              %i.icon-basket
+              2 Garages
+            %li
+              %i.icon-battery
+              2 Bathrooms
+            %li
+              %i.icon-keyboard
+              2 Bedrooms
+        .property-details-item
+          %figure.item-thumbnail
+            %img{:alt => "//", :src => "/assets/img/rent/details06.jpg"}/
+            %span.overthumb
+            .icons
+              %a{:href => "#"}
+                %i.icon-plus
+          %h5 The Beatriche
+          %p.subtitle
+            %span $ 250,000
+            \/ monthly
+          %p Ultra-luxe Penthouses with super dorem impsum in the dolor sit and amet. Consectur adipiscinit...
+          %ul.features
+            %li
+              %i.icon-resize-full
+              6800 sq ft
+            %li
+              %i.icon-basket
+              2 Garages
+            %li
+              %i.icon-battery
+              2 Bathrooms
+            %li
+              %i.icon-keyboard
+              2 Bedrooms
+        .property-details-item
+          %figure.item-thumbnail
+            %img{:alt => "//", :src => "/assets/img/rent/details07.jpg"}/
+            %span.overthumb
+            .icons
+              %a{:href => "#"}
+                %i.icon-plus
+          %h5 The Beatriche
+          %p.subtitle
+            %span $ 250,000
+            \/ monthly
+          %p Ultra-luxe Penthouses with super dorem impsum in the dolor sit and amet. Consectur adipiscinit...
+          %ul.features
+            %li
+              %i.icon-resize-full
+              6800 sq ft
+            %li
+              %i.icon-basket
+              2 Garages
+            %li
+              %i.icon-battery
+              2 Bathrooms
+            %li
+              %i.icon-keyboard
+              2 Bedrooms
+        .property-details-item
+          %figure.item-thumbnail
+            %img{:alt => "//", :src => "/assets/img/rent/details08.jpg"}/
+            %span.overthumb
+            .icons
+              %a{:href => "#"}
+                %i.icon-plus
+          %h5 The Beatriche
+          %p.subtitle
+            %span $ 250,000
+            \/ monthly
+          %p Ultra-luxe Penthouses with super dorem impsum in the dolor sit and amet. Consectur adipiscinit...
+          %ul.features
+            %li
+              %i.icon-resize-full
+              6800 sq ft
+            %li
+              %i.icon-basket
+              2 Garages
+            %li
+              %i.icon-battery
+              2 Bathrooms
+            %li
+              %i.icon-keyboard
+              2 Bedrooms
+      .col-md-3.col-md-push-3.property-details
+        .property-details-item
+          %figure.item-thumbnail
+            %img{:alt => "//", :src => "/assets/img/rent/details09.jpg"}/
+            %span.overthumb
+            .icons
+              %a{:href => "#"}
+                %i.icon-plus
+          %h5 The Beatriche
+          %p.subtitle
+            %span $ 250,000
+            \/ monthly
+          %p Ultra-luxe Penthouses with super dorem impsum in the dolor sit and amet. Consectur adipiscinit...
+          %ul.features
+            %li
+              %i.icon-resize-full
+              6800 sq ft
+            %li
+              %i.icon-basket
+              2 Garages
+            %li
+              %i.icon-battery
+              2 Bathrooms
+            %li
+              %i.icon-keyboard
+              2 Bedrooms
+        .property-details-item
+          %figure.item-thumbnail
+            %img{:alt => "//", :src => "/assets/img/rent/details10.jpg"}/
+            %span.overthumb
+            .icons
+              %a{:href => "#"}
+                %i.icon-plus
+          %h5 The Beatriche
+          %p.subtitle
+            %span $ 250,000
+            \/ monthly
+          %p Ultra-luxe Penthouses with super dorem impsum in the dolor sit and amet. Consectur adipiscinit...
+          %ul.features
+            %li
+              %i.icon-resize-full
+              6800 sq ft
+            %li
+              %i.icon-basket
+              2 Garages
+            %li
+              %i.icon-battery
+              2 Bathrooms
+            %li
+              %i.icon-keyboard
+              2 Bedrooms
+        .property-details-item
+          %figure.item-thumbnail
+            %img{:alt => "//", :src => "/assets/img/rent/details11.jpg"}/
+            %span.overthumb
+            .icons
+              %a{:href => "#"}
+                %i.icon-plus
+          %h5 The Beatriche
+          %p.subtitle
+            %span $ 250,000
+            \/ monthly
+          %p Ultra-luxe Penthouses with super dorem impsum in the dolor sit and amet. Consectur adipiscinit...
+          %ul.features
+            %li
+              %i.icon-resize-full
+              6800 sq ft
+            %li
+              %i.icon-basket
+              2 Garages
+            %li
+              %i.icon-battery
+              2 Bathrooms
+            %li
+              %i.icon-keyboard
+              2 Bedrooms
+        .property-details-item
+          %figure.item-thumbnail
+            %img{:alt => "//", :src => "/assets/img/rent/details12.jpg"}/
+            %span.overthumb
+            .icons
+              %a{:href => "#"}
+                %i.icon-plus
+          %h5 The Beatriche
+          %p.subtitle
+            %span $ 250,000
+            \/ monthly
+          %p Ultra-luxe Penthouses with super dorem impsum in the dolor sit and amet. Consectur adipiscinit...
+          %ul.features
+            %li
+              %i.icon-resize-full
+              6800 sq ft
+            %li
+              %i.icon-basket
+              2 Garages
+            %li
+              %i.icon-battery
+              2 Bathrooms
+            %li
+              %i.icon-keyboard
+              2 Bedrooms
+        .clearfix
+        %ul.pagination
+          %li
+            %a{:href => "#"}
+              %i.icon-left-open
+          %li.active
+            %a{:href => "#"} 1
+          %li
+            %a{:href => "#"} 2
+          %li
+            %a{:href => "#"} 3
+          %li
+            %a{:href => "#"} 4
+          %li
+            %a{:href => "#"} ...
+          %li
+            %a{:href => "#"} 7
+          %li
+            %a{:href => "#"}
+              %i.icon-right-open
+      %aside.col-md-3.col-md-pull-9
+        %form.filters
+          #accordion.panel-group.boxes
+            .panel
+              .panel-heading
+                .boxes-title
+                  %span
+                    %i.icon-search
+                  %h4.panel-title
+                    %a{"data-toggle" => "collapse", :href => "#collapsePrice"}
+                      Price Rating
+                      %i.icon-down-open-mini
+              #collapsePrice.panel-collapse.collapse.in
+                .panel-body
+                  #slider-price.slider-range
+                    %input.input_range.min.sr-only{:type => "text", :value => "20000"}/
+                    %input.input_range.max.sr-only{:type => "text", :value => "90000"}/
+                    .slider
+                    %span.span_range.min $ 20000
+                    %span.span_range.max $ 90000
+                  .clearfix
+            .panel
+              .panel-heading
+                .boxes-title
+                  %span
+                    %i.icon-location
+                  %h4.panel-title
+                    %a{"data-toggle" => "collapse", :href => "#collapseLocation"}
+                      Location
+                      %i.icon-down-open-mini
+              #collapseLocation.panel-collapse.collapse.in
+                .panel-body
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      Harlem
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      Hudston Heights
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      East Harlem
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      Harlem
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      Hudston Heights
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      East Harlem
+                      %span (342)
+            .panel
+              .panel-heading
+                .boxes-title
+                  %span
+                    %i.icon-keyboard
+                  %h4.panel-title
+                    %a{"data-toggle" => "collapse", :href => "#collapseBedrooms"}
+                      Location
+                      %i.icon-down-open-mini
+              #collapseBedrooms.panel-collapse.collapse.in
+                .panel-body
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      1 Bedrooms
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      2 Bedrooms
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      3 Bedrooms
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      4 Bedrooms
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      5 Bedrooms
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      More than 5
+                      %span (342)
+            .panel
+              .panel-heading
+                .boxes-title
+                  %span
+                    %i.icon-resize-full
+                  %h4.panel-title
+                    %a{"data-toggle" => "collapse", :href => "#collapseMetters"}
+                      Meters
+                      %i.icon-down-open-mini
+              #collapseMetters.panel-collapse.collapse.in
+                .panel-body
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      100 sqft
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      500
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      1000
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      2000
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      5000
+                      %span (342)
+                  .checkbox
+                    %label
+                      %input{:type => "checkbox"}>/
+                      9000
+                      %span (342)
+                  %button.btn.btn-search{:type => "submit"} Show More
