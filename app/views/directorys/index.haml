@@ -39,7 +39,7 @@
                 %option Price 2
             %button.btn.btn-search{:type => "submit"} Most Popular
           .clearfix.visible-xs
-          .pull-right
+          -#.pull-right
             %a.btn.btn-icon{:href => "#"}
               %i.icon-layout
             %a.btn.btn-icon{:href => "#"}
@@ -55,11 +55,14 @@
                 = image_tag '/assets/missing_facility.jpg'
               - else
                 = image_tag f.image
-              %span.overthumb
+              = link_to directory_path(f.id) do
+                %span.overthumb
               .icons
-                %a{:href => "#"}
+                = link_to directory_path(f.id) do
                   %i.icon-plus
-            %h5= f.name
+            %h5
+              = link_to directory_path(f.id) do
+                = f.name
             %p.subtitle
               %span $ 250,000
               \/ monthly
@@ -77,7 +80,7 @@
               %li
                 %i.icon-keyboard
                 2 Bedrooms
-        .property-details-item
+        -#.property-details-item
           %figure.item-thumbnail
             %img{:alt => "//", :src => "/assets/img/rent/details02.jpg"}/
             %span.overthumb
@@ -102,7 +105,7 @@
             %li
               %i.icon-keyboard
               2 Bedrooms
-        .property-details-item
+        -#.property-details-item
           %figure.item-thumbnail
             %img{:alt => "//", :src => "/assets/img/rent/details03.jpg"}/
             %span.overthumb
@@ -127,7 +130,7 @@
             %li
               %i.icon-keyboard
               2 Bedrooms
-        .property-details-item
+        -#.property-details-item
           %figure.item-thumbnail
             %img{:alt => "//", :src => "/assets/img/rent/details04.jpg"}/
             %span.overthumb
@@ -153,7 +156,7 @@
               %i.icon-keyboard
               2 Bedrooms
       .col-md-3.col-md-push-3.property-details
-        .property-details-item
+        -#.property-details-item
           %figure.item-thumbnail
             %img{:alt => "//", :src => "/assets/img/rent/details05.jpg"}/
             %span.overthumb
@@ -178,7 +181,7 @@
             %li
               %i.icon-keyboard
               2 Bedrooms
-        .property-details-item
+        -#.property-details-item
           %figure.item-thumbnail
             %img{:alt => "//", :src => "/assets/img/rent/details06.jpg"}/
             %span.overthumb
@@ -203,7 +206,7 @@
             %li
               %i.icon-keyboard
               2 Bedrooms
-        .property-details-item
+        -#.property-details-item
           %figure.item-thumbnail
             %img{:alt => "//", :src => "/assets/img/rent/details07.jpg"}/
             %span.overthumb
@@ -228,7 +231,7 @@
             %li
               %i.icon-keyboard
               2 Bedrooms
-        .property-details-item
+        -#.property-details-item
           %figure.item-thumbnail
             %img{:alt => "//", :src => "/assets/img/rent/details08.jpg"}/
             %span.overthumb
@@ -254,7 +257,7 @@
               %i.icon-keyboard
               2 Bedrooms
       .col-md-3.col-md-push-3.property-details
-        .property-details-item
+        -#.property-details-item
           %figure.item-thumbnail
             %img{:alt => "//", :src => "/assets/img/rent/details09.jpg"}/
             %span.overthumb
@@ -279,7 +282,7 @@
             %li
               %i.icon-keyboard
               2 Bedrooms
-        .property-details-item
+        -#.property-details-item
           %figure.item-thumbnail
             %img{:alt => "//", :src => "/assets/img/rent/details10.jpg"}/
             %span.overthumb
@@ -304,7 +307,7 @@
             %li
               %i.icon-keyboard
               2 Bedrooms
-        .property-details-item
+        -#.property-details-item
           %figure.item-thumbnail
             %img{:alt => "//", :src => "/assets/img/rent/details11.jpg"}/
             %span.overthumb
@@ -329,7 +332,7 @@
             %li
               %i.icon-keyboard
               2 Bedrooms
-        .property-details-item
+        -#.property-details-item
           %figure.item-thumbnail
             %img{:alt => "//", :src => "/assets/img/rent/details12.jpg"}/
             %span.overthumb
@@ -355,7 +358,7 @@
               %i.icon-keyboard
               2 Bedrooms
         .clearfix
-        %ul.pagination
+        -#%ul.pagination
           %li
             %a{:href => "#"}
               %i.icon-left-open
