@@ -47,9 +47,35 @@
             %a.btn.btn-icon{:href => "#"}
               %i.icon-menu
     .row
-      .col-md-3.col-md-push-3.property-details
+      .col-md-9.col-md-push-3.property-details.big
         - facilities.each do |f|
           .property-details-item
+            %figure.item-thumbnail
+              = link_to directory_path(f) do
+                - if  f.image.to_s.empty?
+                  = image_tag '/assets/missing_facility.jpg', alt: f.name
+                - else
+                  = image_tag f.image, alt: f.name
+            %ul.features
+              %li
+                %span.price $ 250,000
+              %li
+                %i.icon-battery
+                1 Bathrooms
+              %li
+                %i.icon-keyboard
+                2 Bedrooms
+              %li
+                %button.btn.btn-details View Details
+            %h5 
+              = link_to directory_path(f) do
+                = f.name
+            %p.subtitle
+              %i.icon-location
+              = f.city
+              = f.state
+            %p= raw f.description
+          -#.property-details-item
             %figure.item-thumbnail
               - if  f.image.to_s.empty?
                 = image_tag '/assets/missing_facility.jpg'

@@ -29,6 +29,7 @@ class DirectorysController < PublicController
         facilities.order("main DESC, position ASC")
       end
     }
+    expose(:facility){ Facility.is_active.find(params[:id]) }
 
     expose(:treatments){ Facility.is_active.treatment.order("main DESC, position ASC").limit(4) }
     expose(:detox){ Facility.is_active.detox.order("main DESC, position ASC").limit(4) }

@@ -1,7 +1,43 @@
-%section
-  %article
-    .container
-      .row
-        .col-md-12
-          Content Here Create Contact
-
+.container
+  .row
+    .col-md-9.col-md-push-3.contact
+      .boxes
+        .row
+          .col-md-12
+            .boxes-title
+              %span
+                %i.icon-user
+              %h5 Contact Form
+            = simple_form_for( contact, :url => contacts_path, method: 'Post', html: { class: "form-contact"}) do |f|
+              %fieldset
+                .form-group
+                  %label.sr-only{:for => "name"} First Name
+                  = f.input :first_name, label: false, input_html: { class: 'string required form-control', placeholder: "First Name" }
+                .form-group
+                  %label.sr-only{:for => "lastname"} Last name
+                  = f.input :last_name, label: false, input_html: { class: 'string required form-control', placeholder: "Last Name" }
+                .form-group
+                  %label.sr-only{:for => "email"} E-mail
+                  = f.input :email, label: false, input_html: { class: 'string required form-control', placeholder: "Email" }
+                .form-group
+                  %label.sr-only{:for => "phone"} Phone Number
+                  = f.input :phone, label: false, input_html: { class: 'string required form-control', placeholder: "Phone Number" }
+                .form-group
+                  %label.sr-only{:for => "message"} Message
+                  = f.input :message, label: false, input_html: { class: 'string required form-control', placeholder: "Message" }
+              =# f.button :submit, "Send", :class => 'btn btn-details' do 
+              %button.btn.btn-details
+                %i.icon-forward>
+                Send
+            .clearfix
+    %aside.col-md-3.col-md-pull-9
+      .boxes
+        .boxes-title
+          %span
+            %i.icon-location
+          %h5 Be social!
+        %a.btn.btn-social.btn-social-facebook.alt{:href => "#"} facebook
+        %a.btn.btn-social.btn-social-gplus.alt{:href => "#"} google plus
+        %a.btn.btn-social.btn-social-twitter.alt{:href => "#"} twitter
+        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, temporibus, beatae harum nemo illum assumenda dicta vel omnis qui obcaecati praesentium est in voluptatum possimus distinctio veniam debitis a repellendus!
+        %br/

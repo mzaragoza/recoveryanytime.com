@@ -1,0 +1,20 @@
+- if current_user
+  - t.add_to_views({:user_id => current_user.id, :referer => referer})
+-else
+  - t.add_to_views({:referer => referer})
+.property-item{ class: "#{'big' if t.main}"}
+  %figure.item-thumbnail.darken
+    = link_to directory_path(t) do
+      - if  t.image.to_s.empty?
+        = image_tag '/assets/missing_facility.jpg', alt: t.name
+      - else
+        = image_tag t.image, alt: t.name
+  %p
+    = link_to directory_path(t) do
+      %strong= t.name
+  %p= raw t.short_description
+  %p
+    %i.icon-location>
+    = t.city
+    = t.state
+
