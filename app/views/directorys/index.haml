@@ -404,9 +404,9 @@
             %a{:href => "#"}
               %i.icon-right-open
       %aside.col-md-3.col-md-pull-9
-        %form.filters
+        = simple_form_for :facility, :url => directorys_path, html: { class: 'filters' }, method: 'GET' do |f| 
           #accordion.panel-group.boxes
-            .panel
+            -#.panel
               .panel-heading
                 .boxes-title
                   %span
@@ -435,116 +435,9 @@
                       %i.icon-down-open-mini
               #collapseLocation.panel-collapse.collapse.in
                 .panel-body
-                  .checkbox
-                    %label
-                      %input{:type => "checkbox"}>/
-                      Harlem
-                      %span (342)
-                  .checkbox
-                    %label
-                      %input{:type => "checkbox"}>/
-                      Hudston Heights
-                      %span (342)
-                  .checkbox
-                    %label
-                      %input{:type => "checkbox"}>/
-                      East Harlem
-                      %span (342)
-                  .checkbox
-                    %label
-                      %input{:type => "checkbox"}>/
-                      Harlem
-                      %span (342)
-                  .checkbox
-                    %label
-                      %input{:type => "checkbox"}>/
-                      Hudston Heights
-                      %span (342)
-                  .checkbox
-                    %label
-                      %input{:type => "checkbox"}>/
-                      East Harlem
-                      %span (342)
-            .panel
-              .panel-heading
-                .boxes-title
-                  %span
-                    %i.icon-keyboard
-                  %h4.panel-title
-                    %a{"data-toggle" => "collapse", :href => "#collapseBedrooms"}
-                      Location
-                      %i.icon-down-open-mini
-              #collapseBedrooms.panel-collapse.collapse.in
-                .panel-body
-                  .checkbox
-                    %label
-                      %input{:type => "checkbox"}>/
-                      1 Bedrooms
-                      %span (342)
-                  .checkbox
-                    %label
-                      %input{:type => "checkbox"}>/
-                      2 Bedrooms
-                      %span (342)
-                  .checkbox
-                    %label
-                      %input{:type => "checkbox"}>/
-                      3 Bedrooms
-                      %span (342)
-                  .checkbox
-                    %label
-                      %input{:type => "checkbox"}>/
-                      4 Bedrooms
-                      %span (342)
-                  .checkbox
-                    %label
-                      %input{:type => "checkbox"}>/
-                      5 Bedrooms
-                      %span (342)
-                  .checkbox
-                    %label
-                      %input{:type => "checkbox"}>/
-                      More than 5
-                      %span (342)
-            .panel
-              .panel-heading
-                .boxes-title
-                  %span
-                    %i.icon-resize-full
-                  %h4.panel-title
-                    %a{"data-toggle" => "collapse", :href => "#collapseMetters"}
-                      Meters
-                      %i.icon-down-open-mini
-              #collapseMetters.panel-collapse.collapse.in
-                .panel-body
-                  .checkbox
-                    %label
-                      %input{:type => "checkbox"}>/
-                      100 sqft
-                      %span (342)
-                  .checkbox
-                    %label
-                      %input{:type => "checkbox"}>/
-                      500
-                      %span (342)
-                  .checkbox
-                    %label
-                      %input{:type => "checkbox"}>/
-                      1000
-                      %span (342)
-                  .checkbox
-                    %label
-                      %input{:type => "checkbox"}>/
-                      2000
-                      %span (342)
-                  .checkbox
-                    %label
-                      %input{:type => "checkbox"}>/
-                      5000
-                      %span (342)
-                  .checkbox
-                    %label
-                      %input{:type => "checkbox"}>/
-                      9000
-                      %span (342)
-                  %button.btn.btn-search{:type => "submit"} Show More
+                  - us_states.each do |state|
+                    .checkbox
+                      %label
+                        = f.input state[0], name: "#{state[0]}", as: :boolean, label: "#{state[0]} (#{facilities.where(:state => state[1]).count})"
+            = f.input :facilty, as: 'hidden', input_html: { value: params[:facilty] }
+            %button.btn.btn-search{:type => "submit"} Show More

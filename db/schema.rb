@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140828140721) do
+ActiveRecord::Schema.define(version: 20140830043914) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20140828140721) do
     t.string   "clickable_type", default: ""
     t.integer  "user_id"
     t.string   "action",         default: ""
-    t.string   "referer",        default: ""
+    t.text     "referer",        default: ""
     t.datetime "created_at"
     t.datetime "updated_at"
   end
