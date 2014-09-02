@@ -105,12 +105,17 @@
                   Directory
                   %span.caret
                 %ul.dropdown-menu
-                  %li= link_to 'Detox', directorys_path(:facilty => 'Detox')
-                  %li= link_to 'Intensive Outpatient', directorys_path(:facilty => 'Intensive Outpatient')
-                  %li= link_to 'Interventionists', directorys_path(:facilty => 'Interventionists')
-                  %li= link_to 'Outpatient Detox', directorys_path(:facilty => 'Outpatient Detox')
-                  %li= link_to 'Sober Living', directorys_path(:facilty => 'Sober Living')
-                  %li= link_to 'Treatment', directorys_path(:facilty => 'Treatment')
+                  %li
+                    %a{:href => "/directorys?facility[facility]=detox"}Detox
+                  %li
+                    %a{:href => "/directorys?facility[facility]=Intensive Outpatient"}Intensive Outpatient
+                  %li
+                    %a{:href => "/directorys?facility[facility]=Interventionists"}Interventionists
+                  %li
+                    %a{:href => "/directorys?facility[facility]=Outpatient Detox"}Outpatient Detox
+                  %li
+                    %a{:href => "/directorys?facility[facility]=Sober Living"}Sober Living
+                  %li
               %li{ class: "btn #{'btn-primary active' if params[:controller] == 'contacts' && params[:action] == 'new'}" }
                 = link_to t(:contact_us), new_contact_path
               -#%li{ class: "btn #{'btn-primary active' if params[:controller] == 'pages' && params[:action] == 'index'}" }

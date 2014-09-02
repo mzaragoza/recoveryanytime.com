@@ -3,12 +3,12 @@
     .col-sm-12
       %h1 
         Directory for 
-        = params[:facilty].titleize if params[:facilty]
+        = page_name
 / end Header
 / begin Content
 %section
   .container
-    .row
+    -#.row
       .col-md-12
         .searchby.boxes
           %form.form-inline.pull-left
@@ -438,6 +438,6 @@
                   - us_states.each do |state|
                     .checkbox
                       %label
-                        = f.input state[0], name: "#{state[0]}", as: :boolean, label: "#{state[0]} (#{facilities.where(:state => state[1]).count})"
-            = f.input :facilty, as: 'hidden', input_html: { value: params[:facilty] }
+                        = f.input state[1], name: "#{state[0]}", as: :boolean, label: "#{state[0]} (#{facilities_count.where(:state => state[1]).count})"
+            = f.input :facility, as: 'hidden', input_html: { value: params[:facility][:facility] }
             %button.btn.btn-search{:type => "submit"} Show More

@@ -1,10 +1,40 @@
 class DirectorysController < PublicController
   layout :choose_layout
-
+  before_filter :check_states, :only => :index
 
     expose(:facilities){
-      if params[:facilty]
-        facility_type = params[:facilty].downcase
+      if params[:facility][:facility]
+        facility_type = params[:facility][:facility].downcase
+      else
+        facility_type = 'treatment'
+      end
+      if facility_type == 'treatment'
+       facilities = Facility.is_active.treatment
+      elsif facility_type == 'detox'
+       facilities =  Facility.is_active.detox
+      elsif facility_type == 'Intensive Outpatient'
+       facilities =  Facility.is_active.intensive_outpatient
+      elsif facility_type == 'Sober Living'
+       facilities =  Facility.is_active.sober_living
+      elsif facility_type == 'Outpatient Detox'
+       facilities = Facility.is_active.outpatient_detox
+      elsif facility_type == 'Interventionists'
+       facilities =  Facility.is_active.interventionists
+      else
+       facilities = Facility.is_active.treatment
+      end
+      if facilities.nil?
+        facilities = []
+      else
+        unless check_states.empty?
+          facilities = facilities.where(:state => check_states)
+        end
+        facilities.order("main DESC, position ASC")
+      end
+    }
+    expose(:facilities_count){
+      if params[:facility][:facility]
+        facility_type = params[:facility][:facility].downcase
       else
         facility_type = 'treatment'
       end
@@ -38,8 +68,23 @@ class DirectorysController < PublicController
     expose(:interventionists){ Facility.is_active.interventionists.order("main DESC, position ASC").limit(4) }
     expose(:outpatient_detox){ Facility.is_active.outpatient_detox.order("main DESC, position ASC").limit(4) }
 
+
+    expose(:page_name){
+      params[:facility][:facility].titleize
+    }
   def choose_layout
     'public/default'
+  end
+
+  private
+  def check_states
+    states_selected = []
+    us_states.each do |state|
+      if params[:facility][state[1].to_sym] == "1"
+        states_selected << state[1]
+      end
+    end
+    states_selected
   end
 end
 
