@@ -1,521 +1,159 @@
 - referer = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
-%section
-  %article
-    .container
-      .row
-        .col-md-9
-          .boxes
-            .boxes-title.home
-              %span
-                %i.icon-clock
-              - unless current_user
-                %h4 Join Recovery Anytime
-              - else
-                %h4 
-            #carousel-house-dreams.carousel.slide.house-dreams{"data-ride" => "carousel"}
-              - unless current_user
-                .quick-search
-                  %h4 Create an Account
-                  = render 'registration'
-              / Controls
-              %a.left.carousel-control{"data-slide" => "prev", href: "#carousel-house-dreams"}
-                %i.icon-left-open
-              %a.right.carousel-control{"data-slide" => "next", href: "#carousel-house-dreams"}
-                %i.icon-right-open
-              / Wrapper for slides
-              .carousel-inner
-                .item.active
-                  %img{alt: "Meeting", src: "/assets/stock-photo-44532628-diverse-group-of-children-and-adults-talking-in-support-meeting.jpg"}/
-                .item
-                  %img{alt: "friends", src: "/assets/stock-photo-44524122-multi-ethnic-friends-having-fun-at-the-beach.jpg"}/
-                .item
-                  %img{alt: "Direcorty", src: "/assets/stock-photo-42255592-hotel-exterior-on-a-winter-night.jpg"}/
-                .item
-                  %img{alt: "Get Help Now", src: "/assets/stock-photo-44372374-customer-support-staff-pointing-away.jpg"}/
-        .col-md-3
-          .boxes
-            - unless current_user
-              .boxes-title
-                %span
-                  %i.icon-clock
-                %h4 Login
-              .property-item
-
-                = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-                  %ul
-                    - resource.errors.full_messages.each do |e|
-                      %li=e
-                  = f.input :email      , label: false, input_html: { class: 'form-control input-lg', placeholder: "Email"      }
-                  %br
-                  = f.input :password   , label: false, input_html: { class: 'form-control input-lg', placeholder: "Password"   }
-                  %br
-                  = f.button :submit    , "Login", :class => 'btn btn-primary btn-block'
-            - else
-              .boxes-title
-                %span
-                  %i.icon-clock
-                = link_to users_root_path, class: 'btn btn-success' do
-                  %h4 Members Area
-            -# Members: 
-            -#= link_to '#', class: 'btn btn-success' do
-              = number_with_delimiter(User.count)
-
-              -#%form#new_user.form-quick-search{"accept-charset" => "UTF-8", action: "/users/sign_in", method: "post"}
-                .form-group
-                  %label.sr-only{for: "qs-operation"} Email Address
-                  %input#email.string.required.form-control{"aria-required" => "true", maxlength: "255", name: "email", placeholder: "Email", size: "255", type: "text", value: ""}/
-                .form-group
-                  %label.sr-only{for: "qs-location"} Password
-                  %input#password.string.required.form-control{"aria-required" => "true", maxlength: "255", name: "password", placeholder: "Password", size: "255", type: "password", value: ""}/
-                .form-group
-                  %input{name: "remember", type: "checkbox"}/
-                  %span Remember Me
-                %button.btn.btn-default{type: "submit"}
-                  login
-            -#.property-item
-              %figure.item-thumbnail.darken
-                %img{alt: "//", src: "/assets/img/houses/popular01.jpg"}/
-                %span.overthumb
-                .icons
-                  %a{href: "#"}
-                    %i.icon-plus
-              %p A new boutique building in the rem ipsum dolor sit...
+/ BEGIN CONTENT
+%section#banner.section-featured
+  #carousel-example-generic.carousel.slide{"data-ride" => "carousel"}
+    / Indicators
+    %ol.carousel-indicators
+      %li.active{"data-slide-to" => "0", "data-target" => "#carousel-example-generic"}
+      %li{"data-slide-to" => "1", "data-target" => "#carousel-example-generic"}
+      %li{"data-slide-to" => "2", "data-target" => "#carousel-example-generic"}
+    / Wrapper for slides
+    .carousel-inner
+      .item.active
+        .row.header-text
+          .col-md-6.col-md-offset-3
+            .text-center
+              %i.fa.fa.fa-thumbs-up.fa-5x
+              %h2.slogan Welcome to Social
               %p
-                %i.icon-location>
-                Chicago, USA
-              %article
-    .container.bordered
-      = link_to get_help_now_path, class: 'btn btn-primary btn-block' do 
-        %h2= t(:get_help_now)
-      %h3{style: 'text-align:center;' }
-        Do you need treatment or detox immediatly? 
-        %br
-        We can help 24/7
-    .container.bordered
-      %h2 Recovery Anytime is ....
-      %p.subtitle  Whether you're sober, clean, or seeking help with your drug addiction or alcoholism, we welcome you, and will connect you with other people who share YOUR addiction, in YOUR local area, and all across the world!
-  %article.offers
-    .container.bordered
-      .row
-        .col-md-4
-          %figure
-            %img{alt: "//", src: "/assets/stock-photo-32246458-i-m-happy-to-help.jpg"}/
-          %h3{style: 'text-align:center;' } Seeking Help
-          %p 
-            Welcome. Take a deep breath. You're right where you're supposed to be. Even the longest journey begins with the 1st step.
-        .col-md-4
-          %figure
-            %img{alt: "//", src: "/assets/stock-photo-45231460-campfire-of-friends-in-circle-on-the-fire.jpg"}/
-          %h3{style: 'text-align:center;' } In Recovery
-          %p 
-            Recovery Anytime hitches the addiction community to a wide array of online social networking tools to facilitate meetings among like minded people and assist in their recovery. 
-        .col-md-4
-          %figure
-            %img{alt: "//", src: "/assets/stock-photo-45215624-group-of-friends-with-hands-in-hands-teamwork.jpg"}/
-          %h3{style: 'text-align:center;' } Friends & Family in Recovery
-          %p Being a friend, family member, colleague, business associate or loved one of someone seeking recovery or in recovery can be exhausting and extremely difficult.
-  -#%article.properties-tabs
-    .container
-      / Nav tabs
-      %ul.nav.nav-tabs
-        %li.active
-          %a{"data-toggle" => "tab", href: "#featured"} Featured Properties
-        %li
-          %a{"data-toggle" => "tab", href: "#sale"} Recent Properties on Sale
-        %li
-          %a{"data-toggle" => "tab", href: "#rent"} Recent Properties for Rent
-      / Tab panes
-      .tab-content
-        #featured.tab-pane.fade.in.active
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular03.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular02.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular01.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular01.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular03.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular02.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular01.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular02.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular03.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .clearfix
-        #sale.tab-pane.fade
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular02.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular01.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular03.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular03.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular01.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular02.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular01.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular03.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular02.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .clearfix
-        #rent.tab-pane.fade
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular02.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular03.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular01.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular01.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular03.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular02.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular02.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular01.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .property-item
-            %figure.item-thumbnail.darken
-              %img{alt: "//", src: "/assets/img/houses/popular03.jpg"}/
-              %span.overthumb
-              .icons
-                %a{href: "#"}
-                  %i.icon-plus
-            %p A new boutique building in the rem ipsum dolor sit...
-            %p
-              %i.icon-location>
-              Chicago, USA
-          .clearfix
-  -#%article.experts
-    .container
-      %h2 Experts on real Estates
-      %h3 We Build our Products to represent our values
-      %a.btn.btn-image{href: "#"} Properties on Sale
-  -#%article.team
-    .container
-      %h2 Meet the Team
-      %p.subtitle Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, omnis, porro, vero explicabo repellendus nisi quibusdam in aliquam nesciunt quos suscipit fuga aperiam et veniam ratione nemo doloremque a! Sed!
-      .team-item
-        %figure.item-thumbnail
-          %img{alt: "//", src: "/assets/img/team/team1.jpg"}/
-          %span.overthumb
-          .icons
-            %a.btn.btn-image{href: "#"} View Profile
-        %h6 Mike Smithson
-        %a{href: "#"} mike@company.com
-        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, voluptatum, consequatur non.
-      .team-item
-        %figure.item-thumbnail
-          %img{alt: "//", src: "/assets/img/team/team2.jpg"}/
-          %span.overthumb
-          .icons
-            %a.btn.btn-image{href: "#"} View Profile
-        %h6 Mike Smithson
-        %a{href: "#"} mike@company.com
-        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, voluptatum, consequatur non.
-      .team-item
-        %figure.item-thumbnail
-          %img{alt: "//", src: "/assets/img/team/team3.jpg"}/
-          %span.overthumb
-          .icons
-            %a.btn.btn-image{href: "#"} View Profile
-        %h6 Mike Smithson
-        %a{href: "#"} mike@company.com
-        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, voluptatum, consequatur non.
-      .team-item
-        %figure.item-thumbnail
-          %img{alt: "//", src: "/assets/img/team/team4.jpg"}/
-          %span.overthumb
-          .icons
-            %a.btn.btn-image{href: "#"} View Profile
-        %h6 Mike Smithson
-        %a{href: "#"} mike@company.com
-        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, voluptatum, consequatur non.
-  %article.super-offers
-    .container
-      .col-md-6
-        .boxes
-          .onsale
-            -#%span> On Sale
-            Treatment
-          - treatments.each do |t|
-            = render :partial => "property", :locals => { :t => t, :referer => referer }
-          .clearfix
-      .col-md-6
-        .boxes
-          .onsale
-            Detox
-          - detox.each do |t|
-            = render :partial => "property", :locals => { :t => t, :referer => referer }
-          .clearfix
-      .col-md-6
-        .boxes
-          .onsale
-            Sober Living
-          - sober_living.each do |t|
-            = render :partial => "property", :locals => { :t => t, :referer => referer }
-          .clearfix
-      .col-md-6
-        .boxes
-          .onsale
-            Intensive Outpatient
-          - intensive_outpatient.each do |t|
-            = render :partial => "property", :locals => { :t => t, :referer => referer }
-          .clearfix
-      .col-md-6
-        .boxes
-          .onsale
-            Interventionists
-          - interventionists.each do |t|
-            = render :partial => "property", :locals => { :t => t, :referer => referer }
-          .clearfix
-      .col-md-6
-        .boxes
-          .onsale
-            Outpatient Detox
-          - outpatient_detox.each do |t|
-            = render :partial => "property", :locals => { :t => t, :referer => referer }
-          .clearfix
+                Lorem ipsum dolor sit amet, natum bonorum expetendis usu ut. Eum impetus offendit disputationi eu, at vim aliquip lucilius praesent. Alia laudem antiopam te ius, sed ad munere integre, ubique facete sapientem nam ut.
+      .item
+        = image_tag 'gallery/graph(1024x680).jpg', alt: 'Second Slide'
+        / Static Header
+        .hidden-xs
+          .col-md-12.text-center
+            %h2
+              %span Welcome to LOREM IPSUM
+            %br/
+            %h3
+              %span Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        / /header-text
+      .item
+        = image_tag 'gallery/beach_1200(1024x768).jpg', alt: 'Third Slide'
+        / Static Header
+        .hidden-xs
+          .col-md-12.text-center
+            %h2
+              %span Welcome to LOREM IPSUM
+            %br/
+            %h3
+              %span Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        / /header-text
+    / Controls
+    %a.right.carousel-control{"data-slide" => "prev", :href => "#carousel-example-generic"}
+      %span.fa.fa-chevron-left
+    %a.left.carousel-control{"data-slide" => "next", :href => "#carousel-example-generic"}
+      %span.fa.fa-chevron-right
+  / /carousel
+%section.section.section-services
+  .container
+    .row
+      .col-lg-4
+        %i.fa.fa-code.fa-5x
+        %h4
+          %strong Valid HTML5
+        %p
+          Lorem ipsum dolor sit amet, mutat graeco volumus ad eam, singulis patrioque comprehensam nam no. Mei cu dicat voluptaria volumus.
+      .col-lg-4
+        %i.fa.fa-terminal.fa-5x
+        %h4 Responsive
+        %p
+          Lorem ipsum dolor sit amet, mutat graeco volumus ad eam, singulis patrioque comprehensam nam no. Mei cu dicat voluptaria volumus.
+      .col-lg-4
+        %i.fa.fa-bolt.fa-5x
+        %h4 Customizable
+        %p
+          Lorem ipsum dolor sit amet, mutat graeco volumus ad eam, singulis patrioque comprehensam nam no. Mei cu dicat voluptaria volumus.
+%section.section.testimonials
+  .container
+    .row
+      .col-lg-12
+        %div
+          .testimonial
+            %h5 Nunc velit risus, dapibus non interdum quis, suscipit nec dolor. Vivamus tempor tempus mauris vitae fermentum. In vitae nulla lacus. Sed sagittis tortor vel arcu sollicitudin nec tincidunt metus suscipit.Nunc velit risus, dapibus non interdum.
+            %br/
+            %span.author
+              — MIKE DOE
+              %a{:href => "#"} www.siteurl.com
+%section.section.section-about
+  .container
+    .row
+      .col-md-offset-3.col-md-6
+        .section-header
+          %h2.section-heading Our Team
+          %p Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur, adipisci velit, sed quia non numquam.
+    .row
+      .col-md-3
+        .team-member
+          %figure.member-photo
+            = image_tag 'avatars/avatar.png', alt: 'Team'
+          .team-detail
+            %h4 Jason Doe
+            %span User experiences
+      .col-md-3
+        .team-member
+          %figure.member-photo
+            = image_tag 'avatars/avatar.png', alt: 'Team'
+          .team-detail
+            %h4 Timothy Clark
+            %span Web developer
+      .col-md-3
+        .team-member
+          %figure.member-photo
+            = image_tag 'avatars/avatar.png', alt: 'Team'
+          .team-detail
+            %h4 Vicky Tan
+            %span Web designer
+      .col-md-3
+        .team-member
+          %figure.member-photo
+            = image_tag 'avatars/avatar.png', alt: 'Team'
+          .team-detail
+            %h4 Kevin Peterson
+            %span UI designer
+%section.section
+  .container
+    .row
+      .col-lg-12
+        #quotes.section-quotes
+          #quote-carousel.carousel.slide.quotes-carousel{"data-ride" => "carousel"}
+            / Bottom Carousel Indicators
+            %ol.carousel-indicators
+              %li.active{"data-slide-to" => "0", "data-target" => "#quote-carousel"}
+              %li{"data-slide-to" => "1", "data-target" => "#quote-carousel"}
+              %li{"data-slide-to" => "2", "data-target" => "#quote-carousel"}
+            / Carousel Slides / Quotes
+            .carousel-inner
+              / Quote 1
+              .item.active
+                %blockquote
+                  .row
+                    .col-sm-3.text-center
+                      = image_tag 'avatars/user1_55@2x.jpg', alt: 'User', class: 'img-circle', style: "width: 100px;height:100px;"
+                    .col-sm-9
+                      %p Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit!
+                      %small Someone famous
+              / Quote 2
+              .item
+                %blockquote
+                  .row
+                    .col-sm-3.text-center
+                      = image_tag 'avatars/user2_55@2x.jpg', alt: 'User', class: 'img-circle', style: "width: 100px;height:100px;"
+                    .col-sm-9
+                      %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam auctor nec lacus ut tempor. Mauris.
+                      %small Someone famous
+              / Quote 3
+              .item
+                %blockquote
+                  .row
+                    .col-sm-3.text-center
+                      = image_tag 'avatars/user3_55@2x.jpg', alt: 'User', class: 'img-circle', style: "width: 100px;height:100px;"
+                    .col-sm-9
+                      %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut rutrum elit in arcu blandit, eget pretium.
+                      %small Someone famous
+            / Carousel Buttons Next/Prev
+            %a.right.carousel-control{"data-slide" => "prev", :href => "#quote-carousel"}
+              %i.fa.fa-chevron-left
+            %a.left.carousel-control{"data-slide" => "next", :href => "#quote-carousel"}
+              %i.fa.fa-chevron-right
+/ END CONTENT
