@@ -88,37 +88,25 @@
     .row
       .col-md-offset-3.col-md-6
         .section-header
-          %h2.section-heading Our Team
+          %h2.section-heading
+            = t(:sponsors)
           %p Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur, adipisci velit, sed quia non numquam.
     .row
       .col-md-3
         .team-member
           %figure.member-photo
-            = image_tag 'avatars/avatar.png', alt: 'Team'
-          .team-detail
-            %h4 Jason Doe
-            %span User experiences
+            %img{:alt => "Wallaby Care", :src => "https://recoveryanytime-prod.s3.amazonaws.com/uploads/promotion/image/3/wallaby_icon.png"}
       .col-md-3
         .team-member
           %figure.member-photo
-            = image_tag 'avatars/avatar.png', alt: 'Team'
-          .team-detail
-            %h4 Timothy Clark
-            %span Web developer
+            %img{:alt => "Coast to Coast", :src => "https://recoveryanytime-prod.s3.amazonaws.com/uploads/promotion/image/2/coast-to-coast.png"}
       .col-md-3
         .team-member
           %figure.member-photo
-            = image_tag 'avatars/avatar.png', alt: 'Team'
-          .team-detail
-            %h4 Vicky Tan
-            %span Web designer
+            %img{:alt => "Coast to Coast", :src => "https://recoveryanytime-prod.s3.amazonaws.com/uploads/promotion/image/1/freshstartmag.png"}
       .col-md-3
         .team-member
           %figure.member-photo
-            = image_tag 'avatars/avatar.png', alt: 'Team'
-          .team-detail
-            %h4 Kevin Peterson
-            %span UI designer
 %section.section
   .container
     .row
