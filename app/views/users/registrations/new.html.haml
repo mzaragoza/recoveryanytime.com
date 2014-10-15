@@ -1,32 +1,86 @@
--#%ul.powerwizard
-  %li.active
-    1. Personal
-  %li
-    2. Account
-  %li.end
-    3.Confirm
-.spacer-30
-.powerwizard-content
-  = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
-    %ul
-      - resource.errors.full_messages.each do |e|
-        %li=e
-    = f.input :username   , label: false, input_html: { class: 'form-control input-lg', placeholder: "Username"   , value: "#{ params[:user][:username] if params[:user] }"   }
-    %br
-    = f.input :email      , label: false, input_html: { class: 'form-control input-lg', placeholder: "Email"      , value: "#{ params[:user][:email]    if params[:user] }"   }
-    %br
-    = f.input :password   , label: false, input_html: { class: 'form-control input-lg', placeholder: "Password"   , value: "#{ params[:user][:password] if params[:user] }"   }
-    %br
-    = f.input :first_name , label: false, input_html: { class: 'form-control input-lg', placeholder: "First Name" }
-    %br
-    = f.input :last_name  , label: false, input_html: { class: 'form-control input-lg', placeholder: "Last Name"  }
-    %br
-    = f.input :gender     , label: false, input_html: { class: 'form-control input-lg', placeholder: "Gender"     }, :as => :select, :collection => gender_list, include_blank: true
-    %br
+%section.section.title-page
+  .container
+    .row
+      .col-md-6
+        %h3.page-title
+          = t(:register)
+      .col-md-6
+        %ol.breadcrumb.pull-right
+          %li
+            = link_to root_path do
+              = t(:home)
+          %li
+            = link_to root_path do
+              = t(:register)
+%section.section.panel.panel-default
+  .container.panel-body
+    .row
+      .col-md-7
+        %blockquote
+          .media
+            %span.pull-left.text-center{:style => "width: 74px;"}
+              %i.fa.fa-code.fa-4x.media-object
+            .media-body
+              %h4.media-heading
+                %strong Valid HTML5
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+        %blockquote
+          .media
+            %span.pull-left.text-center{:style => "width: 74px;"}
+              %i.fa.fa-terminal.fa-4x.media-object
+            .media-body
+              %h4.media-heading>
+                %strong Responsive
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+        %blockquote
+          .media
+            %span.pull-left.text-center{:style => "width: 74px;"}
+              %i.fa.fa-bolt.fa-4x.media-object
+            .media-body
+              %h4.media-heading
+                %strong Customizable
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      .col-md-5.well.well-sm
+        = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+          %ul
+            - resource.errors.full_messages.each do |e|
+              %li
+                = e
+          %h4.text-center Sign up!
+          .form-group
+            .row
+              .col-xs-6.col-md-6
+                = f.input :first_name, label: false, input_html: { class: 'form-control', placeholder: "First Name"}
+              .col-xs-6.col-md-6
+                = f.input :last_name, label: false, input_html: { class: 'form-control', placeholder: "Last Name"}
+          .form-group
+            = f.input :username, label: false, input_html: { class: 'form-control', placeholder: "Username", value: "#{ params[:user][:username] if params[:user] }"}
+          .form-group
+            = f.input :email, label: false, input_html: { class: 'form-control', placeholder: "Email", value: "#{ params[:user][:email] if params[:user] }"}
+          .form-group
+            = f.input :password, label: false, input_html: { class: 'form-control', placeholder: "Password", value: "#{ params[:user][:password] if params[:user] }"}
+          .form-group.text-center
+            %label
+              Birth Date
+            .row
+              .col-xs-4.col-md-4
+                %select.form-control
+                  %option{:value => "Month"} Month
+              .col-xs-4.col-md-4
+                %select.form-control
+                  %option{:value => "Day"} Day
+              .col-xs-4.col-md-4
+                %select.form-control
+                  %option{:value => "Year"} Year
+          .form-group.text-center
+            %label
+              Gender
+            = f.input :gender, label: false, input_html: {class: 'form-control', placeholder: "Gender"}, :as => :select, :collection => gender_list, include_blank: true
+          %button.btn.btn-lg.btn-inverse.btn-block{:type => "submit"} Sign up
+
+-#
     = f.input :address    , label: false, input_html: { class: 'form-control input-lg', placeholder: "Address"    }
-    %br
     = f.input :city       , label: false, input_html: { class: 'form-control input-lg', placeholder: "City"       }
-    %br
     = f.input :state      , label: false, input_html: { class: 'form-control input-lg', placeholder: "State"      }, :as => :select, :collection => us_states, include_blank: true
     %br
     = f.input :zip        , label: false, input_html: { class: 'form-control input-lg', placeholder: "Zipcode"    }

@@ -9,7 +9,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     if params[:action] == 'edit' or params[:action] =='update' or params[:action] =='change_password'
       'users/default'
     else
-      'users/login'
+      'public/default'
     end
   end
 
