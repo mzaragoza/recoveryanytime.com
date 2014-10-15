@@ -2,7 +2,7 @@ class Promotion < ActiveRecord::Base
   has_many :clicks, :as => :clickable
 
   validates_presence_of :name
-  validates_presence_of :image
+  #validates_presence_of :image
   validates_presence_of :link
   mount_uploader :image, PhotoUploader
   scope :is_active, -> { where(:active => true) }
