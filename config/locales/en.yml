@@ -1,7 +1,11 @@
 en:
   company_name: "recovery anytime"
-  tagline: "i need a tagline"
-  seeking_help: "Seeking Help"
-  in_recovery: "In Recovery"
   friends_and_family_in_recovery: "Friends & Family in Recovery"
+  home: "Home"
+  in_recovery: "In Recovery"
+  login: "Login"
+  login: 'Login'
+  seeking_help: "Seeking Help"
   sponsors: "Sponsors"
+  tagline: "I need a tagline"
+  please_sign_in: "Please sign in"
