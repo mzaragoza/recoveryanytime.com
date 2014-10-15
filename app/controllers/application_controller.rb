@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
     strategy DecentExposure::StrongParametersStrategy
   end
   expose(:email_campaings){ EmailCampaing.is_active}
-  expose(:promotions){ Promotion.is_active}
+  expose(:promotions){ Promotion.is_active.order( 'RANDOM() '). limit(4)}
   protect_from_forgery with: :exception
 end

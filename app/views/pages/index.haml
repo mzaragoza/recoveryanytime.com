@@ -92,18 +92,20 @@
             = t(:sponsors)
           %p Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur, adipisci velit, sed quia non numquam.
     .row
-      .col-md-3
-        .team-member
-          %figure.member-photo
-            %img{:alt => "Wallaby Care", :src => "https://recoveryanytime-prod.s3.amazonaws.com/uploads/promotion/image/3/wallaby_icon.png"}
-      .col-md-3
-        .team-member
-          %figure.member-photo
-            %img{:alt => "Coast to Coast", :src => "https://recoveryanytime-prod.s3.amazonaws.com/uploads/promotion/image/2/coast-to-coast.png"}
-      .col-md-3
-        .team-member
-          %figure.member-photo
-            %img{:alt => "Coast to Coast", :src => "https://recoveryanytime-prod.s3.amazonaws.com/uploads/promotion/image/1/freshstartmag.png"}
+      - promotions.each do |p|
+        .col-md-3
+          .team-member
+            %figure.member-photo
+              - if current_user
+                - p.add_to_views({:user_id => current_user.id, :referer => referer})
+              -else
+                - p.add_to_views(:referer => referer)
+              = link_to promotion_click_path(p, :referer => referer) , target: '_blank 'do
+                %figure
+                - unless p.image.to_s.empty?
+                  = image_tag p.image_url, alt: p.name, style: 'width: 150px;'
+                - else
+                  = image_tag '/assets/missing_facility.jpg', alt: p.name, style: 'width: 150px;'
       .col-md-3
         .team-member
           %figure.member-photo
