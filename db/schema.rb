@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141015185800) do
+ActiveRecord::Schema.define(version: 20141015203614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -127,6 +127,21 @@ ActiveRecord::Schema.define(version: 20141015185800) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "abbr",        default: ""
+  end
+
+  create_table "meetings", force: true do |t|
+    t.string   "name",                  default: "",   null: false
+    t.integer  "fellowship_id"
+    t.string   "location",              default: "",   null: false
+    t.string   "address",               default: "",   null: false
+    t.string   "city",                  default: "",   null: false
+    t.string   "state",                 default: "",   null: false
+    t.string   "zip",                   default: "",   null: false
+    t.string   "format",                default: "",   null: false
+    t.string   "language",              default: "",   null: false
+    t.datetime "meeting_time"
+    t.text     "description"
+    t.boolean  "hadicapped_accessable", default: true, null: false
   end
 
   create_table "promotions", force: true do |t|
