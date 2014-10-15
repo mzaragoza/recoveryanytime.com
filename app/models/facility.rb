@@ -26,5 +26,17 @@ class Facility < ActiveRecord::Base
     end
   end
 
+  def views_count
+    self.clicks.where(action: 'view').count
+  end
+  def views_count_this_month
+    self.clicks.where(action: 'view').where(:created_at => Date.today.beginning_of_month..Date.today.end_of_month).count
+  end
+  def clicks_count
+    self.clicks.where(action: 'click').count
+  end
+  def views_count_this_month
+    self.clicks.where(action: 'click').where(:created_at => Date.today.beginning_of_month..Date.today.end_of_month).count
+  end
 end
 
