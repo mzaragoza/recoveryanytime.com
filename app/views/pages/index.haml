@@ -14,11 +14,12 @@
           .col-md-6.col-md-offset-3
             .text-center
               %i.fa.fa.fa-thumbs-up.fa-5x
-              %h2.slogan Welcome to Social
+              %h2.slogan
+                Recovery Anytime is ....
               %p
-                Lorem ipsum dolor sit amet, natum bonorum expetendis usu ut. Eum impetus offendit disputationi eu, at vim aliquip lucilius praesent. Alia laudem antiopam te ius, sed ad munere integre, ubique facete sapientem nam ut.
+                Whether you're sober, clean, or seeking help with your drug addiction or alcoholism, we welcome you, and will connect you with other people who share YOUR addiction, in YOUR local area, and all across the world!
       .item
-        = image_tag 'gallery/graph(1024x680).jpg', alt: 'Second Slide'
+        = image_tag 'group.jpg', alt: 'Second Slide'
         / Static Header
         .hidden-xs
           .col-md-12.text-center
@@ -49,19 +50,26 @@
   .container
     .row
       .col-lg-4
-        %i.fa.fa-code.fa-5x
+        = image_tag 'stock-photo-32246458-i-m-happy-to-help.jpg', alt: '', style: 'width: 80px;'
         %h4
-          %strong Valid HTML5
+          %strong
+            = t(:seeking_help)
         %p
           Lorem ipsum dolor sit amet, mutat graeco volumus ad eam, singulis patrioque comprehensam nam no. Mei cu dicat voluptaria volumus.
       .col-lg-4
-        %i.fa.fa-terminal.fa-5x
-        %h4 Responsive
+        %figure
+          = image_tag 'stock-photo-45231460-campfire-of-friends-in-circle-on-the-fire.jpg', alt: '', style: 'width: 80px;'
+        %h4
+          %strong
+            = t(:in_recovery)
         %p
           Lorem ipsum dolor sit amet, mutat graeco volumus ad eam, singulis patrioque comprehensam nam no. Mei cu dicat voluptaria volumus.
       .col-lg-4
-        %i.fa.fa-bolt.fa-5x
-        %h4 Customizable
+        %figure
+          = image_tag 'stock-photo-45215624-group-of-friends-with-hands-in-hands-teamwork.jpg', alt: '', style: 'width: 80px;'
+        %h4
+          %strong
+            = t(:friends_and_family_in_recovery)
         %p
           Lorem ipsum dolor sit amet, mutat graeco volumus ad eam, singulis patrioque comprehensam nam no. Mei cu dicat voluptaria volumus.
 %section.section.testimonials
@@ -74,7 +82,7 @@
             %br/
             %span.author
               — MIKE DOE
-              %a{:href => "#"} www.siteurl.com
+              %a{:href => "#"} www.recoveryanytime.com
 %section.section.section-about
   .container
     .row
