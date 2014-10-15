@@ -1,5 +1,5 @@
 !!!
-%html{:dir => "rtl"}
+%html
   %head
     %meta{:charset => "utf-8"}
     %title
@@ -13,12 +13,10 @@
     %meta{:content => "", :name => "description"}
     %meta{:content => "", :name => "author"}
 
-    = stylesheet_link_tag 'social.core-rtl', media: 'all', 'data-turbolinks-track' => true
-    = stylesheet_link_tag 'social.frontend-rtl', media: 'all', 'data-turbolinks-track' => true
-    = stylesheet_link_tag 'font-awesome/font-awesome', media: 'all', 'data-turbolinks-track' => true
-    = stylesheet_link_tag 'themes/frontend/blue-rtl', media: 'all', 'data-turbolinks-track' => true
-    = stylesheet_link_tag 'demo-rtl', media: 'all', 'data-turbolinks-track' => true
-    = stylesheet_link_tag 'plugins/jquery-simplecolorpicker/jquery.simplecolorpicker', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'social.core'
+    = stylesheet_link_tag 'social.frontend'
+    = stylesheet_link_tag 'font-awesome/font-awesome'
+    = stylesheet_link_tag 'themes/frontend/blue'
     :css
       .wrapper .main {
         margin-top: 60px;
@@ -26,7 +24,7 @@
     /[if lt IE 8]
       = javascript_include_tag 'html5shiv/html5shiv'
       = javascript_include_tag 'plugins/respond/respond.min'
-      = csrf_meta_tags
+    = csrf_meta_tags
   %body
     .wrapper
       %header
@@ -153,7 +151,7 @@
           .row.copyright
             .col-sm-12
               %p
-                Copyright -
+                Copyright &copy; 2014 -
                 =link_to 'Privacy Policy', privacy_policy_path
                 \-
                 %strong Recovery Anytime

@@ -8,7 +8,7 @@ gem 'pg'
 
 #services
 #gem 'airbrake'
-gem 'newrelic_rpm', '~> 3.7.1.188'
+#gem 'newrelic_rpm', '~> 3.7.1.188'
 gem 'gibbon' # mailchimp
 
 # Server
