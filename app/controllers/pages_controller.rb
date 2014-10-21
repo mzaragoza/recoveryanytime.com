@@ -6,12 +6,12 @@ class PagesController < PublicController
   expose(:resource_name){:user }
   expose(:resource){ User.new }
   expose(:devise_mapping){ Devise.mappings[:user] }
-  expose(:treatments){ Facility.is_active.treatment.order("main DESC, position ASC").limit(4) }
-  expose(:detox){ Facility.is_active.detox.order("main DESC, position ASC").limit(4) }
-  expose(:sober_living){ Facility.is_active.sober_living.order("main DESC, position ASC").limit(4) }
-  expose(:intensive_outpatient){ Facility.is_active.intensive_outpatient.order("main DESC, position ASC").limit(4) }
-  expose(:interventionists){ Facility.is_active.interventionists.order("main DESC, position ASC").limit(4) }
-  expose(:outpatient_detox){ Facility.is_active.outpatient_detox.order("main DESC, position ASC").limit(4) }
+  expose(:treatments){            Facility.is_active.treatment.order(            'RANDOM() ').limit(4) }
+  expose(:detox){                 Facility.is_active.detox.order(                'RANDOM() ').limit(4) }
+  expose(:sober_living){          Facility.is_active.sober_living.order(         'RANDOM() ').limit(4) }
+  expose(:intensive_outpatient){  Facility.is_active.intensive_outpatient.order( 'RANDOM() ').limit(4) }
+  expose(:interventionists){      Facility.is_active.interventionists.order(     'RANDOM() ').limit(4) }
+  expose(:outpatient_detox){      Facility.is_active.outpatient_detox.order(     'RANDOM() ').limit(4) }
 
   def ping
     render :layout => false
