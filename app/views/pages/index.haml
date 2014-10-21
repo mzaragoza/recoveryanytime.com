@@ -19,26 +19,26 @@
               %p
                 Whether you're sober, clean, or seeking help with your drug addiction or alcoholism, we welcome you, and will connect you with other people who share YOUR addiction, in YOUR local area, and all across the world!
       .item
-        = image_tag 'group.jpg', alt: 'Second Slide'
+        = image_tag '/assets/aspire4.jpg', alt: 'Aspire'
         / Static Header
         .hidden-xs
           .col-md-12.text-center
             %h2
-              %span Welcome to LOREM IPSUM
+              %span Aspire
             %br/
             %h3
-              %span Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              %span To say drug and alchohol free with the help of the comunity and your peers.
         / /header-text
       .item
-        = image_tag 'gallery/beach_1200(1024x768).jpg', alt: 'Third Slide'
+        = image_tag '/assets/meeting.jpg', alt: '<eeting'
         / Static Header
         .hidden-xs
           .col-md-12.text-center
             %h2
-              %span Welcome to LOREM IPSUM
+              %span Meeting
             %br/
             %h3
-              %span Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              %span Online meeting will help you to get back into the comunity and stay drug free.
         / /header-text
     / Controls
     %a.right.carousel-control{"data-slide" => "prev", :href => "#carousel-example-generic"}
@@ -75,14 +75,125 @@
 %section.section.testimonials
   .container
     .row
-      .col-lg-12
-        %div
-          .testimonial
-            %h5 Nunc velit risus, dapibus non interdum quis, suscipit nec dolor. Vivamus tempor tempus mauris vitae fermentum. In vitae nulla lacus. Sed sagittis tortor vel arcu sollicitudin nec tincidunt metus suscipit.Nunc velit risus, dapibus non interdum.
-            %br/
-            %span.author
-              — MIKE DOE
-              %a{:href => "#"} www.recoveryanytime.com
+      .col-md-offset-3.col-md-6
+        .section-header
+          %h2.section-heading{ style: 'color:#FFF'}
+            = t(:treatment)
+    .row
+      - treatments.each do |f|
+        .col-md-3
+          .team-member
+            %figure.member-photo
+              - if current_user
+                - f.add_to_views({:user_id => current_user.id, :referer => referer})
+              -else
+                - f.add_to_views(:referer => referer)
+              = link_to directory_path(f) do
+                %figure
+                - unless f.image.to_s.empty?
+                  = image_tag f.image_url, alt: f.name, style: 'width: 150px;'
+                - else
+                  = image_tag '/assets/missing_facility.jpg', alt: f.name, style: 'width: 150px;'
+    .row
+      .col-md-offset-3.col-md-6
+        .section-header
+          %h2.section-heading{ style: 'color:#FFF'}
+            = t(:detox)
+    .row
+      - detox.each do |f|
+        .col-md-3
+          .team-member
+            %figure.member-photo
+              - if current_user
+                - f.add_to_views({:user_id => current_user.id, :referer => referer})
+              -else
+                - f.add_to_views(:referer => referer)
+              = link_to directory_path(f) do
+                %figure
+                - unless f.image.to_s.empty?
+                  = image_tag f.image_url, alt: f.name, style: 'width: 150px;'
+                - else
+                  = image_tag '/assets/missing_facility.jpg', alt: f.name, style: 'width: 150px;'
+    .row
+      .col-md-offset-3.col-md-6
+        .section-header
+          %h2.section-heading{ style: 'color:#FFF'}
+            = t(:sober_living)
+    .row
+      - sober_living.each do |f|
+        .col-md-3
+          .team-member
+            %figure.member-photo
+              - if current_user
+                - f.add_to_views({:user_id => current_user.id, :referer => referer})
+              -else
+                - f.add_to_views(:referer => referer)
+              = link_to directory_path(f) do
+                %figure
+                - unless f.image.to_s.empty?
+                  = image_tag f.image_url, alt: f.name, style: 'width: 150px;'
+                - else
+                  = image_tag '/assets/missing_facility.jpg', alt: f.name, style: 'width: 150px;'
+    .row
+      .col-md-offset-3.col-md-6
+        .section-header
+          %h2.section-heading{ style: 'color:#FFF'}
+            = t(:intensive_outpatient)
+    .row
+      - intensive_outpatient.each do |f|
+        .col-md-3
+          .team-member
+            %figure.member-photo
+              - if current_user
+                - f.add_to_views({:user_id => current_user.id, :referer => referer})
+              -else
+                - f.add_to_views(:referer => referer)
+              = link_to directory_path(f) do
+                %figure
+                - unless f.image.to_s.empty?
+                  = image_tag f.image_url, alt: f.name, style: 'width: 150px;'
+                - else
+                  = image_tag '/assets/missing_facility.jpg', alt: f.name, style: 'width: 150px;'
+    .row
+      .col-md-offset-3.col-md-6
+        .section-header
+          %h2.section-heading{ style: 'color:#FFF'}
+            = t(:interventionists)
+    .row
+      - interventionists.each do |f|
+        .col-md-3
+          .team-member
+            %figure.member-photo
+              - if current_user
+                - f.add_to_views({:user_id => current_user.id, :referer => referer})
+              -else
+                - f.add_to_views(:referer => referer)
+              = link_to directory_path(f) do
+                %figure
+                - unless f.image.to_s.empty?
+                  = image_tag f.image_url, alt: f.name, style: 'width: 150px;'
+                - else
+                  = image_tag '/assets/missing_facility.jpg', alt: f.name, style: 'width: 150px;'
+    .row
+      .col-md-offset-3.col-md-6
+        .section-header
+          %h2.section-heading{ style: 'color:#FFF'}
+            = t(:outpatient_detox)
+    .row
+      - outpatient_detox.each do |f|
+        .col-md-3
+          .team-member
+            %figure.member-photo
+              - if current_user
+                - f.add_to_views({:user_id => current_user.id, :referer => referer})
+              -else
+                - f.add_to_views(:referer => referer)
+              = link_to directory_path(f) do
+                %figure
+                - unless f.image.to_s.empty?
+                  = image_tag f.image_url, alt: f.name, style: 'width: 150px;'
+                - else
+                  = image_tag '/assets/missing_facility.jpg', alt: f.name, style: 'width: 150px;'
 %section.section.section-about
   .container
     .row
@@ -90,7 +201,6 @@
         .section-header
           %h2.section-heading
             = t(:sponsors)
-          %p Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur, adipisci velit, sed quia non numquam.
     .row
       - promotions.each do |p|
         .col-md-3
@@ -106,10 +216,7 @@
                   = image_tag p.image_url, alt: p.name, style: 'width: 150px;'
                 - else
                   = image_tag '/assets/missing_facility.jpg', alt: p.name, style: 'width: 150px;'
-      .col-md-3
-        .team-member
-          %figure.member-photo
-%section.section
+-#%section.section
   .container
     .row
       .col-lg-12
