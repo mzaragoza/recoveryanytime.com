@@ -1,9 +1,31 @@
+- referer = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
+- if current_user
+  - facility.add_to_views({:user_id => current_user.id, :referer => referer})
+-else
+  - facility.add_to_views(:referer => referer)
 .header-bottom
   .container
     .row
       .col-sm-12
         %h1= facility.name
-%section
+    .row
+      .col-sm-12
+        %article.panel.panel-default
+          .panel-body
+            .thumbnail
+              - if  facility.image.to_s.empty?
+                = image_tag '/assets/missing_facility.jpg', alt: facility.name
+              - else
+                = image_tag facility.image, alt: facility.name
+            %h3
+              = facility.name
+            %p
+              %span.label.label-inverse= facility.city.titleize
+              %span.label.label-inverse= facility.state.titleize
+            %p= raw facility.description 
+            %p.pull-right
+              %a.btn.btn-inverse{:href => "#ignore"} Contact
+-#%section
   .container
     .row
       .col-md-12

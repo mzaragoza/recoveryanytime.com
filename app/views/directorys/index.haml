@@ -1,3 +1,4 @@
+- referer = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
 .container
   .row
     .col-sm-12
@@ -12,6 +13,10 @@
       .col-md-9.col-md-push-3.property-details.big
         .row
           - facilities.each do |f|
+            - if current_user
+              - f.add_to_views({:user_id => current_user.id, :referer => referer})
+            -else
+              - f.add_to_views(:referer => referer)
             %article.panel.panel-default
               .panel-body
                 .thumbnail
@@ -28,7 +33,8 @@
                   %span.label.label-inverse= f.state.titleize
                 %p= raw f.description 
                 %p.pull-right
-                  %a.btn.btn-inverse{:href => "#ignore"} View detail
+                  = link_to directory_path(f), class: 'btn btn-inverse' do
+                    View detail
         -# facilities.each do |f|
           .property-details-item
             %figure.item-thumbnail
