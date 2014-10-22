@@ -22,16 +22,16 @@
               %i.fa.fa-code.fa-4x.media-object
             .media-body
               %h4.media-heading
-                %strong Valid HTML5
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                %strong Recovery Network
+              People that have a strong sober network stay sober longer! 
         %blockquote
           .media
             %span.pull-left.text-center{:style => "width: 74px;"}
               %i.fa.fa-terminal.fa-4x.media-object
             .media-body
               %h4.media-heading>
-                %strong Responsive
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+                %strong Fun & Safe 
+              At Recovery Anytim its a fun place to meet people just like you.
         %blockquote
           .media
             %span.pull-left.text-center{:style => "width: 74px;"}
@@ -59,19 +59,12 @@
             = f.input :email, label: false, input_html: { class: 'form-control', placeholder: "Email", value: "#{ params[:user][:email] if params[:user] }"}
           .form-group
             = f.input :password, label: false, input_html: { class: 'form-control', placeholder: "Password", value: "#{ params[:user][:password] if params[:user] }"}
+          .form-group
           .form-group.text-center
             %label
               Birth Date
             .row
-              .col-xs-4.col-md-4
-                %select.form-control
-                  %option{:value => "Month"} Month
-              .col-xs-4.col-md-4
-                %select.form-control
-                  %option{:value => "Day"} Day
-              .col-xs-4.col-md-4
-                %select.form-control
-                  %option{:value => "Year"} Year
+              = f.input :birthday, as: :date, start_year: Date.today.year - 90, end_year: Date.today.year, discard_day: false, order: [:month, :day, :year], label: false
           .form-group.text-center
             %label
               Gender

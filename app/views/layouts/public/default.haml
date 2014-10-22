@@ -68,7 +68,11 @@
                 %li
                   = link_to t(:host_a_meeting), new_meeting_path
                 %li
-                  = link_to t(:log_in), new_user_session_path
+                  - unless current_user
+                    = link_to t(:log_in), new_user_session_path
+                  - else
+                    = link_to t(:log_out), destroy_user_session_path
+
       .main
         = yield
       / BEGIN FOOTER
