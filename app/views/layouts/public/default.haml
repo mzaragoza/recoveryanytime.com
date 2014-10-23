@@ -45,7 +45,7 @@
                   = link_to root_path do
                     Home
                 %li
-                  = link_to t(:meetings), meetings_path
+                  = link_to t(:meetings), '/meetings?meeting[meeting]'
                 %li.dropdown
                   = link_to directorys_path(:facilty => 'Treatment'), class: 'dropdown-toggle', "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown" do
                     Directory
