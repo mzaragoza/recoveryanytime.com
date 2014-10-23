@@ -13,6 +13,8 @@ class CreateMeetings < ActiveRecord::Migration
       t.datetime :meeting_time
       t.text     :description
       t.boolean  :hadicapped_accessable,     null: false, default: true
+
+      t.timestamps
     end
   end
 end

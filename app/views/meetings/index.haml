@@ -3,5 +3,51 @@
     .container
       .row
         .col-md-12
-          Content Here Meetings
+          Meetings
+%section
+  .container
+    .row
+      .col-md-9.col-md-push-3.property-details.big
+        .row
+          - meetings.each do |m|
+            %article.panel.panel-default
+              .panel-body
+                .thumbnail
+                  = link_to meeting_path(m) do
+                    - if  m.fellowship.image.to_s.empty?
+                      = image_tag '/assets/missing_facility.jpg', alt: m.name
+                    - else
+                      = image_tag m.fellowship.image, alt: m..name
+                %h3
+                  = link_to meeting_path(m) do
+                    = m.name
+                %p
+                  %span.label.label-inverse= m.city.titleize
+                  %span.label.label-inverse= m.state.titleize
+                  %span.label.label-inverse= m.fellowship.name.titleize
+                  %span.label.label-inverse= m.meeting_time.strftime('%D %r')
+                %p= raw m.description 
+                %p.pull-right
+                  = link_to meeting_path(m), class: 'btn btn-inverse' do
+                    View detail
+
+      %aside.col-md-3.col-md-pull-9
+        = simple_form_for :meeting, :url => meetings_path, html: { class: 'filters' }, method: 'GET' do |f| 
+          #accordion.panel-group.boxes
+            .panel
+              .panel-heading
+                .boxes-title
+                  %span
+                    %i.icon-location
+                  %h4.panel-title
+                    %a{"data-toggle" => "collapse", :href => "#collapseLocation"}
+                      Location
+                      %i.icon-down-open-mini
+              #collapseLocation.panel-collapse.collapse.in
+                .panel-body
+                  - us_states.each do |state|
+                    .checkbox
+                      %label
+                        = f.input state[1], name: "#{state[0]}", as: :boolean, label: "#{state[0]} (#{meetings_count.where(:state => state[1]).count})"
+            %button.btn.btn-search{:type => "submit"} Show More
 

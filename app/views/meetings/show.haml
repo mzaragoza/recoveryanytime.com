@@ -1,7 +1,23 @@
-%section
-  %article
-    .container
-      .row
-        .col-md-12
-          Content Here Meetings Show
-
+.header-bottom
+  .container
+    .row
+      .col-sm-12
+        %h1= meeting.name
+    .row
+      .col-sm-12
+        %article.panel.panel-default
+          .panel-body
+            .thumbnail
+              - if  meeting.fellowship.image.to_s.empty?
+                = image_tag '/assets/missing_facility.jpg', alt: meeting.name
+              - else
+                = image_tag meeting.fellowship.image, alt: meeting.name
+            %h3
+              = meeting.name
+            %p
+              %span.label.label-inverse= meeting.city.titleize
+              %span.label.label-inverse= meeting.state.titleize
+              %span.label.label-inverse= meeting.fellowship.name.titleize
+              %span.label.label-inverse= meeting.meeting_time.strftime('%D %r')
+            %p= raw meeting.description 
+            %p= link_to meeting.full_address, "https://www.google.com/maps/place/#{meeting.full_address}", target: '_blank'

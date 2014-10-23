@@ -2,13 +2,15 @@ class Facility < ActiveRecord::Base
   has_many :clicks, :as => :clickable
 
   scope :is_active, -> { where(:active => true) }
-
   scope :treatment,             -> { where(:type_of => 'treatment') }
   scope :detox,                 -> { where(:type_of => 'detox') }
   scope :sober_living,          -> { where(:type_of => 'sober_living') }
   scope :intensive_outpatient,  -> { where(:type_of => 'intensive_outpatient') }
   scope :interventionists,      -> { where(:type_of => 'interventionists') }
   scope :outpatient_detox,      -> { where(:type_of => 'outpatient_detox') }
+
+  before_validation { |facility| facility.state = state.downcase }
+
   mount_uploader :image, PhotoUploader
 
   def add_to_views(options={})

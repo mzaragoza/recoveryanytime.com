@@ -7,7 +7,7 @@ Fabricator(:meeting) do
   zip                    { Faker::AddressUS.zip_code }
   format                 { Faker::Company.name }
   language               { ['english','spanish','mandarin','hindi','arabic','portuguese','bengali'].sample }
-  meeting_time           { DateTime.now + 2.days }
+  meeting_time           { DateTime.now + rand(336).hours }
   description            { Faker::HealthcareIpsum.words(rand(10)+1).join(' ') }
   hadicapped_accessable  { true }
   after_build do |m|

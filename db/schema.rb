@@ -142,6 +142,8 @@ ActiveRecord::Schema.define(version: 20141015203614) do
     t.datetime "meeting_time"
     t.text     "description"
     t.boolean  "hadicapped_accessable", default: true, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "promotions", force: true do |t|
