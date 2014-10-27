@@ -44,8 +44,16 @@
                 %li
                   = link_to root_path do
                     Home
-                %li
-                  = link_to t(:meetings), '/meetings?meeting[meeting]'
+                %li.dropdown
+                  = link_to '/meetings?meeting[meeting]', class: 'dropdown-toggle', "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown" do
+                    Meetings
+                    %b.caret
+                  %ul.dropdown-menu
+                    %li
+                      %a{:href => "/meetings?meeting[meeting]"} Meetings
+                    - if current_user
+                      %li
+                        = link_to t(:add_your_meeting), new_meeting_path 
                 %li.dropdown
                   = link_to directorys_path(:facilty => 'Treatment'), class: 'dropdown-toggle', "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown" do
                     Directory

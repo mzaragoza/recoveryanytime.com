@@ -10,3 +10,18 @@ en:
   tagline: "I need a tagline"
   please_sign_in: "Please sign in"
   register: "Register"
+
+  # MEETINGS
+  meeting_name: "Meeting Name"
+  fellowship_name: "Fellowship Name"
+  fellowship: "Fellowship"
+  location: "Location"
+  address: "Address"
+  city: "City"
+  state: "State"
+  zip: "Zip"
+  format: "Format"
+  language: "Language"
+  meeting_time: "Meeting Time"
+  description: "Description"
+  hadicapped_accessable: "Hadicapped Accessable"

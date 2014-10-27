@@ -1,0 +1,32 @@
+= simple_form_for(meeting) do |f|
+  %ul
+    - meeting.errors.full_messages.each do |e|
+      %li
+        = e
+  %fieldset
+    .form-group
+      = f.input :name, label: t(:meeting_name), input_html: { class: 'form-control', placeholder: t(:meeting_name) }
+    .form-group
+      = f.input :fellowship_id, label: t(:fellowship_name), input_html: { class: 'form-control', placeholder: t(:fellowship) }
+    .form-group
+      = f.input :location, label: t(:location), input_html: { class: 'form-control', placeholder: t(:location) }
+    .form-group
+      = f.input :address, label: t(:address), input_html: { class: 'form-control', placeholder: t(:address) }
+    .form-group
+      = f.input :city, label: t(:city), input_html: { class: 'form-control', placeholder: t(:city) }
+    .form-group
+      = f.input :state, label: t(:state), input_html: { class: 'form-control', placeholder: t(:state) }
+    .form-group
+      = f.input :zip, label: t(:zip), input_html: { class: 'form-control', placeholder: t(:zip) }
+    .form-group
+      = f.input :format, label: t(:format), input_html: { class: 'form-control', placeholder: t(:format) }
+    .form-group
+      = f.input :language, label: t(:language), input_html: { class: 'form-control', placeholder: t(:language) }
+    .form-group
+      = f.input :meeting_time, label: t(:meeting_time), input_html: { class: 'form-control', placeholder: t(:meeting_time) }
+    .form-group
+      = f.input :description, label: t(:description), input_html: { class: 'form-control', placeholder: t(:description) }
+    .form-group
+      = f.input :hadicapped_accessable, label: t(:hadicapped_accessable), input_html: { class: 'form-control', placeholder: t(:hadicapped_accessable) }
+    .form-group
+      = f.button :submit, "Create Meeting", :class => 'btn btn-lg btn-inverse btn-block'
