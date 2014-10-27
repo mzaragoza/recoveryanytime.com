@@ -7,7 +7,7 @@
     .form-group
       = f.input :name, label: t(:meeting_name), input_html: { class: 'form-control', placeholder: t(:meeting_name) }
     .form-group
-      = f.input :fellowship_id, label: t(:fellowship_name), input_html: { class: 'form-control', placeholder: t(:fellowship) }
+      = f.input :fellowship_id, label: t(:fellowship_name), input_html: { class: 'form-control input-lg', placeholder: t(:fellowship) }, :as => :select, :collection => Fellowship.is_active, include_blank: false
     .form-group
       = f.input :location, label: t(:location), input_html: { class: 'form-control', placeholder: t(:location) }
     .form-group
@@ -15,7 +15,7 @@
     .form-group
       = f.input :city, label: t(:city), input_html: { class: 'form-control', placeholder: t(:city) }
     .form-group
-      = f.input :state, label: t(:state), input_html: { class: 'form-control', placeholder: t(:state) }
+      = f.input :state, label: t(:state), input_html: { class: 'form-control input-lg', placeholder: t(:state) }, :as => :select, :collection => us_states, include_blank: false
     .form-group
       = f.input :zip, label: t(:zip), input_html: { class: 'form-control', placeholder: t(:zip) }
     .form-group
