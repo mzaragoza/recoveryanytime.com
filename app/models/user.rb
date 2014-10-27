@@ -27,7 +27,11 @@ class User < ActiveRecord::Base
   end
 
   def sober_ago
-    Time.diff(DateTime.now, self.sober_date)[:diff]
+    if self.sober_date
+      Time.diff(DateTime.now, self.sober_date)[:diff]
+    else
+      'N/A'
+    end
   end
   def should_validate_password?
     updating_password || new_record?

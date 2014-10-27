@@ -1,16 +1,33 @@
-.subheading
-  %h3 My Profile
-
-.col-md-12
-  %ul.ext-tabs
-    %li.active
-      %a{href: "#personal_information"} Personal Information
-    %li
-      %a{href: "#fellowships"} Fellowships
-    %li
-      %a{href: "#newsletters"} Newsletters
-  / End .ext-tabs
-  .tab-content.ext-tabs-boxed
-    = render 'personal_information'
-    = render 'fellowships'
-    = render 'newsletters'
+%section
+  %article
+    .container
+      .row
+        .col-md-12
+          %h1 
+            Profile
+%section
+  .container
+    .row
+      .col-md-9.col-md-push-3.property-details.big
+        .row
+          .panel.panel-default
+            .panel-body
+              %ul.nav.nav-tabs
+                %li.active
+                  %a{"data-toggle" => "tab", :href => "#personal_information"} Personal Information
+                %li
+                  %a{"data-toggle" => "tab", :href => "#fellowships"} Fellowships
+                %li
+                  %a{"data-toggle" => "tab", :href => "#newsletters"} Newsletters
+              .tab-content
+                = render 'personal_information'
+                = render 'fellowships'
+                = render 'newsletters'
+      %aside.col-md-3.col-md-pull-9
+        .inner-padding
+          .client-block
+            .avatar
+              - unless user.photo_url.to_s.empty?
+                = image_tag user.photo_url
+              - else
+                %img{alt: "", src: "/assets/images/users/missing_user.png"}/

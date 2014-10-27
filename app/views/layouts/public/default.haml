@@ -75,11 +75,19 @@
                   = link_to t(:about_us), about_us_path
                 %li
                   = link_to t(:host_a_meeting), new_meeting_path
-                %li
-                  - unless current_user
+                - unless current_user
+                  %li
                     = link_to t(:log_in), new_user_session_path
-                  - else
-                    = link_to t(:log_out), destroy_user_session_path
+                - else
+                  %li.dropdown
+                    = link_to '#', class: 'dropdown-toggle', "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown" do
+                      Profile
+                      %b.caret
+                    %ul.dropdown-menu
+                      %li
+                        = link_to t(:profile), users_profile_path(current_user)
+                      %li
+                        = link_to t(:log_out), destroy_user_session_path
 
       .main
         = yield
