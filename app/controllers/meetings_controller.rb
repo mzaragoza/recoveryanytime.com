@@ -18,6 +18,14 @@ class MeetingsController < PublicController
       meetings = Meeting.where(:meeting_time => Date.today..Date.today + 7.days)
     }
 
+  def create
+    if meeting.save
+      flash[:notice] = t(:meeting_was_successfully_created)
+      redirect_to meetings_path(meeting)
+    else
+      render :new
+    end
+  end
 
   def choose_layout
     'public/default'
