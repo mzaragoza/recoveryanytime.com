@@ -12,13 +12,13 @@ class DirectorysController < PublicController
        facilities = Facility.is_active.treatment
       elsif facility_type == 'detox'
        facilities =  Facility.is_active.detox
-      elsif facility_type == 'Intensive Outpatient'
+      elsif facility_type == 'intensive outpatient'
        facilities =  Facility.is_active.intensive_outpatient
-      elsif facility_type == 'Sober Living'
+      elsif facility_type == 'sober living'
        facilities =  Facility.is_active.sober_living
-      elsif facility_type == 'Outpatient Detox'
+      elsif facility_type == 'outpatient detox'
        facilities = Facility.is_active.outpatient_detox
-      elsif facility_type == 'Interventionists'
+      elsif facility_type == 'interventionists'
        facilities =  Facility.is_active.interventionists
       else
        facilities = Facility.is_active.treatment
