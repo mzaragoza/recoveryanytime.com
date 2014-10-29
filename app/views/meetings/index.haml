@@ -18,7 +18,7 @@
                     - if  m.fellowship.image.to_s.empty?
                       = image_tag '/assets/missing_facility.jpg', alt: m.name
                     - else
-                      = image_tag m.fellowship.image, alt: m..name
+                      = image_tag m.fellowship.image, alt: m.name
                 %h3
                   = link_to meeting_path(m) do
                     = m.name
