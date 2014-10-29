@@ -54,6 +54,8 @@
                     - if current_user
                       %li
                         = link_to t(:add_your_meeting), new_meeting_path 
+                %li
+                  = link_to t(:online_meeting), root_path
                 %li.dropdown
                   = link_to directorys_path(:facilty => 'Treatment'), class: 'dropdown-toggle', "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown" do
                     Directory
@@ -73,8 +75,6 @@
                   = link_to t(:contact_us), new_contact_path
                 %li
                   = link_to t(:about_us), about_us_path
-                %li
-                  = link_to t(:host_a_meeting), new_meeting_path
                 - unless current_user
                   %li
                     = link_to t(:log_in), new_user_session_path
